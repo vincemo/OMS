@@ -1,0 +1,12 @@
+D:\Project\OSM\OSM\bin\Debug\OSM.exe
+D:\Project\OSM\OSM\bin\Debug\OSM.pdb
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.Properties.Resources.resources
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.csproj.GenerateResource.Cache
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.exe
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.pdb
+D:\Project\OSM\OSM\bin\Debug\DB\OSMDBProvider.accdb
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.csprojResolveAssemblyReference.cache
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Login.resources
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Main.resources
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.AboutBox_OSM.resources
+D:\Project\OSM\OSM\obj\x86\Debug\OSM.MDIParent_Main.resources
