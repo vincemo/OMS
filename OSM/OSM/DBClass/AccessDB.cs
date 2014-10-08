@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 //添加OleDb库
 using System.Data;
-using System.Data.OleDb;    
+using System.Data.OleDb;
+using System.Data.SqlClient;    
 //添加JSON引用
 //using System.Runtime.Serialization;
 //using System.Runtime.Serialization.Json;
@@ -24,6 +25,14 @@ namespace OSM.DBClass
             OleDbConnection connection = new OleDbConnection(connectionString);
             return connection;
         }
+
+        //public SqlConnection getSqlConnection()
+        //{
+        //    string myConn = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Project\\OSM\\OSM\\DB\\OSMDBProvider.accdb;Persist Security Info=True";
+        //    //"server=127.0.0.1;uid=user;pwd=123456;database=Northwind;Trusted_Connection=no";
+        //    SqlConnection sqlConnection = new SqlConnection(myConn);
+        //    return sqlConnection;
+        //}
 
         public Hashtable login(OleDbConnection conn, string sql)
         {
@@ -72,6 +81,26 @@ namespace OSM.DBClass
                 {
                     return false;
                 }
+            }
+            catch (Exception e)
+            {
+                throw (new Exception("数据库连接出错！" + e.Message));
+            }
+        }
+
+        public DataSet SQLQuery(OleDbConnection conn, string sql)
+        {
+            try
+            {
+                OleDbCommand selectCommand = new OleDbCommand(sql, conn);
+                OleDbDataAdapter selectAdapter = new OleDbDataAdapter();
+                selectAdapter.SelectCommand = selectCommand;
+                DataSet dataSet = new DataSet();
+                conn.Open();
+                selectAdapter.SelectCommand.ExecuteNonQuery();
+                conn.Close();
+                selectAdapter.Fill(dataSet);
+                return dataSet;
             }
             catch (Exception e)
             {

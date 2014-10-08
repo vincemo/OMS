@@ -35,22 +35,24 @@
             this.menuStrip_Main = new System.Windows.Forms.MenuStrip();
             this.TSMItem_Offers = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_offer_query = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItem_offer_add = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_Orders = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_order_query = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItem_offer_add = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_order_add = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_Purchase = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItem_Deliver = new System.Windows.Forms.ToolStripMenuItem();
-            this.TSMItem_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_purchase_query = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_purchase_arrive = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItem_Deliver = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_deliver_query = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_deliver_pay = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItem_Options = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_change_pwd = new System.Windows.Forms.ToolStripMenuItem();
             this.TStMItem_about = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView_Main = new System.Windows.Forms.DataGridView();
             this.statusStrip_Main.SuspendLayout();
             this.menuStrip_Main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Main)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip_Main
@@ -106,6 +108,13 @@
             this.TSMItem_offer_query.Name = "TSMItem_offer_query";
             this.TSMItem_offer_query.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_offer_query.Text = "报价单查询";
+            this.TSMItem_offer_query.Click += new System.EventHandler(this.TSMItem_offer_query_Click);
+            // 
+            // TSMItem_offer_add
+            // 
+            this.TSMItem_offer_add.Name = "TSMItem_offer_add";
+            this.TSMItem_offer_add.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_offer_add.Text = "新增报价单";
             // 
             // TSMItem_Orders
             // 
@@ -119,19 +128,13 @@
             // TSMItem_order_query
             // 
             this.TSMItem_order_query.Name = "TSMItem_order_query";
-            this.TSMItem_order_query.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_order_query.Size = new System.Drawing.Size(124, 22);
             this.TSMItem_order_query.Text = "订单查询";
-            // 
-            // TSMItem_offer_add
-            // 
-            this.TSMItem_offer_add.Name = "TSMItem_offer_add";
-            this.TSMItem_offer_add.Size = new System.Drawing.Size(152, 22);
-            this.TSMItem_offer_add.Text = "新增报价单";
             // 
             // TSMItem_order_add
             // 
             this.TSMItem_order_add.Name = "TSMItem_order_add";
-            this.TSMItem_order_add.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_order_add.Size = new System.Drawing.Size(124, 22);
             this.TSMItem_order_add.Text = "新增订单";
             // 
             // TSMItem_Purchase
@@ -143,6 +146,18 @@
             this.TSMItem_Purchase.Size = new System.Drawing.Size(68, 21);
             this.TSMItem_Purchase.Text = "采购管理";
             // 
+            // TSMItem_purchase_query
+            // 
+            this.TSMItem_purchase_query.Name = "TSMItem_purchase_query";
+            this.TSMItem_purchase_query.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_purchase_query.Text = "采购单查询";
+            // 
+            // TSMItem_purchase_arrive
+            // 
+            this.TSMItem_purchase_arrive.Name = "TSMItem_purchase_arrive";
+            this.TSMItem_purchase_arrive.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_purchase_arrive.Text = "采购到货";
+            // 
             // TSMItem_Deliver
             // 
             this.TSMItem_Deliver.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -151,6 +166,18 @@
             this.TSMItem_Deliver.Name = "TSMItem_Deliver";
             this.TSMItem_Deliver.Size = new System.Drawing.Size(68, 21);
             this.TSMItem_Deliver.Text = "发货管理";
+            // 
+            // TSMItem_deliver_query
+            // 
+            this.TSMItem_deliver_query.Name = "TSMItem_deliver_query";
+            this.TSMItem_deliver_query.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_deliver_query.Text = "发货单查询";
+            // 
+            // TSMItem_deliver_pay
+            // 
+            this.TSMItem_deliver_pay.Name = "TSMItem_deliver_pay";
+            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_deliver_pay.Text = "发货收款";
             // 
             // TSMItem_Options
             // 
@@ -162,56 +189,45 @@
             this.TSMItem_Options.Size = new System.Drawing.Size(68, 21);
             this.TSMItem_Options.Text = "系统设置";
             // 
-            // TSMItem_purchase_query
-            // 
-            this.TSMItem_purchase_query.Name = "TSMItem_purchase_query";
-            this.TSMItem_purchase_query.Size = new System.Drawing.Size(152, 22);
-            this.TSMItem_purchase_query.Text = "采购单查询";
-            // 
-            // TSMItem_purchase_arrive
-            // 
-            this.TSMItem_purchase_arrive.Name = "TSMItem_purchase_arrive";
-            this.TSMItem_purchase_arrive.Size = new System.Drawing.Size(152, 22);
-            this.TSMItem_purchase_arrive.Text = "采购到货";
-            // 
-            // TSMItem_deliver_query
-            // 
-            this.TSMItem_deliver_query.Name = "TSMItem_deliver_query";
-            this.TSMItem_deliver_query.Size = new System.Drawing.Size(152, 22);
-            this.TSMItem_deliver_query.Text = "发货单查询";
-            // 
-            // TSMItem_deliver_pay
-            // 
-            this.TSMItem_deliver_pay.Name = "TSMItem_deliver_pay";
-            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(152, 22);
-            this.TSMItem_deliver_pay.Text = "发货收款";
-            // 
             // TSMItem_change_pwd
             // 
             this.TSMItem_change_pwd.Name = "TSMItem_change_pwd";
-            this.TSMItem_change_pwd.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_change_pwd.Size = new System.Drawing.Size(124, 22);
             this.TSMItem_change_pwd.Text = "修改密码";
             this.TSMItem_change_pwd.Click += new System.EventHandler(this.TSMItem_change_pwd_Click);
             // 
             // TStMItem_about
             // 
             this.TStMItem_about.Name = "TStMItem_about";
-            this.TStMItem_about.Size = new System.Drawing.Size(152, 22);
+            this.TStMItem_about.Size = new System.Drawing.Size(124, 22);
             this.TStMItem_about.Text = "关于...";
             this.TStMItem_about.Click += new System.EventHandler(this.TStMItem_about_Click);
             // 
             // TSMItem_exit
             // 
             this.TSMItem_exit.Name = "TSMItem_exit";
-            this.TSMItem_exit.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_exit.Size = new System.Drawing.Size(124, 22);
             this.TSMItem_exit.Text = "退出";
             this.TSMItem_exit.Click += new System.EventHandler(this.TSMItem_exit_Click);
+            // 
+            // dataGridView_Main
+            // 
+            this.dataGridView_Main.AllowUserToAddRows = false;
+            this.dataGridView_Main.AllowUserToDeleteRows = false;
+            this.dataGridView_Main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Main.Location = new System.Drawing.Point(241, 28);
+            this.dataGridView_Main.Name = "dataGridView_Main";
+            this.dataGridView_Main.ReadOnly = true;
+            this.dataGridView_Main.RowTemplate.Height = 23;
+            this.dataGridView_Main.Size = new System.Drawing.Size(561, 439);
+            this.dataGridView_Main.TabIndex = 4;
             // 
             // FormOSM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 492);
+            this.Controls.Add(this.dataGridView_Main);
             this.Controls.Add(this.statusStrip_Main);
             this.Controls.Add(this.menuStrip_Main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -224,6 +240,7 @@
             this.statusStrip_Main.PerformLayout();
             this.menuStrip_Main.ResumeLayout(false);
             this.menuStrip_Main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Main)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +268,6 @@
         private System.Windows.Forms.ToolStripMenuItem TSMItem_change_pwd;
         private System.Windows.Forms.ToolStripMenuItem TStMItem_about;
         private System.Windows.Forms.ToolStripMenuItem TSMItem_exit;
+        private System.Windows.Forms.DataGridView dataGridView_Main;
     }
 }

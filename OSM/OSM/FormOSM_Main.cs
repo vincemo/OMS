@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using OSM.DBClass;
+using System.Collections;
 
 namespace OSM
 {
@@ -38,6 +40,16 @@ namespace OSM
         {
             //MDIParent_Main mdi_main = new MDIParent_Main();
             //mdi_main.ShowDialog();
+        }
+
+        private void TSMItem_offer_query_Click(object sender, EventArgs e)
+        {
+            AccessDB adb = new AccessDB();
+            string sql = "select * from OSM_OFFER_SHEET";
+            DataSet dataSet = adb.SQLQuery(adb.getConnection(), sql);
+            dataGridView_Main.DataSource = dataSet.Tables[0];
+            //dataGridView_Main.Refresh();
+            //dataGridView_Main.DataBind();
         }
     }
 }
