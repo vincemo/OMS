@@ -23,7 +23,7 @@ namespace OSM
             this.Text = "关于OSM";
             this.labelProductName_OSM.Text = "订单信息管理系统";
             this.labelVersion_OSM.Text = "版本v0.1";
-            this.labelCopyright_OSM.Text = "版权所有人:莫雨帆";
+            this.labelCopyright_OSM.Text = "版权所有人:MMMOOO";
             this.labelCompanyName_OSM.Text = "OSM Company.Inc";
             this.textBoxDescription_OSM.Text = "试用版";
         }

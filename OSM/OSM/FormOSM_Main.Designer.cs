@@ -49,10 +49,9 @@
             this.TSMItem_change_pwd = new System.Windows.Forms.ToolStripMenuItem();
             this.TStMItem_about = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_exit = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView_Main = new System.Windows.Forms.DataGridView();
+            this.panel_Main = new System.Windows.Forms.Panel();
             this.statusStrip_Main.SuspendLayout();
             this.menuStrip_Main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Main)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip_Main
@@ -60,10 +59,10 @@
             this.statusStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel_username,
             this.toolStripStatusLabel_date});
-            this.statusStrip_Main.Location = new System.Drawing.Point(0, 470);
+            this.statusStrip_Main.Location = new System.Drawing.Point(0, 550);
             this.statusStrip_Main.Name = "statusStrip_Main";
             this.statusStrip_Main.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip_Main.Size = new System.Drawing.Size(814, 22);
+            this.statusStrip_Main.Size = new System.Drawing.Size(1057, 22);
             this.statusStrip_Main.TabIndex = 2;
             this.statusStrip_Main.Text = "statusStrip";
             // 
@@ -90,7 +89,7 @@
             this.TSMItem_Options});
             this.menuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_Main.Name = "menuStrip_Main";
-            this.menuStrip_Main.Size = new System.Drawing.Size(814, 25);
+            this.menuStrip_Main.Size = new System.Drawing.Size(1057, 25);
             this.menuStrip_Main.TabIndex = 3;
             this.menuStrip_Main.Text = "menuStrip1";
             // 
@@ -106,15 +105,16 @@
             // TSMItem_offer_query
             // 
             this.TSMItem_offer_query.Name = "TSMItem_offer_query";
-            this.TSMItem_offer_query.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_offer_query.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_offer_query.Text = "报价单查询";
             this.TSMItem_offer_query.Click += new System.EventHandler(this.TSMItem_offer_query_Click);
             // 
             // TSMItem_offer_add
             // 
             this.TSMItem_offer_add.Name = "TSMItem_offer_add";
-            this.TSMItem_offer_add.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_offer_add.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_offer_add.Text = "新增报价单";
+            this.TSMItem_offer_add.Click += new System.EventHandler(this.TSMItem_offer_add_Click);
             // 
             // TSMItem_Orders
             // 
@@ -210,24 +210,19 @@
             this.TSMItem_exit.Text = "退出";
             this.TSMItem_exit.Click += new System.EventHandler(this.TSMItem_exit_Click);
             // 
-            // dataGridView_Main
+            // panel_Main
             // 
-            this.dataGridView_Main.AllowUserToAddRows = false;
-            this.dataGridView_Main.AllowUserToDeleteRows = false;
-            this.dataGridView_Main.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Main.Location = new System.Drawing.Point(241, 28);
-            this.dataGridView_Main.Name = "dataGridView_Main";
-            this.dataGridView_Main.ReadOnly = true;
-            this.dataGridView_Main.RowTemplate.Height = 23;
-            this.dataGridView_Main.Size = new System.Drawing.Size(561, 439);
-            this.dataGridView_Main.TabIndex = 4;
+            this.panel_Main.Location = new System.Drawing.Point(12, 28);
+            this.panel_Main.Name = "panel_Main";
+            this.panel_Main.Size = new System.Drawing.Size(1033, 512);
+            this.panel_Main.TabIndex = 4;
             // 
             // FormOSM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 492);
-            this.Controls.Add(this.dataGridView_Main);
+            this.ClientSize = new System.Drawing.Size(1057, 572);
+            this.Controls.Add(this.panel_Main);
             this.Controls.Add(this.statusStrip_Main);
             this.Controls.Add(this.menuStrip_Main);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -240,7 +235,6 @@
             this.statusStrip_Main.PerformLayout();
             this.menuStrip_Main.ResumeLayout(false);
             this.menuStrip_Main.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Main)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,6 +262,6 @@
         private System.Windows.Forms.ToolStripMenuItem TSMItem_change_pwd;
         private System.Windows.Forms.ToolStripMenuItem TStMItem_about;
         private System.Windows.Forms.ToolStripMenuItem TSMItem_exit;
-        private System.Windows.Forms.DataGridView dataGridView_Main;
+        private System.Windows.Forms.Panel panel_Main;
     }
 }

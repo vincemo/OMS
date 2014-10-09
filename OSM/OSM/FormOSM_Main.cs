@@ -40,16 +40,22 @@ namespace OSM
         {
             //MDIParent_Main mdi_main = new MDIParent_Main();
             //mdi_main.ShowDialog();
+            FormOSM_password Form_pwd = new FormOSM_password();
+            Form_pwd.uid = uid;
+            Form_pwd.uname = uname;
+            Form_pwd.StartPosition = FormStartPosition.CenterParent;
+            Form_pwd.ShowDialog();
         }
 
         private void TSMItem_offer_query_Click(object sender, EventArgs e)
         {
-            AccessDB adb = new AccessDB();
-            string sql = "select * from OSM_OFFER_SHEET";
-            DataSet dataSet = adb.SQLQuery(adb.getConnection(), sql);
-            dataGridView_Main.DataSource = dataSet.Tables[0];
-            //dataGridView_Main.Refresh();
-            //dataGridView_Main.DataBind();
+            panel_Main.Controls.Clear();
+            panel_Main.Controls.Add(new OSM_Offers_Form());
+        }
+
+        private void TSMItem_offer_add_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
         }
     }
 }

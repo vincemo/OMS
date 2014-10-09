@@ -21,7 +21,7 @@ namespace OSM.DBClass
 
         public OleDbConnection getConnection() 
         {
-            connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Project\\OSM\\OSM\\DB\\OSMDBProvider.accdb;Persist Security Info=True";
+            connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Project\\OMS\\OSM\\OSM\\DB\\OSMDBProvider.accdb;Persist Security Info=True";
             OleDbConnection connection = new OleDbConnection(connectionString);
             return connection;
         }
@@ -42,6 +42,7 @@ namespace OSM.DBClass
                 OleDbCommand command = new OleDbCommand(sql, conn);
                 conn.Open();
                 OleDbDataReader reader = command.ExecuteReader();
+                
                 if (reader.Read())
                 {
                     string username = reader["USER_NAME"].ToString();
@@ -51,6 +52,7 @@ namespace OSM.DBClass
                     Hashtable ht = new Hashtable();
                     ht.Add("userid", userid);
                     ht.Add("username", username);
+                    conn.Close();
                     return ht;
                 }
                 else
@@ -72,6 +74,7 @@ namespace OSM.DBClass
                 OleDbCommand command = new OleDbCommand(sql, conn);
                 conn.Open();
                 int row = command.ExecuteNonQuery();
+                conn.Close();
 
                 if (row > 0)
                 {
@@ -98,8 +101,8 @@ namespace OSM.DBClass
                 DataSet dataSet = new DataSet();
                 conn.Open();
                 selectAdapter.SelectCommand.ExecuteNonQuery();
-                conn.Close();
                 selectAdapter.Fill(dataSet);
+                conn.Close();
                 return dataSet;
             }
             catch (Exception e)
