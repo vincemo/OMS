@@ -21,7 +21,8 @@ namespace OSM.DBClass
 
         public OleDbConnection getConnection() 
         {
-            connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Project\\OMS\\OSM\\OSM\\DB\\OSMDBProvider.accdb;Persist Security Info=True";
+            //D:\\Project\\OMS\\OSM\\OSM\\
+            connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DB\\OSMDBProvider.accdb;Persist Security Info=True";
             OleDbConnection connection = new OleDbConnection(connectionString);
             return connection;
         }

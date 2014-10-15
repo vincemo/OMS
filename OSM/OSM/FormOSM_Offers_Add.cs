@@ -60,6 +60,12 @@ namespace OSM
             fillComboBox(sql, cbox);
         }
 
+        public void refresh_seller_comboBox()
+        {
+            string sql = "select ID,COM_NAME from OSM_BJF";
+            fillComboBox(sql, comboBox_SELLER);
+        }
+
         private void fillBuyerComboBox(ComboBox cbox)
         {
             string sql = "select ID,COM_NAME from OSM_GMF";
@@ -99,7 +105,9 @@ namespace OSM
 
         private void button_Add_Seller_Click(object sender, EventArgs e)
         {
-
+            FormOSM_Seller_Add form_add_seller = new FormOSM_Seller_Add();
+            form_add_seller.setOfferForm(this);
+            form_add_seller.ShowDialog();
         }
 
         private void button_Add_Buyer_Click(object sender, EventArgs e)
