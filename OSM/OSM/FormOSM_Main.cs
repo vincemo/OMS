@@ -55,7 +55,10 @@ namespace OSM
 
         private void TSMItem_offer_add_Click(object sender, EventArgs e)
         {
-            panel_Main.Controls.Clear();
+            //panel_Main.Controls.Clear();
+            FormOSM_Offers_Add form_offers_add = new FormOSM_Offers_Add();
+            form_offers_add.StartPosition = FormStartPosition.CenterParent;
+            form_offers_add.ShowDialog();
         }
     }
 }

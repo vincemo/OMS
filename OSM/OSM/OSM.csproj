@@ -64,6 +64,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBClass\Buyer.cs" />
+    <Compile Include="DBClass\HW.cs" />
+    <Compile Include="DBClass\Seller.cs" />
+    <Compile Include="FormOSM_Offers_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_Offers_Add.Designer.cs">
+      <DependentUpon>FormOSM_Offers_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOSM_password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormOSM_Offers_Add.resx">
+      <DependentUpon>FormOSM_Offers_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_password.resx">
       <DependentUpon>FormOSM_password.cs</DependentUpon>
     </EmbeddedResource>

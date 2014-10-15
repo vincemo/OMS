@@ -62,7 +62,7 @@
             this.statusStrip_Main.Location = new System.Drawing.Point(0, 550);
             this.statusStrip_Main.Name = "statusStrip_Main";
             this.statusStrip_Main.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip_Main.Size = new System.Drawing.Size(1057, 22);
+            this.statusStrip_Main.Size = new System.Drawing.Size(1058, 22);
             this.statusStrip_Main.TabIndex = 2;
             this.statusStrip_Main.Text = "statusStrip";
             // 
@@ -89,7 +89,7 @@
             this.TSMItem_Options});
             this.menuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_Main.Name = "menuStrip_Main";
-            this.menuStrip_Main.Size = new System.Drawing.Size(1057, 25);
+            this.menuStrip_Main.Size = new System.Drawing.Size(1058, 25);
             this.menuStrip_Main.TabIndex = 3;
             this.menuStrip_Main.Text = "menuStrip1";
             // 
@@ -170,13 +170,13 @@
             // TSMItem_deliver_query
             // 
             this.TSMItem_deliver_query.Name = "TSMItem_deliver_query";
-            this.TSMItem_deliver_query.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_deliver_query.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_deliver_query.Text = "发货单查询";
             // 
             // TSMItem_deliver_pay
             // 
             this.TSMItem_deliver_pay.Name = "TSMItem_deliver_pay";
-            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_deliver_pay.Text = "发货收款";
             // 
             // TSMItem_Options
@@ -214,14 +214,14 @@
             // 
             this.panel_Main.Location = new System.Drawing.Point(12, 28);
             this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(1033, 512);
+            this.panel_Main.Size = new System.Drawing.Size(1024, 500);
             this.panel_Main.TabIndex = 4;
             // 
             // FormOSM_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1057, 572);
+            this.ClientSize = new System.Drawing.Size(1058, 572);
             this.Controls.Add(this.panel_Main);
             this.Controls.Add(this.statusStrip_Main);
             this.Controls.Add(this.menuStrip_Main);

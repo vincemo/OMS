@@ -34,15 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker_OfferSheet = new System.Windows.Forms.DateTimePicker();
             this.label_Date = new System.Windows.Forms.Label();
-            this.checkbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OFFERSHEET_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GMF_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BJF_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OFFERSHEET_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OFFERSHEET_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OFFERSHEET_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewBtn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.editBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_OfferSheet)).BeginInit();
             this.groupBox__OfferSheet.SuspendLayout();
             this.SuspendLayout();
@@ -54,8 +53,7 @@
             this.dataGridView_OfferSheet.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView_OfferSheet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_OfferSheet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.checkbox,
-            this.ID,
+            this.OFFERSHEET_CODE,
             this.GMF_NAME,
             this.BJF_NAME,
             this.OFFERSHEET_TYPE,
@@ -119,19 +117,12 @@
             this.label_Date.TabIndex = 0;
             this.label_Date.Text = "日期";
             // 
-            // checkbox
+            // OFFERSHEET_CODE
             // 
-            this.checkbox.HeaderText = "";
-            this.checkbox.Name = "checkbox";
-            this.checkbox.Width = 30;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 60;
+            this.OFFERSHEET_CODE.DataPropertyName = "OFFERSHEET_CODE";
+            this.OFFERSHEET_CODE.HeaderText = "报价单编号";
+            this.OFFERSHEET_CODE.Name = "OFFERSHEET_CODE";
+            this.OFFERSHEET_CODE.ReadOnly = true;
             // 
             // GMF_NAME
             // 
@@ -179,10 +170,11 @@
             // 
             // editBtn
             // 
-            this.editBtn.FillWeight = 50F;
             this.editBtn.HeaderText = "";
             this.editBtn.Name = "editBtn";
             this.editBtn.Text = "编辑";
+            this.editBtn.UseColumnTextForLinkValue = true;
+            this.editBtn.Width = 50;
             // 
             // OSM_Offers_Form
             // 
@@ -207,14 +199,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker_OfferSheet;
         private System.Windows.Forms.Label label_Date;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkbox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_CODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn GMF_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn BJF_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_TYPE;
         private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_STATE;
         private System.Windows.Forms.DataGridViewLinkColumn viewBtn;
-        private System.Windows.Forms.DataGridViewButtonColumn editBtn;
+        private System.Windows.Forms.DataGridViewLinkColumn editBtn;
     }
 }

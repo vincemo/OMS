@@ -35,29 +35,38 @@
             this.label_pwd = new System.Windows.Forms.Label();
             this.BTN_LOGIN = new System.Windows.Forms.Button();
             this.BTN_CANCEL = new System.Windows.Forms.Button();
+            this.tableLayoutPanel_Login = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_Login.SuspendLayout();
             this.SuspendLayout();
             // 
             // TB_UserName
             // 
-            this.TB_UserName.Location = new System.Drawing.Point(102, 40);
+            this.TB_UserName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel_Login.SetColumnSpan(this.TB_UserName, 2);
+            this.TB_UserName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TB_UserName.Location = new System.Drawing.Point(87, 8);
             this.TB_UserName.Name = "TB_UserName";
-            this.TB_UserName.Size = new System.Drawing.Size(154, 21);
+            this.TB_UserName.Size = new System.Drawing.Size(154, 23);
             this.TB_UserName.TabIndex = 0;
             // 
             // TB_PWD
             // 
-            this.TB_PWD.Location = new System.Drawing.Point(102, 100);
+            this.TB_PWD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel_Login.SetColumnSpan(this.TB_PWD, 2);
+            this.TB_PWD.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TB_PWD.Location = new System.Drawing.Point(87, 48);
             this.TB_PWD.Name = "TB_PWD";
             this.TB_PWD.PasswordChar = '*';
-            this.TB_PWD.Size = new System.Drawing.Size(154, 21);
+            this.TB_PWD.Size = new System.Drawing.Size(154, 23);
             this.TB_PWD.TabIndex = 1;
             this.TB_PWD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_PWD_KeyDown);
             // 
             // label_username
             // 
+            this.label_username.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_username.AutoSize = true;
             this.label_username.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_username.Location = new System.Drawing.Point(21, 40);
+            this.label_username.Location = new System.Drawing.Point(12, 9);
             this.label_username.Name = "label_username";
             this.label_username.Size = new System.Drawing.Size(58, 21);
             this.label_username.TabIndex = 2;
@@ -66,9 +75,10 @@
             // 
             // label_pwd
             // 
+            this.label_pwd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_pwd.AutoSize = true;
             this.label_pwd.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_pwd.Location = new System.Drawing.Point(37, 100);
+            this.label_pwd.Location = new System.Drawing.Point(20, 49);
             this.label_pwd.Name = "label_pwd";
             this.label_pwd.Size = new System.Drawing.Size(42, 21);
             this.label_pwd.TabIndex = 3;
@@ -77,10 +87,11 @@
             // 
             // BTN_LOGIN
             // 
+            this.BTN_LOGIN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BTN_LOGIN.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BTN_LOGIN.Location = new System.Drawing.Point(41, 157);
+            this.BTN_LOGIN.Location = new System.Drawing.Point(89, 88);
             this.BTN_LOGIN.Name = "BTN_LOGIN";
-            this.BTN_LOGIN.Size = new System.Drawing.Size(75, 34);
+            this.BTN_LOGIN.Size = new System.Drawing.Size(68, 25);
             this.BTN_LOGIN.TabIndex = 4;
             this.BTN_LOGIN.Text = "登录";
             this.BTN_LOGIN.UseVisualStyleBackColor = true;
@@ -88,14 +99,36 @@
             // 
             // BTN_CANCEL
             // 
+            this.BTN_CANCEL.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BTN_CANCEL.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BTN_CANCEL.Location = new System.Drawing.Point(162, 157);
+            this.BTN_CANCEL.Location = new System.Drawing.Point(171, 88);
             this.BTN_CANCEL.Name = "BTN_CANCEL";
-            this.BTN_CANCEL.Size = new System.Drawing.Size(75, 34);
+            this.BTN_CANCEL.Size = new System.Drawing.Size(68, 25);
             this.BTN_CANCEL.TabIndex = 5;
             this.BTN_CANCEL.Text = "退出";
             this.BTN_CANCEL.UseVisualStyleBackColor = true;
             this.BTN_CANCEL.Click += new System.EventHandler(this.BTN_CANCEL_Click);
+            // 
+            // tableLayoutPanel_Login
+            // 
+            this.tableLayoutPanel_Login.ColumnCount = 3;
+            this.tableLayoutPanel_Login.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel_Login.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel_Login.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel_Login.Controls.Add(this.label_username, 0, 0);
+            this.tableLayoutPanel_Login.Controls.Add(this.BTN_CANCEL, 2, 2);
+            this.tableLayoutPanel_Login.Controls.Add(this.label_pwd, 0, 1);
+            this.tableLayoutPanel_Login.Controls.Add(this.TB_UserName, 1, 0);
+            this.tableLayoutPanel_Login.Controls.Add(this.TB_PWD, 1, 1);
+            this.tableLayoutPanel_Login.Controls.Add(this.BTN_LOGIN, 1, 2);
+            this.tableLayoutPanel_Login.Location = new System.Drawing.Point(13, 13);
+            this.tableLayoutPanel_Login.Name = "tableLayoutPanel_Login";
+            this.tableLayoutPanel_Login.RowCount = 3;
+            this.tableLayoutPanel_Login.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel_Login.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel_Login.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel_Login.Size = new System.Drawing.Size(247, 121);
+            this.tableLayoutPanel_Login.TabIndex = 6;
             // 
             // FormOSM_Login
             // 
@@ -103,21 +136,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(287, 207);
+            this.ClientSize = new System.Drawing.Size(274, 146);
             this.ControlBox = false;
-            this.Controls.Add(this.BTN_CANCEL);
-            this.Controls.Add(this.BTN_LOGIN);
-            this.Controls.Add(this.label_pwd);
-            this.Controls.Add(this.label_username);
-            this.Controls.Add(this.TB_PWD);
-            this.Controls.Add(this.TB_UserName);
+            this.Controls.Add(this.tableLayoutPanel_Login);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormOSM_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登录";
+            this.tableLayoutPanel_Login.ResumeLayout(false);
+            this.tableLayoutPanel_Login.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -129,6 +158,7 @@
         private System.Windows.Forms.Label label_pwd;
         private System.Windows.Forms.Button BTN_LOGIN;
         private System.Windows.Forms.Button BTN_CANCEL;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Login;
     }
 }
 

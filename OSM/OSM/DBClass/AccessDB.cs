@@ -110,5 +110,25 @@ namespace OSM.DBClass
                 throw (new Exception("数据库连接出错！" + e.Message));
             }
         }
+
+        public DataTable SQLTableQuery(OleDbConnection conn, string sql)
+        {
+            try
+            {
+                OleDbCommand selectCommand = new OleDbCommand(sql, conn);
+                OleDbDataAdapter selectAdapter = new OleDbDataAdapter();
+                selectAdapter.SelectCommand = selectCommand;
+                DataTable dt = new DataTable();
+                conn.Open();
+                selectAdapter.SelectCommand.ExecuteNonQuery();
+                selectAdapter.Fill(dt);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception e)
+            {
+                throw (new Exception("数据库连接出错" + e.Message));
+            }
+        }
     }
 }
