@@ -32,7 +32,7 @@ namespace OSM.DBClass
             return OFFERSHEET_CODE;
         }
 
-        public void setOFFFERSHEET_CODE(string offersheet_code)
+        public void setOFFERSHEET_CODE(string offersheet_code)
         {
             OFFERSHEET_CODE = offersheet_code;
         }

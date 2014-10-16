@@ -131,5 +131,22 @@ namespace OSM.DBClass
                 throw (new Exception("数据库连接出错" + e.Message));
             }
         }
+
+        public int SQLTableDelete(OleDbConnection conn, string tableName, string whereString)
+        {
+            string sql = "delete from " + tableName + " " + whereString;
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand(sql, conn);
+                conn.Open();
+                int row = cmd.ExecuteNonQuery();
+                conn.Close();
+                return row;
+            }
+            catch (Exception e)
+            {
+                throw (new Exception("数据库连接出错" + e.Message));
+            }
+        }
     }
 }

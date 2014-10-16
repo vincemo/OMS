@@ -25,3 +25,5 @@ D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.pdb
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.csprojResolveAssemblyReference.cache
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Offers_Add.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Seller_Add.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Buyer_Add.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_HW_Add.resources

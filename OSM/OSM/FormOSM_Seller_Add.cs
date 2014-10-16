@@ -12,21 +12,29 @@ namespace OSM
 {
     public partial class FormOSM_Seller_Add : Form
     {
+        //报价方对象
         private Seller seller;
+        //父窗口对象
         private FormOSM_Offers_Add offerForm;
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
         public FormOSM_Seller_Add()
         {
             InitializeComponent();
             seller = new Seller();
-            //offerForm = this.Parent as FormOSM_Offers_Add;
-            //textBox_COM_NAME_SELLER.Validating += new CancelEventHandler(textBox_notNull_Validating);
         }
 
+        /// <summary>
+        /// 获取父窗口对象
+        /// </summary>
+        /// <param name="parentOfferForm"></param>
         public void setOfferForm(FormOSM_Offers_Add parentOfferForm)
         {
             offerForm = parentOfferForm;
         }
+
         ///<summary>
         ///功能不输入则光标不会离开目标textBox
         ///<para>示例:textBox.Validating += new CancelEventHandler(textBox_notNull_Validating);</para>
@@ -37,15 +45,23 @@ namespace OSM
             e.Cancel = string.IsNullOrEmpty(tb.Text);
         }
 
+        /// <summary>
+        /// 取消按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_CANCEL_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// 确认按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_OK_Click(object sender, EventArgs e)
         {
-            //bool flag;
-            //flag = (textBox_COM_NAME_SELLER.Text == "") ? false : true;
             if (string.IsNullOrEmpty(textBox_COM_NAME_SELLER.Text))
             {
                 MessageBox.Show("名称不应为空！", "警告");
@@ -79,6 +95,10 @@ namespace OSM
             }
         }
 
+        /// <summary>
+        /// 输入窗口内容构造报价方对象
+        /// </summary>
+        /// <param name="seller"></param>
         private void createSeller(Seller seller)
         {
             seller.setCOM_NAME(textBox_COM_NAME_SELLER.Text);
@@ -91,6 +111,11 @@ namespace OSM
             seller.setCOMMENT(textBox_COMMENT_SELLER.Text);
         }
 
+        /// <summary>
+        /// 实现数据库插入报价方数据
+        /// </summary>
+        /// <param name="seller"></param>
+        /// <returns></returns>
         private bool addSeller(Seller seller)
         {
             string sql = "insert into OSM_BJF(COM_NAME,ADDR,CONTACT,PHONE,ZIP_CODE,FAX,EMAIL,COMMENT) ";

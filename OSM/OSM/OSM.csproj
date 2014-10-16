@@ -66,7 +66,20 @@
   <ItemGroup>
     <Compile Include="DBClass\Buyer.cs" />
     <Compile Include="DBClass\HW.cs" />
+    <Compile Include="DBClass\OfferSheet.cs" />
     <Compile Include="DBClass\Seller.cs" />
+    <Compile Include="FormOSM_Buyer_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_Buyer_Add.Designer.cs">
+      <DependentUpon>FormOSM_Buyer_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOSM_HW_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_HW_Add.Designer.cs">
+      <DependentUpon>FormOSM_HW_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOSM_Offers_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +125,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormOSM_Buyer_Add.resx">
+      <DependentUpon>FormOSM_Buyer_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_HW_Add.resx">
+      <DependentUpon>FormOSM_HW_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_Offers_Add.resx">
       <DependentUpon>FormOSM_Offers_Add.cs</DependentUpon>
     </EmbeddedResource>

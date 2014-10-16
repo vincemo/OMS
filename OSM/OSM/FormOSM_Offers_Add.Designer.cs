@@ -787,6 +787,7 @@
             this.comboBox_OFFERSHEET_TYPE.Name = "comboBox_OFFERSHEET_TYPE";
             this.comboBox_OFFERSHEET_TYPE.Size = new System.Drawing.Size(101, 25);
             this.comboBox_OFFERSHEET_TYPE.TabIndex = 21;
+            this.comboBox_OFFERSHEET_TYPE.SelectedIndexChanged += new System.EventHandler(this.comboBox_OFFERSHEET_TYPE_SelectedIndexChanged);
             // 
             // dateTimePicker_OFFERSHEET_DATE
             // 
@@ -796,13 +797,14 @@
             this.dateTimePicker_OFFERSHEET_DATE.Name = "dateTimePicker_OFFERSHEET_DATE";
             this.dateTimePicker_OFFERSHEET_DATE.Size = new System.Drawing.Size(103, 23);
             this.dateTimePicker_OFFERSHEET_DATE.TabIndex = 23;
+            this.dateTimePicker_OFFERSHEET_DATE.ValueChanged += new System.EventHandler(this.dateTimePicker_OFFERSHEET_DATE_ValueChanged);
             // 
             // button_CANCEL
             // 
-            this.button_CANCEL.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_CANCEL.Location = new System.Drawing.Point(345, 431);
+            this.button_CANCEL.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.button_CANCEL.Location = new System.Drawing.Point(348, 435);
             this.button_CANCEL.Name = "button_CANCEL";
-            this.button_CANCEL.Size = new System.Drawing.Size(97, 28);
+            this.button_CANCEL.Size = new System.Drawing.Size(76, 25);
             this.button_CANCEL.TabIndex = 1;
             this.button_CANCEL.Text = "取消";
             this.button_CANCEL.UseVisualStyleBackColor = true;
@@ -810,10 +812,10 @@
             // 
             // button_CONFIRM
             // 
-            this.button_CONFIRM.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_CONFIRM.Location = new System.Drawing.Point(242, 431);
+            this.button_CONFIRM.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.button_CONFIRM.Location = new System.Drawing.Point(245, 435);
             this.button_CONFIRM.Name = "button_CONFIRM";
-            this.button_CONFIRM.Size = new System.Drawing.Size(97, 28);
+            this.button_CONFIRM.Size = new System.Drawing.Size(76, 25);
             this.button_CONFIRM.TabIndex = 2;
             this.button_CONFIRM.Text = "确认";
             this.button_CONFIRM.UseVisualStyleBackColor = true;
