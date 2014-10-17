@@ -35,7 +35,7 @@ namespace OSM
         {
             AccessDB adb = new AccessDB();
             string sql = "select * from BASE_USERS where USER_ID = '" + TB_UserName.Text + "' and USER_PWD = '" + TB_PWD.Text + "'";
-            Hashtable ht = adb.login(adb.getConnection(), sql);
+            Hashtable ht = adb.login(sql);
 
             if (ht != null)
             {

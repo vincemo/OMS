@@ -13,6 +13,8 @@ namespace OSM
 {
     public partial class FormOSM_Offers_Add : Form
     {
+        //父对象
+        FormOSM_Main main_form;
         //报价单对象
         private OfferSheet offer_sheet;
         //购买方对象
@@ -54,6 +56,15 @@ namespace OSM
         }
 
         /// <summary>
+        /// 设置MainForm对象
+        /// </summary>
+        /// <param name="formOSM_main"></param>
+        public void setMainForm(FormOSM_Main formOSM_main)
+        {
+            main_form = formOSM_main;
+        }
+
+        /// <summary>
         /// 查询对应报价单货物列表
         /// </summary>
         /// <param name="dgv"></param>
@@ -63,7 +74,7 @@ namespace OSM
             sql += "order by ID DESC";
 
             AccessDB adb = new AccessDB();
-            DataTable dt = adb.SQLTableQuery(adb.getConnection(), sql);
+            DataTable dt = adb.SQLTableQuery(sql);
             dgv.DataSource = dt;
         }
 
@@ -76,7 +87,7 @@ namespace OSM
             sql += "order by ID DESC";
 
             AccessDB adb = new AccessDB();
-            DataTable dt = adb.SQLTableQuery(adb.getConnection(), sql);
+            DataTable dt = adb.SQLTableQuery(sql);
             dataGridView_HW.DataSource = dt;
         }
 
@@ -126,7 +137,7 @@ namespace OSM
         private void fillComboBox(string sql, ComboBox cbox)
         {
             AccessDB adb = new AccessDB();
-            DataTable dt = adb.SQLTableQuery(adb.getConnection(), sql);
+            DataTable dt = adb.SQLTableQuery(sql);
 
             Dictionary<int, string> sellerDict = new Dictionary<int, string>();
 
@@ -160,10 +171,16 @@ namespace OSM
 
             if (addOfferSheet(offer_sheet))
             {
+                main_form.TSMItem_offer_query_Refresh();
                 this.Close();
             }
         }
 
+        /// <summary>
+        /// 数据库新增报价单记录
+        /// </summary>
+        /// <param name="offer_sheet">报价单对象</param>
+        /// <returns>是否添加成功</returns>
         private bool addOfferSheet(OfferSheet offer_sheet)
         {
             string sql = "insert into OSM_OFFER_SHEET(OFFERSHEET_CODE,GMF_ID,BJF_ID,OFFERSHEET_TYPE,OFFERSHEET_DATE,OFFERSHEET_STATE) ";
@@ -171,7 +188,7 @@ namespace OSM
             sql += ",'" + offer_sheet.getOFFERSHEET_TYPE() + "','" + offer_sheet.getOFFERSHEET_DATE() + "','" + offer_sheet.getOFFERSHEET_STATE() + "')";
 
             AccessDB adb = new AccessDB();
-            bool isExecuteSucc = adb.SQLExecute(adb.getConnection(), sql);
+            bool isExecuteSucc = adb.SQLExecute(sql);
             if (isExecuteSucc)
             {
                 MessageBox.Show("添加成功！", "消息");
@@ -191,15 +208,9 @@ namespace OSM
         /// <param name="e"></param>
         private void button_CANCEL_Click(object sender, EventArgs e)
         {
-            //string sql = "delete from OSM_HW where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "'";
-            //if (adb.SQLExecute(adb.getConnection(), sql))
-            //{
-            //    this.Close();
-            //}
-
             AccessDB adb = new AccessDB();
             string whereStr = " where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "'";
-            if (adb.SQLTableDelete(adb.getConnection(), "OSM_HW", whereStr) >= 0)
+            if (adb.SQLTableDelete("OSM_HW", whereStr) >= 0)
             {
                 this.Close();
             }
@@ -255,7 +266,7 @@ namespace OSM
             sql += id;
 
             AccessDB adb = new AccessDB();
-            DataTable dt = adb.SQLTableQuery(adb.getConnection(), sql);
+            DataTable dt = adb.SQLTableQuery(sql);
             if (dt.Rows.Count == 1)
             {
                 //构造报价方ID
@@ -304,7 +315,7 @@ namespace OSM
             sql += id;
 
             AccessDB adb = new AccessDB();
-            DataTable dt = adb.SQLTableQuery(adb.getConnection(), sql);
+            DataTable dt = adb.SQLTableQuery(sql);
             if (dt.Rows.Count == 1)
             {
                 //构造购买方ID

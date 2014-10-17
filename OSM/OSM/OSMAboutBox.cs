@@ -10,6 +10,9 @@ namespace OSM
 {
     partial class AboutBox_OSM : Form
     {
+        /// <summary>
+        /// 构造函数,修改关于信息
+        /// </summary>
         public AboutBox_OSM()
         {
             InitializeComponent();

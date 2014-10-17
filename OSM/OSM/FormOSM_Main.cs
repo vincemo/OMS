@@ -13,8 +13,16 @@ namespace OSM
 {
     public partial class FormOSM_Main : Form
     {
+        //用户ID
         public string uid = "";
+        //用户名
         public string uname = "";
+
+        /// <summary>
+        /// 构造函数,登录
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <param name="username"></param>
         public FormOSM_Main(string userid, string username)
         {
             InitializeComponent();
@@ -23,19 +31,36 @@ namespace OSM
             uname = username;
             toolStripStatusLabel_username.Text = "欢迎您," + username;
             toolStripStatusLabel_date.Text = DateTime.Today.Year.ToString() + "年" + DateTime.Today.Month.ToString() + "月" + DateTime.Today.Day.ToString() + "日";
+
+            panel_Main.Controls.Add(new OSM_Offers_Form());
         }
 
+        /// <summary>
+        /// 退出菜单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TSMItem_exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// 关于菜单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TStMItem_about_Click(object sender, EventArgs e)
         {
             AboutBox_OSM about = new AboutBox_OSM();
             about.ShowDialog();
         }
 
+        /// <summary>
+        /// 更改密码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TSMItem_change_pwd_Click(object sender, EventArgs e)
         {
             //MDIParent_Main mdi_main = new MDIParent_Main();
@@ -47,16 +72,36 @@ namespace OSM
             Form_pwd.ShowDialog();
         }
 
+        /// <summary>
+        /// 查询报价单菜单
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TSMItem_offer_query_Click(object sender, EventArgs e)
         {
             panel_Main.Controls.Clear();
             panel_Main.Controls.Add(new OSM_Offers_Form());
         }
 
+        /// <summary>
+        /// 报价单刷新
+        /// </summary>
+        public void TSMItem_offer_query_Refresh()
+        {
+            panel_Main.Controls.Clear();
+            panel_Main.Controls.Add(new OSM_Offers_Form());
+        }
+
+        /// <summary>
+        /// 新增报价单菜单点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TSMItem_offer_add_Click(object sender, EventArgs e)
         {
             //panel_Main.Controls.Clear();
             FormOSM_Offers_Add form_offers_add = new FormOSM_Offers_Add();
+            form_offers_add.setMainForm(this);
             form_offers_add.StartPosition = FormStartPosition.CenterParent;
             form_offers_add.ShowDialog();
         }

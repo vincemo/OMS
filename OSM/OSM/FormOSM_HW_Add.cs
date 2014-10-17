@@ -171,7 +171,7 @@ namespace OSM
             sql += "," + hw.getHW_TOTALPRICE().ToString() + ",'" + hw.getCOMMENT() + "')";
 
             AccessDB adb = new AccessDB();
-            bool isExecuteSucc = adb.SQLExecute(adb.getConnection(), sql);
+            bool isExecuteSucc = adb.SQLExecute(sql);
             if (isExecuteSucc)
             {
                 MessageBox.Show("添加成功！", "消息");

@@ -122,7 +122,7 @@ namespace OSM
             sql += buyer.getFAX() + "','" + buyer.getEMAIL() + "','" + buyer.getCOMMENT() + "')";
 
             AccessDB adb = new AccessDB();
-            bool isExecuteSucc = adb.SQLExecute(adb.getConnection(), sql);
+            bool isExecuteSucc = adb.SQLExecute(sql);
             if (isExecuteSucc)
             {
                 MessageBox.Show("添加成功！", "消息");

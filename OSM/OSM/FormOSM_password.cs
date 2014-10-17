@@ -12,9 +12,14 @@ namespace OSM
 {
     public partial class FormOSM_password : Form
     {
+        //用户ID
         public string uid;
+        //用户名
         public string uname;
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
         public FormOSM_password()
         {
             InitializeComponent();
@@ -28,6 +33,11 @@ namespace OSM
             //this.Location = new Point(x, y);
         }
 
+        /// <summary>
+        /// 确认按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_OK_Click(object sender, EventArgs e)
         {
             if (textBox_old_pwd.Text == "")
@@ -44,7 +54,7 @@ namespace OSM
 
             AccessDB adb = new AccessDB();
             string sql = "SELECT * FROM BASE_USERS WHERE USER_ID = '" + uid + "'";
-            DataSet ds = adb.SQLQuery(adb.getConnection(), sql);
+            DataSet ds = adb.SQLQuery(sql);
             DataTable dt = ds.Tables[0];
             DataRow dr = dt.Rows[0];
 
@@ -68,13 +78,18 @@ namespace OSM
             }
 
             sql = "UPDATE BASE_USERS SET USER_PWD = '" + textBox_new_pwd.Text + "' WHERE USER_ID = '" + uid + "'";
-            if (adb.SQLExecute(adb.getConnection(), sql))
+            if (adb.SQLExecute(sql))
             {
                 MessageBox.Show("密码修改成功！", "消息");
                 this.Close();
             }
         }
 
+        /// <summary>
+        /// 取消按钮点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_CANCEL_Click(object sender, EventArgs e)
         {
             this.Close();
