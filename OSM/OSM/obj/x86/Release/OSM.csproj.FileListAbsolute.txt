@@ -1,0 +1,17 @@
+D:\Project\OMS\OSM\OSM\bin\Release\DB\OSMDBProvider.accdb
+D:\Project\OMS\OSM\OSM\bin\Release\OSM.exe
+D:\Project\OMS\OSM\OSM\bin\Release\OSM.pdb
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.FormOSM_Buyer_Add.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.FormOSM_HW_Add.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.FormOSM_Offers_Add.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.FormOSM_password.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.FormOSM_Seller_Add.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.AboutBox_OSM.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.FormOSM_Login.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.FormOSM_Main.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.OSM_Offers_Form.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.OSM_Pager.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.Properties.Resources.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.csproj.GenerateResource.Cache
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.exe
+D:\Project\OMS\OSM\OSM\obj\x86\Release\OSM.pdb

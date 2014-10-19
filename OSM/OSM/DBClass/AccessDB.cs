@@ -20,6 +20,10 @@ namespace OSM.DBClass
         private static string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DB\\OSMDBProvider.accdb;Persist Security Info=True";
         //public static string ConnString = System.Configuration.ConfigurationManager.AppSettings["DBConnectionString"].ToString();
 
+        /// <summary>
+        /// 获取当前数据库连接
+        /// </summary>
+        /// <returns></returns>
         public OleDbConnection getConnection() 
         {
             OleDbConnection connection = new OleDbConnection(connectionString);
@@ -34,6 +38,11 @@ namespace OSM.DBClass
         //    return sqlConnection;
         //}
 
+        /// <summary>
+        /// 系统登陆数据库接口
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public Hashtable login(string sql)
         {
             OleDbConnection conn = getConnection();
@@ -68,6 +77,13 @@ namespace OSM.DBClass
             }
         }
 
+        
+
+        /// <summary>
+        /// 执行SQL语句不返回结果
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public Boolean SQLExecute(string sql)
         {
             OleDbConnection conn = getConnection();
@@ -94,6 +110,11 @@ namespace OSM.DBClass
             }
         }
 
+        /// <summary>
+        /// 执行SQL语句返回查询结果数据集
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public DataSet SQLQuery(string sql)
         {
             OleDbConnection conn = getConnection();
@@ -116,6 +137,11 @@ namespace OSM.DBClass
             }
         }
 
+        /// <summary>
+        /// 执行SQL语句返回查询结果表格
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns></returns>
         public DataTable SQLTableQuery(string sql)
         {
             OleDbConnection conn = getConnection();
@@ -138,6 +164,12 @@ namespace OSM.DBClass
             }
         }
 
+        /// <summary>
+        /// 返回带where条件的SQL删除语句执行行数
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="whereString"></param>
+        /// <returns></returns>
         public int SQLTableDelete(string tableName, string whereString)
         {
             OleDbConnection conn = getConnection();

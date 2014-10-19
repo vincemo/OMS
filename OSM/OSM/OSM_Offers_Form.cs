@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using OSM.DBClass;
+using System.Collections;
 
 namespace OSM
 {
@@ -55,7 +56,7 @@ namespace OSM
             OSM_Pager_offerSheet.setWhereString(whereString);
             OSM_Pager_offerSheet.setOrderString("OFFERSHEET_CODE DESC");
             OSM_Pager_offerSheet.setPageIndex(1);
-            OSM_Pager_offerSheet.setPageSize(1);
+            OSM_Pager_offerSheet.setPageSize(10);
             OSM_Pager_offerSheet.refreshDataGirdViewBySQL(dgv);
 
             //AccessDB adb = new AccessDB();
@@ -102,6 +103,53 @@ namespace OSM
         private void dateTimePicker_OfferSheet_DropDown(object sender, EventArgs e)
         {
             dateTimePicker_OfferSheet.CustomFormat = "yyyy-MM-dd";
+        }
+
+        private void dataGridView_OfferSheet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView_OfferSheet.Columns[e.ColumnIndex].Name == "viewBtn")
+            {
+                MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
+            }
+
+            if (dataGridView_OfferSheet.Columns[e.ColumnIndex].Name == "editBtn")
+            {
+                //MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
+                string offersheet_code = dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString();
+                editOfferSheet(offersheet_code);
+            }
+
+
+            if (dataGridView_OfferSheet.Columns[e.ColumnIndex].Name == "delBtn")
+            {
+                MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
+            }
+        }
+
+        private void editOfferSheet(string offersheet_code)
+        {
+            string sql = "select * from OSM_OFFER_SHEET ";
+            sql += "where OFFERSHEET_CODE = '" + offersheet_code + "'";
+
+            AccessDB adb = new AccessDB();
+            DataTable dt = adb.SQLTableQuery(sql);
+            Hashtable hashtable = new Hashtable();
+
+            if (dt.Rows.Count == 1)
+            {
+                DataRow dr = dt.Rows[0];
+                hashtable.Add("ID", dr.ItemArray[0]);
+                hashtable.Add("OFFERSHEET_CODE", dr.ItemArray[1]);
+                hashtable.Add("GMF_ID", dr.ItemArray[2]);
+                hashtable.Add("BJF_ID", dr.ItemArray[3]);
+                hashtable.Add("OFFERSHEET_TYPE", dr.ItemArray[4]);
+                hashtable.Add("OFFERSHEET_DATE", dr.ItemArray[5]);
+                hashtable.Add("OFFERSHEET_STATE", dr.ItemArray[6]);
+            }
+
+            FormOSM_Offers_Add form_add_offers = new FormOSM_Offers_Add();
+            form_add_offers.dataGridViewEditBtn_click_reaction(hashtable);
+            form_add_offers.ShowDialog();
         }
     }
 }

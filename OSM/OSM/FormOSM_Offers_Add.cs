@@ -353,6 +353,11 @@ namespace OSM
             }
         }
 
+        /// <summary>
+        /// 报价单类型下拉列表select事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBox_OFFERSHEET_TYPE_SelectedIndexChanged(object sender, EventArgs e)
         {
             KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_TYPE.SelectedItem;
@@ -360,10 +365,21 @@ namespace OSM
             offer_sheet.setOFFERSHEET_TYPE(offer_sheet_type);
         }
 
+        /// <summary>
+        /// 日期控件选择事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dateTimePicker_OFFERSHEET_DATE_ValueChanged(object sender, EventArgs e)
         {
             string offer_sheet_date = dateTimePicker_OFFERSHEET_DATE.Text;
             offer_sheet.setOFFERSHEET_DATE(offer_sheet_date);
+        }
+
+        public void dataGridViewEditBtn_click_reaction(Hashtable hashtable)
+        {
+            textBox_OFFERSHEET_CODE.Text = hashtable["OFFERSHEET_CODE"].ToString();
+            textBox_OFFERSHEET_CODE.ReadOnly = true;
         }
     }
 }
