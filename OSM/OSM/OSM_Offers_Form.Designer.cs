@@ -257,7 +257,7 @@
             // 
             this.OSM_Pager_offerSheet.Location = new System.Drawing.Point(271, 468);
             this.OSM_Pager_offerSheet.Name = "OSM_Pager_offerSheet";
-            this.OSM_Pager_offerSheet.Size = new System.Drawing.Size(750, 28);
+            this.OSM_Pager_offerSheet.Size = new System.Drawing.Size(750, 30);
             this.OSM_Pager_offerSheet.TabIndex = 2;
             // 
             // OSM_Offers_Form
@@ -268,7 +268,7 @@
             this.Controls.Add(this.groupBox__OfferSheet);
             this.Controls.Add(this.dataGridView_OfferSheet);
             this.Name = "OSM_Offers_Form";
-            this.Size = new System.Drawing.Size(1024, 500);
+            this.Size = new System.Drawing.Size(1024, 510);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_OfferSheet)).EndInit();
             this.groupBox__OfferSheet.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

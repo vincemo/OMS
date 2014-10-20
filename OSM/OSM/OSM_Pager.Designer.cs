@@ -34,12 +34,12 @@
             this.button_last_page = new System.Windows.Forms.Button();
             this.textBox_page_index = new System.Windows.Forms.TextBox();
             this.button_goToPage = new System.Windows.Forms.Button();
-            this.label_page_sum = new System.Windows.Forms.Label();
-            this.label_pageSum = new System.Windows.Forms.Label();
             this.label_currentPage = new System.Windows.Forms.Label();
             this.label_current_page = new System.Windows.Forms.Label();
             this.label_recordSum = new System.Windows.Forms.Label();
             this.label_record_sum = new System.Windows.Forms.Label();
+            this.comboBox_recordsPerPage = new System.Windows.Forms.ComboBox();
+            this.label_recordsPerPage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button_first_page
@@ -105,31 +105,11 @@
             this.button_goToPage.UseVisualStyleBackColor = true;
             this.button_goToPage.Click += new System.EventHandler(this.button_goToPage_Click);
             // 
-            // label_page_sum
-            // 
-            this.label_page_sum.AutoSize = true;
-            this.label_page_sum.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_page_sum.Location = new System.Drawing.Point(543, 6);
-            this.label_page_sum.Name = "label_page_sum";
-            this.label_page_sum.Size = new System.Drawing.Size(62, 17);
-            this.label_page_sum.TabIndex = 6;
-            this.label_page_sum.Text = "PageSum";
-            // 
-            // label_pageSum
-            // 
-            this.label_pageSum.AutoSize = true;
-            this.label_pageSum.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_pageSum.Location = new System.Drawing.Point(490, 6);
-            this.label_pageSum.Name = "label_pageSum";
-            this.label_pageSum.Size = new System.Drawing.Size(47, 17);
-            this.label_pageSum.TabIndex = 7;
-            this.label_pageSum.Text = "总页数:";
-            // 
             // label_currentPage
             // 
             this.label_currentPage.AutoSize = true;
             this.label_currentPage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_currentPage.Location = new System.Drawing.Point(366, 6);
+            this.label_currentPage.Location = new System.Drawing.Point(516, 6);
             this.label_currentPage.Name = "label_currentPage";
             this.label_currentPage.Size = new System.Drawing.Size(47, 17);
             this.label_currentPage.TabIndex = 9;
@@ -139,11 +119,11 @@
             // 
             this.label_current_page.AutoSize = true;
             this.label_current_page.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_current_page.Location = new System.Drawing.Point(412, 6);
+            this.label_current_page.Location = new System.Drawing.Point(560, 6);
             this.label_current_page.Name = "label_current_page";
-            this.label_current_page.Size = new System.Drawing.Size(80, 17);
+            this.label_current_page.Size = new System.Drawing.Size(51, 17);
             this.label_current_page.TabIndex = 8;
-            this.label_current_page.Text = "CurrentPage";
+            this.label_current_page.Text = "Current";
             // 
             // label_recordSum
             // 
@@ -165,16 +145,41 @@
             this.label_record_sum.TabIndex = 10;
             this.label_record_sum.Text = "recordSum";
             // 
+            // comboBox_recordsPerPage
+            // 
+            this.comboBox_recordsPerPage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_recordsPerPage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBox_recordsPerPage.FormattingEnabled = true;
+            this.comboBox_recordsPerPage.Items.AddRange(new object[] {
+            "10",
+            "20",
+            "50"});
+            this.comboBox_recordsPerPage.Location = new System.Drawing.Point(428, 4);
+            this.comboBox_recordsPerPage.Name = "comboBox_recordsPerPage";
+            this.comboBox_recordsPerPage.Size = new System.Drawing.Size(47, 25);
+            this.comboBox_recordsPerPage.TabIndex = 12;
+            this.comboBox_recordsPerPage.SelectedIndexChanged += new System.EventHandler(this.comboBox_recordsPerPage_SelectedIndexChanged);
+            // 
+            // label_recordsPerPage
+            // 
+            this.label_recordsPerPage.AutoSize = true;
+            this.label_recordsPerPage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_recordsPerPage.Location = new System.Drawing.Point(357, 6);
+            this.label_recordsPerPage.Name = "label_recordsPerPage";
+            this.label_recordsPerPage.Size = new System.Drawing.Size(71, 17);
+            this.label_recordsPerPage.TabIndex = 13;
+            this.label_recordsPerPage.Text = "每页记录数:";
+            // 
             // OSM_Pager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label_recordsPerPage);
+            this.Controls.Add(this.comboBox_recordsPerPage);
             this.Controls.Add(this.label_recordSum);
             this.Controls.Add(this.label_record_sum);
             this.Controls.Add(this.label_currentPage);
             this.Controls.Add(this.label_current_page);
-            this.Controls.Add(this.label_pageSum);
-            this.Controls.Add(this.label_page_sum);
             this.Controls.Add(this.button_goToPage);
             this.Controls.Add(this.textBox_page_index);
             this.Controls.Add(this.button_last_page);
@@ -182,7 +187,7 @@
             this.Controls.Add(this.button_previous);
             this.Controls.Add(this.button_first_page);
             this.Name = "OSM_Pager";
-            this.Size = new System.Drawing.Size(750, 28);
+            this.Size = new System.Drawing.Size(750, 30);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,11 +201,11 @@
         private System.Windows.Forms.Button button_last_page;
         private System.Windows.Forms.TextBox textBox_page_index;
         private System.Windows.Forms.Button button_goToPage;
-        private System.Windows.Forms.Label label_page_sum;
-        private System.Windows.Forms.Label label_pageSum;
         private System.Windows.Forms.Label label_currentPage;
         private System.Windows.Forms.Label label_current_page;
         private System.Windows.Forms.Label label_recordSum;
         private System.Windows.Forms.Label label_record_sum;
+        private System.Windows.Forms.ComboBox comboBox_recordsPerPage;
+        private System.Windows.Forms.Label label_recordsPerPage;
     }
 }

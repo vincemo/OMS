@@ -32,7 +32,9 @@ namespace OSM
             toolStripStatusLabel_username.Text = "欢迎您," + username;
             toolStripStatusLabel_date.Text = DateTime.Today.Year.ToString() + "年" + DateTime.Today.Month.ToString() + "月" + DateTime.Today.Day.ToString() + "日";
 
-            panel_Main.Controls.Add(new OSM_Offers_Form());
+            OSM_Offers_Form offer_form = new OSM_Offers_Form();
+            offer_form.setMainForm(this);
+            panel_Main.Controls.Add(offer_form);
         }
 
         /// <summary>
@@ -80,7 +82,9 @@ namespace OSM
         private void TSMItem_offer_query_Click(object sender, EventArgs e)
         {
             panel_Main.Controls.Clear();
-            panel_Main.Controls.Add(new OSM_Offers_Form());
+            OSM_Offers_Form offer_form = new OSM_Offers_Form();
+            offer_form.setMainForm(this);
+            panel_Main.Controls.Add(offer_form);
         }
 
         /// <summary>
@@ -89,7 +93,9 @@ namespace OSM
         public void TSMItem_offer_query_Refresh()
         {
             panel_Main.Controls.Clear();
-            panel_Main.Controls.Add(new OSM_Offers_Form());
+            OSM_Offers_Form offer_form = new OSM_Offers_Form();
+            offer_form.setMainForm(this);
+            panel_Main.Controls.Add(offer_form);
         }
 
         /// <summary>

@@ -107,8 +107,8 @@
             // 
             // tabControl_Offers_add
             // 
-            this.tabControl_Offers_add.Controls.Add(this.tabPage_SELLER);
             this.tabControl_Offers_add.Controls.Add(this.tabPage_BUYER);
+            this.tabControl_Offers_add.Controls.Add(this.tabPage_SELLER);
             this.tabControl_Offers_add.Controls.Add(this.tabPage_HW);
             this.tabControl_Offers_add.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl_Offers_add.ItemSize = new System.Drawing.Size(48, 20);

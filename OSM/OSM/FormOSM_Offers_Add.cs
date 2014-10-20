@@ -23,6 +23,8 @@ namespace OSM
         private Seller seller;
         //货物对象
         //private HW hw;
+        //页面状态:新增0、查看1、编辑2
+        private int view_state = 0;
 
         /// <summary>
         /// 构造函数
@@ -162,18 +164,40 @@ namespace OSM
         /// <param name="e"></param>
         private void button_CONFIRM_Click(object sender, EventArgs e)
         {
-            //string date = dateTimePicker_OFFERSHEET_DATE.Text;
-            //将报价单编号用于构造报价单对象
-            offer_sheet.setOFFERSHEET_CODE(textBox_OFFERSHEET_CODE.Text);
-            //由于是新增报价单，所以状态是初始状态1
-            offer_sheet.setOFFERSHEET_STATE("1");
-            offer_sheet.setOFFERSHEET_DATE(dateTimePicker_OFFERSHEET_DATE.Text);
-
-            if (addOfferSheet(offer_sheet))
+            //状态为新增
+            if (view_state == 0)
             {
-                main_form.TSMItem_offer_query_Refresh();
+                //将报价单编号用于构造报价单对象
+                offer_sheet.setOFFERSHEET_CODE(textBox_OFFERSHEET_CODE.Text);
+                //由于是新增报价单，所以状态是初始状态1
+                offer_sheet.setOFFERSHEET_STATE("1");
+                offer_sheet.setOFFERSHEET_DATE(dateTimePicker_OFFERSHEET_DATE.Text);
+
+                if (addOfferSheet(offer_sheet))
+                {
+                    main_form.TSMItem_offer_query_Refresh();
+                    this.Close();
+                }
+            }
+
+            //状态为查看
+            if (view_state == 1)
+            {
                 this.Close();
             }
+
+            //状态为编辑
+            if (view_state == 2)
+            {
+                //设置当前dateTimePicker中的日期
+                offer_sheet.setOFFERSHEET_DATE(dateTimePicker_OFFERSHEET_DATE.Text);
+                if (updateOfferSheet(offer_sheet))
+                {
+                    main_form.TSMItem_offer_query_Refresh();
+                    this.Close();
+                }
+            }
+            
         }
 
         /// <summary>
@@ -202,15 +226,56 @@ namespace OSM
         }
 
         /// <summary>
+        /// 数据库更新报价单记录
+        /// </summary>
+        /// <param name="offer_sheet"></param>
+        /// <returns>是否更新成功</returns>
+        private bool updateOfferSheet(OfferSheet offer_sheet)
+        {
+            string sql = "update OSM_OFFER_SHEET set OFFERSHEET_CODE = '" + offer_sheet.getOFFERSHEET_CODE() + "',";
+            sql += "GMF_ID=" + offer_sheet.getGMF_ID().ToString() + ",BJF_ID=" + offer_sheet.getBJF_ID() + ",";
+            sql += "OFFERSHEET_TYPE='" + offer_sheet.getOFFERSHEET_TYPE() + "',OFFERSHEET_DATE = #" + offer_sheet.getOFFERSHEET_DATE() + "#,OFFERSHEET_STATE='" + offer_sheet.getOFFERSHEET_STATE() + "'  ";
+            sql += "where ID = " + offer_sheet.getID().ToString();
+
+            AccessDB adb = new AccessDB();
+            bool isExecuteSucc = adb.SQLExecute(sql);
+            if (isExecuteSucc)
+            {
+                MessageBox.Show("更新成功！", "消息");
+            }
+            else
+            {
+                MessageBox.Show("更新失败！", "消息");
+            }
+            return isExecuteSucc;
+        }
+
+        /// <summary>
         /// 取消按钮点击事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button_CANCEL_Click(object sender, EventArgs e)
         {
-            AccessDB adb = new AccessDB();
-            string whereStr = " where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "'";
-            if (adb.SQLTableDelete("OSM_HW", whereStr) >= 0)
+            //状态为新增
+            if (view_state == 0)
+            {
+                AccessDB adb = new AccessDB();
+                string whereStr = " where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "'";
+                if (adb.SQLTableDelete("OSM_HW", whereStr) >= 0)
+                {
+                    this.Close();
+                }
+            }
+
+            //状态为查看
+            if(view_state == 1)
+            {
+                this.Close();
+            }
+
+            //状态为编辑
+            if (view_state == 2)
             {
                 this.Close();
             }
@@ -376,10 +441,102 @@ namespace OSM
             offer_sheet.setOFFERSHEET_DATE(offer_sheet_date);
         }
 
-        public void dataGridViewEditBtn_click_reaction(Hashtable hashtable)
+        /// <summary>
+        /// 设置页面状态
+        /// </summary>
+        /// <param name="state">页面状态:新增0,查看1,编辑2</param>
+        public void setViewState(int state)
         {
-            textBox_OFFERSHEET_CODE.Text = hashtable["OFFERSHEET_CODE"].ToString();
+            view_state = state;
+        }
+
+        /// <summary>
+        /// 编辑按钮点击事件反应，传入参数
+        /// </summary>
+        /// <param name="hashtable">SQL语句查询结果</param>
+        public void dataGridView_editBtn_click_reaction(Hashtable hashtable)
+        {
             textBox_OFFERSHEET_CODE.ReadOnly = true;
+            button_Add_HW.Visible = false;
+
+            offerSheet_dataBindingUp(hashtable);
+        }
+
+        /// <summary>
+        /// 查看按钮点击事件反应，传入参数
+        /// </summary>
+        /// <param name="hashtable">SQL语句查询结果</param>
+        public void dataGridView_viewBtn_click_reaction(Hashtable hashtable)
+        {
+            textBox_OFFERSHEET_CODE.ReadOnly = true;
+            comboBox_OFFERSHEET_TYPE.Enabled = false;
+            dateTimePicker_OFFERSHEET_DATE.Enabled = false;
+            label_buyer_select.Visible = false;
+            comboBox_BUYER.Visible = false;
+            label_Seller_select.Visible = false;
+            comboBox_SELLER.Visible = false;
+            button_Add_Buyer.Visible = false;
+            button_Add_Seller.Visible = false;
+            button_Add_HW.Visible = false;
+
+            offerSheet_dataBindingUp(hashtable);
+        }
+
+        /// <summary>
+        /// 绑定查询结果数据
+        /// </summary>
+        /// <param name="hashtable"></param>
+        private void offerSheet_dataBindingUp(Hashtable hashtable)
+        {
+            offer_sheet.setID((int)hashtable["ID"]);
+            offer_sheet.setOFFERSHEET_CODE(hashtable["OFFERSHEET_CODE"].ToString());
+            offer_sheet.setBJF_ID((int)hashtable["BJF_ID"]);
+            offer_sheet.setGMF_ID((int)hashtable["GMF_ID"]);
+            offer_sheet.setOFFERSHEET_TYPE(hashtable["OFFERSHEET_TYPE"].ToString());
+            offer_sheet.setOFFERSHEET_DATE(((DateTime)hashtable["OFFERSHEET_DATE"]).ToString("yyyy-MM-dd"));
+            offer_sheet.setOFFERSHEET_STATE(hashtable["OFFERSHEET_STATE"].ToString());
+
+            //获取定价单编号
+            textBox_OFFERSHEET_CODE.Text = hashtable["OFFERSHEET_CODE"].ToString();
+
+            //获取定价单类型
+            for (int i = 0; i < comboBox_OFFERSHEET_TYPE.Items.Count; i++)
+            {
+                KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_TYPE.Items[i];
+                if (hashtable["OFFERSHEET_TYPE"].ToString() == kv.Key)
+                {
+                    comboBox_OFFERSHEET_TYPE.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            //获取定价单日期
+            dateTimePicker_OFFERSHEET_DATE.Text = ((DateTime)hashtable["OFFERSHEET_DATE"]).ToString("yyyy-MM-dd");
+
+            //获取报价单购买方ID
+            for (int i = 0; i < comboBox_BUYER.Items.Count; i++)
+            {
+                KeyValuePair<int, string> kv = (KeyValuePair<int, string>)comboBox_BUYER.Items[i];
+                if ((int)hashtable["GMF_ID"] == kv.Key)
+                {
+                    comboBox_BUYER.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            //获取报价单报价方ID
+            for (int i = 0; i < comboBox_SELLER.Items.Count; i++)
+            {
+                KeyValuePair<int, string> kv = (KeyValuePair<int, string>)comboBox_SELLER.Items[i];
+                if ((int)hashtable["BJF_ID"] == kv.Key)
+                {
+                    comboBox_SELLER.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            //获取货物列表
+            queryByHW(dataGridView_HW);
         }
     }
 }

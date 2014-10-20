@@ -13,6 +13,9 @@ namespace OSM
 {
     public partial class OSM_Offers_Form : UserControl
     {
+        //父对象
+        FormOSM_Main main_form;
+
         /// <summary>
         /// 构造函数
         /// </summary>
@@ -38,6 +41,15 @@ namespace OSM
             comboBox_OfferSheet.DataSource = bs;
             comboBox_OfferSheet.ValueMember = "Key";
             comboBox_OfferSheet.DisplayMember = "Value";
+        }
+
+        /// <summary>
+        /// 设置MainForm对象
+        /// </summary>
+        /// <param name="formOSM_main"></param>
+        public void setMainForm(FormOSM_Main formOSM_main)
+        {
+            main_form = formOSM_main;
         }
 
         /// <summary>
@@ -109,7 +121,9 @@ namespace OSM
         {
             if (dataGridView_OfferSheet.Columns[e.ColumnIndex].Name == "viewBtn")
             {
-                MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
+                //MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
+                string offersheet_code = dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString();
+                viewOfferSheet(offersheet_code);
             }
 
             if (dataGridView_OfferSheet.Columns[e.ColumnIndex].Name == "editBtn")
@@ -122,7 +136,9 @@ namespace OSM
 
             if (dataGridView_OfferSheet.Columns[e.ColumnIndex].Name == "delBtn")
             {
-                MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
+                //MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
+                string offersheet_code = dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString();
+                delOfferSheet(offersheet_code);
             }
         }
 
@@ -148,8 +164,54 @@ namespace OSM
             }
 
             FormOSM_Offers_Add form_add_offers = new FormOSM_Offers_Add();
-            form_add_offers.dataGridViewEditBtn_click_reaction(hashtable);
+            form_add_offers.dataGridView_editBtn_click_reaction(hashtable);
+            form_add_offers.setMainForm(main_form);
+            form_add_offers.setViewState(2);
             form_add_offers.ShowDialog();
+        }
+
+        private void viewOfferSheet(string offersheet_code)
+        {
+            string sql = "select * from OSM_OFFER_SHEET ";
+            sql += "where OFFERSHEET_CODE = '" + offersheet_code + "'";
+
+            AccessDB adb = new AccessDB();
+            DataTable dt = adb.SQLTableQuery(sql);
+            Hashtable hashtable = new Hashtable();
+
+            if (dt.Rows.Count == 1)
+            {
+                DataRow dr = dt.Rows[0];
+                hashtable.Add("ID", dr.ItemArray[0]);
+                hashtable.Add("OFFERSHEET_CODE", dr.ItemArray[1]);
+                hashtable.Add("GMF_ID", dr.ItemArray[2]);
+                hashtable.Add("BJF_ID", dr.ItemArray[3]);
+                hashtable.Add("OFFERSHEET_TYPE", dr.ItemArray[4]);
+                hashtable.Add("OFFERSHEET_DATE", dr.ItemArray[5]);
+                hashtable.Add("OFFERSHEET_STATE", dr.ItemArray[6]);
+            }
+
+            FormOSM_Offers_Add form_add_offers = new FormOSM_Offers_Add();
+            form_add_offers.dataGridView_viewBtn_click_reaction(hashtable);
+            form_add_offers.setMainForm(main_form);
+            form_add_offers.setViewState(1);
+            form_add_offers.ShowDialog();
+        }
+
+        private void delOfferSheet(string offersheet_code)
+        {
+            AccessDB adb = new AccessDB();
+
+            string whereString = " where OFFERSHEET_CODE = '" + offersheet_code + "'";
+
+            if (adb.SQLTableDelete("OSM_HW", whereString) >= 0)
+            {
+                if (adb.SQLTableDelete("OSM_OFFER_SHEET", whereString) == 1)
+                {
+                    MessageBox.Show("删除成功！", "消息");
+                    queryFromOfferSheetV(dataGridView_OfferSheet);
+                }
+            }
         }
     }
 }

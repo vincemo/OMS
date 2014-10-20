@@ -39,6 +39,7 @@ namespace OSM
         public OSM_Pager()
         {
             InitializeComponent();
+            //comboBox_recordsPerPage.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -123,12 +124,12 @@ namespace OSM
             }
             showString = showString.Substring(0, showString.Length - 1) + " ";
 
+
             AccessDB adb = new AccessDB();
-            //执行查询第一页,默认页面容量为1
+            //执行查询第一页,默认页面容量为10
             DataTable dt = adb.ExecutePager(pageIndex, pageSize, keyString, showString, queryString, whereString, orderString, out pageCount, out recordSum);
             dgv.DataSource = dt;
-            label_current_page.Text = "1";
-            label_page_sum.Text = pageCount.ToString();
+            label_current_page.Text = "1/" + pageCount.ToString();
             label_record_sum.Text = recordSum.ToString();
 
         }
@@ -141,12 +142,12 @@ namespace OSM
         private void button_first_page_Click(object sender, EventArgs e)
         {
             pageIndex = 1;
+
             AccessDB adb = new AccessDB();
             DataTable dt = adb.ExecutePager(pageIndex, pageSize, keyString, showString, queryString, whereString, orderString, out pageCount, out recordSum);
             dgv.DataSource = dt;
             textBox_page_index.Text = "1";
-            label_current_page.Text = "1";
-            label_page_sum.Text = pageCount.ToString();
+            label_current_page.Text = "1/" + pageCount.ToString(); ;
             label_record_sum.Text = recordSum.ToString();
         }
 
@@ -158,6 +159,7 @@ namespace OSM
         private void button_previous_Click(object sender, EventArgs e)
         {
             pageIndex = int.Parse(textBox_page_index.Text);
+
             if (--pageIndex < 1)
             {
                 pageIndex = 1;
@@ -167,8 +169,7 @@ namespace OSM
             DataTable dt = adb.ExecutePager(pageIndex, pageSize, keyString, showString, queryString, whereString, orderString, out pageCount, out recordSum);
             dgv.DataSource = dt;
             textBox_page_index.Text = pageIndex.ToString();
-            label_current_page.Text = pageIndex.ToString();
-            label_page_sum.Text = pageCount.ToString();
+            label_current_page.Text = pageIndex.ToString() + "/" + pageCount.ToString();
             label_record_sum.Text = recordSum.ToString();
         }
 
@@ -180,6 +181,7 @@ namespace OSM
         private void button_next_Click(object sender, EventArgs e)
         {
             pageIndex = int.Parse(textBox_page_index.Text);
+
             if (++pageIndex > pageCount)
             {
                 pageIndex = pageCount;
@@ -189,8 +191,7 @@ namespace OSM
             DataTable dt = adb.ExecutePager(pageIndex, pageSize, keyString, showString, queryString, whereString, orderString, out pageCount, out recordSum);
             dgv.DataSource = dt;
             textBox_page_index.Text = pageIndex.ToString();
-            label_current_page.Text = pageIndex.ToString();
-            label_page_sum.Text = pageCount.ToString();
+            label_current_page.Text = pageIndex.ToString() + "/" + pageCount.ToString();
             label_record_sum.Text = recordSum.ToString();
         }
 
@@ -207,8 +208,7 @@ namespace OSM
             DataTable dt = adb.ExecutePager(pageIndex, pageSize, keyString, showString, queryString, whereString, orderString, out pageCount, out recordSum);
             dgv.DataSource = dt;
             textBox_page_index.Text = pageIndex.ToString();
-            label_current_page.Text = pageIndex.ToString(); 
-            label_page_sum.Text = pageCount.ToString();
+            label_current_page.Text = pageIndex.ToString() + "/" + pageCount.ToString();
             label_record_sum.Text = recordSum.ToString();
         }
 
@@ -220,6 +220,7 @@ namespace OSM
         private void button_goToPage_Click(object sender, EventArgs e)
         {
             pageIndex = int.Parse(textBox_page_index.Text);
+
             if (pageIndex > pageCount)
             {
                 MessageBox.Show("页码大于总页数！", "错误");
@@ -230,8 +231,20 @@ namespace OSM
             DataTable dt = adb.ExecutePager(pageIndex, pageSize, keyString, showString, queryString, whereString, orderString, out pageCount, out recordSum);
             dgv.DataSource = dt;
             textBox_page_index.Text = pageIndex.ToString();
-            label_current_page.Text = pageIndex.ToString(); 
-            label_page_sum.Text = pageCount.ToString();
+            label_current_page.Text = pageIndex.ToString() + "/" + pageCount.ToString();
+            label_record_sum.Text = recordSum.ToString();
+        }
+
+        private void comboBox_recordsPerPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pageIndex = 1;
+            pageSize = int.Parse(comboBox_recordsPerPage.SelectedItem.ToString());
+
+            AccessDB adb = new AccessDB();
+            //执行查询第一页,默认页面容量为选择页面容量
+            DataTable dt = adb.ExecutePager(pageIndex, pageSize, keyString, showString, queryString, whereString, orderString, out pageCount, out recordSum);
+            dgv.DataSource = dt;
+            label_current_page.Text = "1/" + pageCount.ToString();
             label_record_sum.Text = recordSum.ToString();
         }
     }
