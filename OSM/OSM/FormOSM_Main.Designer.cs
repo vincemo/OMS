@@ -50,6 +50,7 @@
             this.TStMItem_about = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Main = new System.Windows.Forms.Panel();
+            this.TSMItem_offer_aduit = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip_Main.SuspendLayout();
             this.menuStrip_Main.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +98,8 @@
             // 
             this.TSMItem_Offers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSMItem_offer_query,
-            this.TSMItem_offer_add});
+            this.TSMItem_offer_add,
+            this.TSMItem_offer_aduit});
             this.TSMItem_Offers.Name = "TSMItem_Offers";
             this.TSMItem_Offers.Size = new System.Drawing.Size(80, 21);
             this.TSMItem_Offers.Text = "报价单管理";
@@ -105,14 +107,14 @@
             // TSMItem_offer_query
             // 
             this.TSMItem_offer_query.Name = "TSMItem_offer_query";
-            this.TSMItem_offer_query.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_offer_query.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_offer_query.Text = "报价单查询";
             this.TSMItem_offer_query.Click += new System.EventHandler(this.TSMItem_offer_query_Click);
             // 
             // TSMItem_offer_add
             // 
             this.TSMItem_offer_add.Name = "TSMItem_offer_add";
-            this.TSMItem_offer_add.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_offer_add.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_offer_add.Text = "新增报价单";
             this.TSMItem_offer_add.Click += new System.EventHandler(this.TSMItem_offer_add_Click);
             // 
@@ -128,14 +130,16 @@
             // TSMItem_order_query
             // 
             this.TSMItem_order_query.Name = "TSMItem_order_query";
-            this.TSMItem_order_query.Size = new System.Drawing.Size(124, 22);
+            this.TSMItem_order_query.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_order_query.Text = "订单查询";
+            this.TSMItem_order_query.Click += new System.EventHandler(this.TSMItem_order_query_Click);
             // 
             // TSMItem_order_add
             // 
             this.TSMItem_order_add.Name = "TSMItem_order_add";
-            this.TSMItem_order_add.Size = new System.Drawing.Size(124, 22);
+            this.TSMItem_order_add.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_order_add.Text = "新增订单";
+            this.TSMItem_order_add.Click += new System.EventHandler(this.TSMItem_order_add_Click);
             // 
             // TSMItem_Purchase
             // 
@@ -170,13 +174,13 @@
             // TSMItem_deliver_query
             // 
             this.TSMItem_deliver_query.Name = "TSMItem_deliver_query";
-            this.TSMItem_deliver_query.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_deliver_query.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_deliver_query.Text = "发货单查询";
             // 
             // TSMItem_deliver_pay
             // 
             this.TSMItem_deliver_pay.Name = "TSMItem_deliver_pay";
-            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_deliver_pay.Text = "发货收款";
             // 
             // TSMItem_Options
@@ -216,6 +220,13 @@
             this.panel_Main.Name = "panel_Main";
             this.panel_Main.Size = new System.Drawing.Size(1024, 500);
             this.panel_Main.TabIndex = 4;
+            // 
+            // TSMItem_offer_aduit
+            // 
+            this.TSMItem_offer_aduit.Name = "TSMItem_offer_aduit";
+            this.TSMItem_offer_aduit.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_offer_aduit.Text = "报价单审核";
+            this.TSMItem_offer_aduit.Click += new System.EventHandler(this.TSMItem_offer_aduit_Click);
             // 
             // FormOSM_Main
             // 
@@ -263,5 +274,6 @@
         private System.Windows.Forms.ToolStripMenuItem TStMItem_about;
         private System.Windows.Forms.ToolStripMenuItem TSMItem_exit;
         private System.Windows.Forms.Panel panel_Main;
+        private System.Windows.Forms.ToolStripMenuItem TSMItem_offer_aduit;
     }
 }

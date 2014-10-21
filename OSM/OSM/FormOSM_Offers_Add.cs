@@ -14,7 +14,9 @@ namespace OSM
     public partial class FormOSM_Offers_Add : Form
     {
         //父对象
-        FormOSM_Main main_form;
+        private FormOSM_Main main_form;
+        //UID
+        private string uid;
         //报价单对象
         private OfferSheet offer_sheet;
         //购买方对象
@@ -64,6 +66,15 @@ namespace OSM
         public void setMainForm(FormOSM_Main formOSM_main)
         {
             main_form = formOSM_main;
+        }
+
+        /// <summary>
+        /// 获取UID
+        /// </summary>
+        /// <param name="u_id"></param>
+        public void setUid(string u_id)
+        {
+            uid = u_id;
         }
 
         /// <summary>

@@ -108,8 +108,41 @@ namespace OSM
             //panel_Main.Controls.Clear();
             FormOSM_Offers_Add form_offers_add = new FormOSM_Offers_Add();
             form_offers_add.setMainForm(this);
+            form_offers_add.setUid(uid);
             form_offers_add.StartPosition = FormStartPosition.CenterParent;
             form_offers_add.ShowDialog();
+        }
+
+        /// <summary>
+        /// 报价单审核点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TSMItem_offer_aduit_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("报价单审核");
+            FormOSM_Offers_Audit offersheet_audit = new FormOSM_Offers_Audit();
+            offersheet_audit.ShowDialog();
+        }
+
+        /// <summary>
+        /// 订单查询菜单点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TSMItem_order_query_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("订单查询");
+        }
+
+        /// <summary>
+        /// 新增订单点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TSMItem_order_add_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("新增订单");
         }
     }
 }

@@ -188,7 +188,7 @@
             // 
             this.comboBox_OfferSheet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_OfferSheet.FormattingEnabled = true;
-            this.comboBox_OfferSheet.Location = new System.Drawing.Point(85, 50);
+            this.comboBox_OfferSheet.Location = new System.Drawing.Point(85, 53);
             this.comboBox_OfferSheet.Name = "comboBox_OfferSheet";
             this.comboBox_OfferSheet.Size = new System.Drawing.Size(152, 25);
             this.comboBox_OfferSheet.TabIndex = 3;
