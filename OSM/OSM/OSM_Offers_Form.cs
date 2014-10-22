@@ -112,11 +112,21 @@ namespace OSM
             comboBox_OfferSheet.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// 日期控件下拉事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dateTimePicker_OfferSheet_DropDown(object sender, EventArgs e)
         {
             dateTimePicker_OfferSheet.CustomFormat = "yyyy-MM-dd";
         }
 
+        /// <summary>
+        /// dataGridView单元按钮触发事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView_OfferSheet_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView_OfferSheet.Columns[e.ColumnIndex].Name == "viewBtn")
@@ -142,6 +152,10 @@ namespace OSM
             }
         }
 
+        /// <summary>
+        /// 编辑报价单按钮
+        /// </summary>
+        /// <param name="offersheet_code"></param>
         private void editOfferSheet(string offersheet_code)
         {
             string sql = "select * from OSM_OFFER_SHEET ";
@@ -170,6 +184,10 @@ namespace OSM
             form_add_offers.ShowDialog();
         }
 
+        /// <summary>
+        /// 查看报价单按钮
+        /// </summary>
+        /// <param name="offersheet_code"></param>
         private void viewOfferSheet(string offersheet_code)
         {
             string sql = "select * from OSM_OFFER_SHEET ";
@@ -198,6 +216,10 @@ namespace OSM
             form_add_offers.ShowDialog();
         }
 
+        /// <summary>
+        /// 删除报价单按钮
+        /// </summary>
+        /// <param name="offersheet_code"></param>
         private void delOfferSheet(string offersheet_code)
         {
             AccessDB adb = new AccessDB();

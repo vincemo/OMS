@@ -28,4 +28,5 @@ D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Seller_Add.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Buyer_Add.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_HW_Add.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Pager.resources
-D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Offers_Audit.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Offer_Audit_Form.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_OfferSheet_AuditBox.resources

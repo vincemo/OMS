@@ -121,8 +121,23 @@ namespace OSM
         private void TSMItem_offer_aduit_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("报价单审核");
-            FormOSM_Offers_Audit offersheet_audit = new FormOSM_Offers_Audit();
-            offersheet_audit.ShowDialog();
+            //FormOSM_Offers_Audit offersheet_audit = new FormOSM_Offers_Audit();
+            //offersheet_audit.ShowDialog();
+            panel_Main.Controls.Clear();
+            OSM_Offer_Audit_Form offerAuditForm = new OSM_Offer_Audit_Form();
+            offerAuditForm.setMainForm(this);
+            panel_Main.Controls.Add(offerAuditForm);
+        }
+
+        /// <summary>
+        /// 报价单审核界面刷新
+        /// </summary>
+        public void TSMItem_offer_aduit_Refresh()
+        {
+            panel_Main.Controls.Clear();
+            OSM_Offer_Audit_Form offerAuditForm = new OSM_Offer_Audit_Form();
+            offerAuditForm.setMainForm(this);
+            panel_Main.Controls.Add(offerAuditForm);
         }
 
         /// <summary>

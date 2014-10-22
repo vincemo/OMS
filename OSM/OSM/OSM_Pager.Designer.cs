@@ -154,7 +154,7 @@
             "10",
             "20",
             "50"});
-            this.comboBox_recordsPerPage.Location = new System.Drawing.Point(428, 4);
+            this.comboBox_recordsPerPage.Location = new System.Drawing.Point(432, 0);
             this.comboBox_recordsPerPage.Name = "comboBox_recordsPerPage";
             this.comboBox_recordsPerPage.Size = new System.Drawing.Size(47, 25);
             this.comboBox_recordsPerPage.TabIndex = 12;

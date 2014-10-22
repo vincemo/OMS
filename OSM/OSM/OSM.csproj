@@ -80,17 +80,17 @@
     <Compile Include="FormOSM_HW_Add.Designer.cs">
       <DependentUpon>FormOSM_HW_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOSM_OfferSheet_AuditBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_OfferSheet_AuditBox.Designer.cs">
+      <DependentUpon>FormOSM_OfferSheet_AuditBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOSM_Offers_Add.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormOSM_Offers_Add.Designer.cs">
       <DependentUpon>FormOSM_Offers_Add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOSM_Offers_Audit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOSM_Offers_Audit.Designer.cs">
-      <DependentUpon>FormOSM_Offers_Audit.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOSM_password.cs">
       <SubType>Form</SubType>
@@ -129,6 +129,12 @@
     <Compile Include="OSM_Offers_Form.Designer.cs">
       <DependentUpon>OSM_Offers_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSM_Offer_Audit_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_Offer_Audit_Form.Designer.cs">
+      <DependentUpon>OSM_Offer_Audit_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSM_Pager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,11 +149,11 @@
     <EmbeddedResource Include="FormOSM_HW_Add.resx">
       <DependentUpon>FormOSM_HW_Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_OfferSheet_AuditBox.resx">
+      <DependentUpon>FormOSM_OfferSheet_AuditBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_Offers_Add.resx">
       <DependentUpon>FormOSM_Offers_Add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOSM_Offers_Audit.resx">
-      <DependentUpon>FormOSM_Offers_Audit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_password.resx">
       <DependentUpon>FormOSM_password.cs</DependentUpon>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Offers_Form.resx">
       <DependentUpon>OSM_Offers_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_Offer_Audit_Form.resx">
+      <DependentUpon>OSM_Offer_Audit_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Pager.resx">
       <DependentUpon>OSM_Pager.cs</DependentUpon>
