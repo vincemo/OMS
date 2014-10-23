@@ -30,3 +30,4 @@ D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_HW_Add.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Pager.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Offer_Audit_Form.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_OfferSheet_AuditBox.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Orders_Form.resources

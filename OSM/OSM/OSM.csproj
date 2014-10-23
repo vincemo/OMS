@@ -67,6 +67,7 @@
     <Compile Include="DBClass\Buyer.cs" />
     <Compile Include="DBClass\HW.cs" />
     <Compile Include="DBClass\OfferSheet.cs" />
+    <Compile Include="DBClass\OrderSheet.cs" />
     <Compile Include="DBClass\Seller.cs" />
     <Compile Include="FormOSM_Buyer_Add.cs">
       <SubType>Form</SubType>
@@ -135,6 +136,12 @@
     <Compile Include="OSM_Offer_Audit_Form.Designer.cs">
       <DependentUpon>OSM_Offer_Audit_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSM_Orders_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_Orders_Form.Designer.cs">
+      <DependentUpon>OSM_Orders_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSM_Pager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Offer_Audit_Form.resx">
       <DependentUpon>OSM_Offer_Audit_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_Orders_Form.resx">
+      <DependentUpon>OSM_Orders_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Pager.resx">
       <DependentUpon>OSM_Pager.cs</DependentUpon>

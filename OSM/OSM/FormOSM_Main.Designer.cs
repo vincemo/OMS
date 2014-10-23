@@ -36,6 +36,7 @@
             this.TSMItem_Offers = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_offer_query = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_offer_add = new System.Windows.Forms.ToolStripMenuItem();
+            this.TSMItem_offer_aduit = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_Orders = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_order_query = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_order_add = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,6 @@
             this.TStMItem_about = new System.Windows.Forms.ToolStripMenuItem();
             this.TSMItem_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Main = new System.Windows.Forms.Panel();
-            this.TSMItem_offer_aduit = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip_Main.SuspendLayout();
             this.menuStrip_Main.SuspendLayout();
             this.SuspendLayout();
@@ -97,8 +97,8 @@
             // TSMItem_Offers
             // 
             this.TSMItem_Offers.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TSMItem_offer_query,
             this.TSMItem_offer_add,
+            this.TSMItem_offer_query,
             this.TSMItem_offer_aduit});
             this.TSMItem_Offers.Name = "TSMItem_Offers";
             this.TSMItem_Offers.Size = new System.Drawing.Size(80, 21);
@@ -118,6 +118,13 @@
             this.TSMItem_offer_add.Text = "新增报价单";
             this.TSMItem_offer_add.Click += new System.EventHandler(this.TSMItem_offer_add_Click);
             // 
+            // TSMItem_offer_aduit
+            // 
+            this.TSMItem_offer_aduit.Name = "TSMItem_offer_aduit";
+            this.TSMItem_offer_aduit.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_offer_aduit.Text = "报价单审核";
+            this.TSMItem_offer_aduit.Click += new System.EventHandler(this.TSMItem_offer_aduit_Click);
+            // 
             // TSMItem_Orders
             // 
             this.TSMItem_Orders.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -130,14 +137,14 @@
             // TSMItem_order_query
             // 
             this.TSMItem_order_query.Name = "TSMItem_order_query";
-            this.TSMItem_order_query.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_order_query.Size = new System.Drawing.Size(124, 22);
             this.TSMItem_order_query.Text = "订单查询";
             this.TSMItem_order_query.Click += new System.EventHandler(this.TSMItem_order_query_Click);
             // 
             // TSMItem_order_add
             // 
             this.TSMItem_order_add.Name = "TSMItem_order_add";
-            this.TSMItem_order_add.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_order_add.Size = new System.Drawing.Size(124, 22);
             this.TSMItem_order_add.Text = "新增订单";
             this.TSMItem_order_add.Click += new System.EventHandler(this.TSMItem_order_add_Click);
             // 
@@ -220,13 +227,6 @@
             this.panel_Main.Name = "panel_Main";
             this.panel_Main.Size = new System.Drawing.Size(1024, 500);
             this.panel_Main.TabIndex = 4;
-            // 
-            // TSMItem_offer_aduit
-            // 
-            this.TSMItem_offer_aduit.Name = "TSMItem_offer_aduit";
-            this.TSMItem_offer_aduit.Size = new System.Drawing.Size(152, 22);
-            this.TSMItem_offer_aduit.Text = "报价单审核";
-            this.TSMItem_offer_aduit.Click += new System.EventHandler(this.TSMItem_offer_aduit_Click);
             // 
             // FormOSM_Main
             // 

@@ -123,8 +123,10 @@ namespace OSM
             {
                 //MessageBox.Show(dataGridView_OfferSheet_Audit.Rows[e.RowIndex].Cells["ID"].Value.ToString());
                 string offersheet_id = dataGridView_OfferSheet_Audit.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                string offersheet_code = dataGridView_OfferSheet_Audit.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString();
                 FormOSM_OfferSheet_AuditBox offerSheetAuditBox = new FormOSM_OfferSheet_AuditBox();
                 offerSheetAuditBox.setOfferSheetID(offersheet_id);
+                offerSheetAuditBox.setOfferSheetCode(offersheet_code);
                 offerSheetAuditBox.setMainForm(main_form);
                 offerSheetAuditBox.StartPosition = FormStartPosition.CenterParent;
                 offerSheetAuditBox.ShowDialog();

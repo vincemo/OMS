@@ -1,6 +1,6 @@
 ﻿namespace OSM
 {
-    partial class OSM_Offers_Form
+    partial class OSM_Orders_Form
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,17 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView_OfferSheet = new System.Windows.Forms.DataGridView();
-            this.ORDERSHEET_GEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OFFERSHEET_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GMF_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BJF_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OFFERSHEET_TYPE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OFFERSHEET_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OFFERSHEET_STATE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewBtn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.editBtn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.delBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox__OfferSheet = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_Date = new System.Windows.Forms.Label();
@@ -48,131 +37,22 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button_Query = new System.Windows.Forms.Button();
             this.button_Reset = new System.Windows.Forms.Button();
+            this.dataGridView_OfferSheet = new System.Windows.Forms.DataGridView();
             this.OSM_Pager_offerSheet = new OSM.OSM_Pager();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_OfferSheet)).BeginInit();
             this.groupBox__OfferSheet.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_OfferSheet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView_OfferSheet
-            // 
-            this.dataGridView_OfferSheet.AllowUserToAddRows = false;
-            this.dataGridView_OfferSheet.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView_OfferSheet.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.dataGridView_OfferSheet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_OfferSheet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ORDERSHEET_GEN,
-            this.OFFERSHEET_CODE,
-            this.GMF_NAME,
-            this.BJF_NAME,
-            this.OFFERSHEET_TYPE_DESC,
-            this.OFFERSHEET_DATE,
-            this.OFFERSHEET_STATE_DESC,
-            this.viewBtn,
-            this.editBtn,
-            this.delBtn});
-            this.dataGridView_OfferSheet.Location = new System.Drawing.Point(266, 0);
-            this.dataGridView_OfferSheet.Name = "dataGridView_OfferSheet";
-            this.dataGridView_OfferSheet.RowTemplate.Height = 23;
-            this.dataGridView_OfferSheet.Size = new System.Drawing.Size(750, 465);
-            this.dataGridView_OfferSheet.TabIndex = 0;
-            this.dataGridView_OfferSheet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_OfferSheet_CellContentClick);
-            // 
-            // ORDERSHEET_GEN
-            // 
-            this.ORDERSHEET_GEN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ORDERSHEET_GEN.DataPropertyName = "ORDERSHEET_GEN";
-            this.ORDERSHEET_GEN.HeaderText = "生成订单";
-            this.ORDERSHEET_GEN.Name = "ORDERSHEET_GEN";
-            this.ORDERSHEET_GEN.Width = 78;
-            // 
-            // OFFERSHEET_CODE
-            // 
-            this.OFFERSHEET_CODE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.OFFERSHEET_CODE.DataPropertyName = "OFFERSHEET_CODE";
-            this.OFFERSHEET_CODE.HeaderText = "报价单编号";
-            this.OFFERSHEET_CODE.Name = "OFFERSHEET_CODE";
-            this.OFFERSHEET_CODE.ReadOnly = true;
-            this.OFFERSHEET_CODE.Width = 140;
-            // 
-            // GMF_NAME
-            // 
-            this.GMF_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.GMF_NAME.DataPropertyName = "GMF_NAME";
-            this.GMF_NAME.HeaderText = "购买方";
-            this.GMF_NAME.Name = "GMF_NAME";
-            this.GMF_NAME.ReadOnly = true;
-            // 
-            // BJF_NAME
-            // 
-            this.BJF_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.BJF_NAME.DataPropertyName = "BJF_NAME";
-            this.BJF_NAME.HeaderText = "报价方";
-            this.BJF_NAME.Name = "BJF_NAME";
-            this.BJF_NAME.ReadOnly = true;
-            // 
-            // OFFERSHEET_TYPE_DESC
-            // 
-            this.OFFERSHEET_TYPE_DESC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.OFFERSHEET_TYPE_DESC.DataPropertyName = "OFFERSHEET_TYPE_DESC";
-            this.OFFERSHEET_TYPE_DESC.HeaderText = "报价单类型";
-            this.OFFERSHEET_TYPE_DESC.Name = "OFFERSHEET_TYPE_DESC";
-            this.OFFERSHEET_TYPE_DESC.ReadOnly = true;
-            this.OFFERSHEET_TYPE_DESC.Width = 90;
-            // 
-            // OFFERSHEET_DATE
-            // 
-            this.OFFERSHEET_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.OFFERSHEET_DATE.DataPropertyName = "OFFERSHEET_DATE";
-            this.OFFERSHEET_DATE.HeaderText = "报价单日期";
-            this.OFFERSHEET_DATE.Name = "OFFERSHEET_DATE";
-            this.OFFERSHEET_DATE.ReadOnly = true;
-            this.OFFERSHEET_DATE.Width = 90;
-            // 
-            // OFFERSHEET_STATE_DESC
-            // 
-            this.OFFERSHEET_STATE_DESC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.OFFERSHEET_STATE_DESC.DataPropertyName = "OFFERSHEET_STATE_DESC";
-            this.OFFERSHEET_STATE_DESC.HeaderText = "报价单状态";
-            this.OFFERSHEET_STATE_DESC.Name = "OFFERSHEET_STATE_DESC";
-            this.OFFERSHEET_STATE_DESC.ReadOnly = true;
-            this.OFFERSHEET_STATE_DESC.Width = 90;
-            // 
-            // viewBtn
-            // 
-            this.viewBtn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.viewBtn.HeaderText = "";
-            this.viewBtn.Name = "viewBtn";
-            this.viewBtn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.viewBtn.Text = "查看";
-            this.viewBtn.UseColumnTextForLinkValue = true;
-            this.viewBtn.Width = 50;
-            // 
-            // editBtn
-            // 
-            this.editBtn.HeaderText = "";
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Text = "编辑";
-            this.editBtn.UseColumnTextForLinkValue = true;
-            this.editBtn.Width = 50;
-            // 
-            // delBtn
-            // 
-            this.delBtn.HeaderText = "";
-            this.delBtn.Name = "delBtn";
-            this.delBtn.Text = "删除";
-            this.delBtn.UseColumnTextForLinkValue = true;
-            this.delBtn.Width = 50;
             // 
             // groupBox__OfferSheet
             // 
             this.groupBox__OfferSheet.Controls.Add(this.tableLayoutPanel1);
             this.groupBox__OfferSheet.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox__OfferSheet.Location = new System.Drawing.Point(4, 4);
+            this.groupBox__OfferSheet.Location = new System.Drawing.Point(3, 3);
             this.groupBox__OfferSheet.Name = "groupBox__OfferSheet";
             this.groupBox__OfferSheet.Size = new System.Drawing.Size(262, 493);
-            this.groupBox__OfferSheet.TabIndex = 1;
+            this.groupBox__OfferSheet.TabIndex = 2;
             this.groupBox__OfferSheet.TabStop = false;
             this.groupBox__OfferSheet.Text = "报价单查询条件";
             // 
@@ -210,7 +90,7 @@
             this.comboBox_OfferSheet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_OfferSheet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OfferSheet.FormattingEnabled = true;
-            this.comboBox_OfferSheet.Location = new System.Drawing.Point(85, 53);
+            this.comboBox_OfferSheet.Location = new System.Drawing.Point(85, 50);
             this.comboBox_OfferSheet.Name = "comboBox_OfferSheet";
             this.comboBox_OfferSheet.Size = new System.Drawing.Size(152, 25);
             this.comboBox_OfferSheet.TabIndex = 3;
@@ -237,7 +117,6 @@
             this.dateTimePicker_OfferSheet.Size = new System.Drawing.Size(152, 23);
             this.dateTimePicker_OfferSheet.TabIndex = 1;
             this.dateTimePicker_OfferSheet.Value = new System.DateTime(2014, 10, 8, 0, 0, 0, 0);
-            this.dateTimePicker_OfferSheet.DropDown += new System.EventHandler(this.dateTimePicker_OfferSheet_DropDown);
             // 
             // tableLayoutPanel2
             // 
@@ -262,7 +141,6 @@
             this.button_Query.TabIndex = 0;
             this.button_Query.Text = "查询";
             this.button_Query.UseVisualStyleBackColor = true;
-            this.button_Query.Click += new System.EventHandler(this.button_Query_Click);
             // 
             // button_Reset
             // 
@@ -273,55 +151,56 @@
             this.button_Reset.TabIndex = 1;
             this.button_Reset.Text = "重置";
             this.button_Reset.UseVisualStyleBackColor = true;
-            this.button_Reset.Click += new System.EventHandler(this.button_Reset_Click);
+            // 
+            // dataGridView_OfferSheet
+            // 
+            this.dataGridView_OfferSheet.AllowUserToAddRows = false;
+            this.dataGridView_OfferSheet.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_OfferSheet.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView_OfferSheet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_OfferSheet.Location = new System.Drawing.Point(266, 2);
+            this.dataGridView_OfferSheet.Name = "dataGridView_OfferSheet";
+            this.dataGridView_OfferSheet.RowTemplate.Height = 23;
+            this.dataGridView_OfferSheet.Size = new System.Drawing.Size(750, 465);
+            this.dataGridView_OfferSheet.TabIndex = 3;
             // 
             // OSM_Pager_offerSheet
             // 
-            this.OSM_Pager_offerSheet.Location = new System.Drawing.Point(266, 467);
+            this.OSM_Pager_offerSheet.Location = new System.Drawing.Point(266, 468);
             this.OSM_Pager_offerSheet.Name = "OSM_Pager_offerSheet";
             this.OSM_Pager_offerSheet.Size = new System.Drawing.Size(750, 30);
-            this.OSM_Pager_offerSheet.TabIndex = 2;
+            this.OSM_Pager_offerSheet.TabIndex = 4;
             // 
-            // OSM_Offers_Form
+            // OSM_Orders_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.OSM_Pager_offerSheet);
-            this.Controls.Add(this.groupBox__OfferSheet);
             this.Controls.Add(this.dataGridView_OfferSheet);
-            this.Name = "OSM_Offers_Form";
+            this.Controls.Add(this.groupBox__OfferSheet);
+            this.Name = "OSM_Orders_Form";
             this.Size = new System.Drawing.Size(1024, 510);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_OfferSheet)).EndInit();
             this.groupBox__OfferSheet.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_OfferSheet)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView_OfferSheet;
         private System.Windows.Forms.GroupBox groupBox__OfferSheet;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label_Date;
         private System.Windows.Forms.ComboBox comboBox_OfferSheet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker_OfferSheet;
-        private System.Windows.Forms.Label label_Date;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button button_Query;
         private System.Windows.Forms.Button button_Reset;
+        private System.Windows.Forms.DataGridView dataGridView_OfferSheet;
         private OSM_Pager OSM_Pager_offerSheet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ORDERSHEET_GEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_CODE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GMF_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BJF_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_TYPE_DESC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_DATE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_STATE_DESC;
-        private System.Windows.Forms.DataGridViewLinkColumn viewBtn;
-        private System.Windows.Forms.DataGridViewLinkColumn editBtn;
-        private System.Windows.Forms.DataGridViewLinkColumn delBtn;
     }
 }

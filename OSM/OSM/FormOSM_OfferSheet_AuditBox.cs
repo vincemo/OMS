@@ -14,6 +14,8 @@ namespace OSM
     {
         //报价单ID
         private string offerSheetID;
+        //报价单编号
+        private string offerSheetCode;
         //父窗口
         private FormOSM_Main main_form;
 
@@ -42,6 +44,15 @@ namespace OSM
         {
             offerSheetID = offersheetid;
         }
+
+        /// <summary>
+        /// 设置报价单编号
+        /// </summary>
+        /// <param name="offersheetcode"></param>
+        public void setOfferSheetCode(string offersheetcode)
+        {
+            offerSheetCode = offersheetcode;
+        }
         
 
         /// <summary>
@@ -67,6 +78,17 @@ namespace OSM
             AccessDB adb = new AccessDB();
             if (adb.SQLExecute(sql))
             {
+                string query = "select sum(HW_TOTALPRICE) from OSM_HW where OFFERSHEET_CODE = '" + offerSheetCode + "'";
+                DataTable dt = adb.SQLTableQuery(query);
+                DataRow dr = dt.Rows[0];
+                double require_payment = double.Parse(dr[0].ToString());
+
+                //生成订单存入数据库
+                string insertSQL = "insert into OSM_ORDER_SHEET(OFFERSHEET_ID,ORDER_STATE,REQUIRE_PAYMENT) values ('" + offerSheetID + "','1'," + require_payment + ")";
+                if (adb.SQLExecute(insertSQL))
+                {
+                    MessageBox.Show("已将审核通过的报价单生成订单","消息");
+                }
                 main_form.TSMItem_offer_aduit_Refresh();
                 this.Close();
                 this.Dispose();
