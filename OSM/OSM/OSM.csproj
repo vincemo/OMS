@@ -69,6 +69,7 @@
     <Compile Include="DBClass\OfferSheet.cs" />
     <Compile Include="DBClass\OrderSheet.cs" />
     <Compile Include="DBClass\Seller.cs" />
+    <Compile Include="DBClass\SJZDController.cs" />
     <Compile Include="FormOSM_Buyer_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,12 @@
     </Compile>
     <Compile Include="FormOSM_Offers_Add.Designer.cs">
       <DependentUpon>FormOSM_Offers_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOSM_Order_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_Order_View.Designer.cs">
+      <DependentUpon>FormOSM_Order_View.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOSM_password.cs">
       <SubType>Form</SubType>
@@ -161,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_Offers_Add.resx">
       <DependentUpon>FormOSM_Offers_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_Order_View.resx">
+      <DependentUpon>FormOSM_Order_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_password.resx">
       <DependentUpon>FormOSM_password.cs</DependentUpon>

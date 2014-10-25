@@ -29,18 +29,8 @@ namespace OSM
             //设置页码控件控制的datagridview
             //osM_Pager_offerSheet.setDataGridView(dataGridView_OfferSheet);
 
-            //初始化状态下拉列表
-            Dictionary<string, string> osDic = new Dictionary<string, string>();
-            osDic.Add("1", "待审核");
-            osDic.Add("2", "需要修改");
-            osDic.Add("3", "成交");
-            osDic.Add("4", "已关闭");
-
-            BindingSource bs = new BindingSource();
-            bs.DataSource = osDic;
-            comboBox_OfferSheet.DataSource = bs;
-            comboBox_OfferSheet.ValueMember = "Key";
-            comboBox_OfferSheet.DisplayMember = "Value";
+            string whereString = "where PID = 1";
+            SJZDController.setZD_ComboBox(whereString, comboBox_OfferSheet);
         }
 
         /// <summary>
@@ -148,7 +138,18 @@ namespace OSM
             {
                 //MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
                 string offersheet_code = dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString();
-                delOfferSheet(offersheet_code);
+                DialogResult result =  MessageBox.Show("确认删除该条记录?", "消息", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    if (!string.IsNullOrWhiteSpace(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["ORDERSHEET_GEN"].Value.ToString()))
+                    {
+                        MessageBox.Show("该记录已生成订单,无法删除!", "警告");
+                    }
+                    else
+                    {
+                        delOfferSheet(offersheet_code);
+                    }
+                }
             }
         }
 

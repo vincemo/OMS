@@ -25,16 +25,8 @@ namespace OSM
             InitializeComponent();
             hw = new HW();
 
-            Dictionary<string, string> otDic = new Dictionary<string, string>();
-            otDic.Add("1", "类型A");
-            otDic.Add("2", "类型B");
-            otDic.Add("3", "类型C");
-            otDic.Add("4", "类型D");
-            BindingSource bs = new BindingSource();
-            bs.DataSource = otDic;
-            comboBox_HW_TYPE.DataSource = bs;
-            comboBox_HW_TYPE.ValueMember = "Key";
-            comboBox_HW_TYPE.DisplayMember = "Value";
+            string whereString = "where PID = 15 ";
+            SJZDController.setZD_ComboBox(whereString, comboBox_HW_TYPE);
         }
 
         /// <summary>
@@ -125,7 +117,7 @@ namespace OSM
         private void textBox_HW_NUMBER_KeyPress(object sender, KeyPressEventArgs e)
         {
             //只能输入整数数字
-            if ((e.KeyChar <= 48 || e.KeyChar >= 57))// && (e.KeyChar != 8) && (e.KeyChar != 46)
+            if ((e.KeyChar < 48 || e.KeyChar > 57))// && (e.KeyChar != 8) && (e.KeyChar != 46)
                 e.Handled = true;
         }
 
@@ -137,7 +129,7 @@ namespace OSM
         private void textBox_HW_PRICE_KeyPress(object sender, KeyPressEventArgs e)
         {
             //只能输入双精度数字
-            if ((e.KeyChar <= 48 || e.KeyChar >= 57) && (e.KeyChar != 46))// && (e.KeyChar != 8) 
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar != 46))// && (e.KeyChar != 8) 
                 e.Handled = true;
         }
 

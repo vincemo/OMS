@@ -21,9 +21,11 @@ namespace OSM
             
             if (Log.DialogResult == DialogResult.OK)
             {
+                string id = Log.id;
                 string userid = Log.userid;
                 string username = Log.username;
-                Application.Run(new FormOSM_Main(userid,username));
+
+                Application.Run(new FormOSM_Main(id, userid, username));
             }
         }
     }

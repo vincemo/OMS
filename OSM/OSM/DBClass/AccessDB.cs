@@ -54,11 +54,13 @@ namespace OSM.DBClass
                 
                 if (reader.Read())
                 {
+                    string id = reader["ID"].ToString();
                     string username = reader["USER_NAME"].ToString();
                     string userid = reader["USER_ID"].ToString();
                     string pwd = reader["USER_PWD"].ToString();
 
                     Hashtable ht = new Hashtable();
+                    ht.Add("id", id);
                     ht.Add("userid", userid);
                     ht.Add("username", username);
                     conn.Close();
@@ -157,6 +159,35 @@ namespace OSM.DBClass
                 conn.Close();
                 conn.Dispose();
                 return dt;
+            }
+            catch (Exception e)
+            {
+                throw (new Exception("数据库连接出错" + e.Message));
+            }
+        }
+
+        public Dictionary<string, string> QuerySJZD(string whereString)
+        {
+            string sql = "select C_CODE,C_NAME from BASE_ZYSJZD ";
+            sql += whereString;
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+
+            OleDbConnection conn = getConnection();
+            try
+            {
+                OleDbCommand zdCommand = new OleDbCommand(sql, conn);
+                conn.Open();
+                OleDbDataReader reader = zdCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    dict.Add(reader["C_CODE"].ToString(), reader["C_NAME"].ToString());
+                }
+
+                conn.Close();
+                conn.Dispose();
+                
+                return dict;
             }
             catch (Exception e)
             {

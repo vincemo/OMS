@@ -14,6 +14,8 @@ namespace OSM
     public partial class FormOSM_Main : Form
     {
         //用户ID
+        public string uuid = "";
+        //用户CODE
         public string uid = "";
         //用户名
         public string uname = "";
@@ -23,10 +25,11 @@ namespace OSM
         /// </summary>
         /// <param name="userid"></param>
         /// <param name="username"></param>
-        public FormOSM_Main(string userid, string username)
+        public FormOSM_Main(string id,string userid, string username)
         {
             InitializeComponent();
             //label_username.Text = username;
+            uuid = id;
             uid = userid;
             uname = username;
             toolStripStatusLabel_username.Text = "欢迎您," + username;
@@ -106,9 +109,9 @@ namespace OSM
         private void TSMItem_offer_add_Click(object sender, EventArgs e)
         {
             //panel_Main.Controls.Clear();
-            FormOSM_Offers_Add form_offers_add = new FormOSM_Offers_Add();
+            FormOSM_Offers_Add form_offers_add = new FormOSM_Offers_Add(uuid);
             form_offers_add.setMainForm(this);
-            form_offers_add.setUid(uid);
+            //form_offers_add.setUid(uid);
             form_offers_add.StartPosition = FormStartPosition.CenterParent;
             form_offers_add.ShowDialog();
         }
@@ -147,7 +150,11 @@ namespace OSM
         /// <param name="e"></param>
         private void TSMItem_order_query_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("订单查询");
+            //MessageBox.Show("订单查询");
+            panel_Main.Controls.Clear();
+            OSM_Orders_Form orderForm = new OSM_Orders_Form();
+            orderForm.setMainForm(this);
+            panel_Main.Controls.Add(orderForm);
         }
 
         /// <summary>
@@ -155,9 +162,9 @@ namespace OSM
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TSMItem_order_add_Click(object sender, EventArgs e)
+        private void TSMItem_order_delivery_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("新增订单");
+            MessageBox.Show("订单发货");
         }
     }
 }

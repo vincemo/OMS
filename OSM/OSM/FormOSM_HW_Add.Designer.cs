@@ -162,6 +162,7 @@
             // 
             // comboBox_HW_TYPE
             // 
+            this.comboBox_HW_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_HW_TYPE.FormattingEnabled = true;
             this.comboBox_HW_TYPE.Location = new System.Drawing.Point(327, 61);
             this.comboBox_HW_TYPE.Name = "comboBox_HW_TYPE";

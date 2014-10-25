@@ -31,7 +31,7 @@ namespace OSM
         /// <summary>
         /// 构造函数
         /// </summary>
-        public FormOSM_Offers_Add()
+        public FormOSM_Offers_Add(string uuid = "")
         {
             InitializeComponent();
 
@@ -40,18 +40,10 @@ namespace OSM
             offer_sheet = new OfferSheet();
             //hw = new HW();
 
-            Dictionary<string, string> otDic = new Dictionary<string, string>();
-            otDic.Add("1", "类型1");
-            otDic.Add("2", "类型2");
-            otDic.Add("3", "类型3");
-            otDic.Add("4", "类型4");
-            BindingSource bs = new BindingSource();
-            bs.DataSource = otDic;
-            comboBox_OFFERSHEET_TYPE.DataSource = bs;
-            comboBox_OFFERSHEET_TYPE.ValueMember = "Key";
-            comboBox_OFFERSHEET_TYPE.DisplayMember = "Value";
+            string whereString = "where PID = 10";
+            SJZDController.setZD_ComboBox(whereString, comboBox_OFFERSHEET_TYPE);
 
-            string offsht_code = "OSC" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            string offsht_code = "U" + uuid + "OSC" + DateTime.Now.ToString("yyyyMMddHHmmss");
             textBox_OFFERSHEET_CODE.Text = offsht_code;
 
             fillSellerComboBox(comboBox_SELLER);
@@ -188,6 +180,7 @@ namespace OSM
                 {
                     main_form.TSMItem_offer_query_Refresh();
                     this.Close();
+                    this.Dispose();
                 }
             }
 
@@ -195,6 +188,7 @@ namespace OSM
             if (view_state == 1)
             {
                 this.Close();
+                this.Dispose();
             }
 
             //状态为编辑
@@ -206,6 +200,7 @@ namespace OSM
                 {
                     main_form.TSMItem_offer_query_Refresh();
                     this.Close();
+                    this.Dispose();
                 }
             }
             
@@ -276,6 +271,7 @@ namespace OSM
                 if (adb.SQLTableDelete("OSM_HW", whereStr) >= 0)
                 {
                     this.Close();
+                    this.Dispose();
                 }
             }
 
@@ -283,12 +279,14 @@ namespace OSM
             if(view_state == 1)
             {
                 this.Close();
+                this.Dispose();
             }
 
             //状态为编辑
             if (view_state == 2)
             {
                 this.Close();
+                this.Dispose();
             }
         }
 

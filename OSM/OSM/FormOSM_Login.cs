@@ -13,6 +13,7 @@ namespace OSM
 {
     public partial class FormOSM_Login : Form
     {
+        public string id = "";
         public string userid = "";
         public string username = "";
 
@@ -39,6 +40,7 @@ namespace OSM
 
             if (ht != null)
             {
+                id = ht["id"].ToString();
                 userid = ht["userid"].ToString();
                 username = ht["username"].ToString();
                 //MessageBox.Show("登录成功！", "欢迎");

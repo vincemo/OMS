@@ -30,27 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOSM_Offers_Add));
             this.tabControl_Offers_add = new System.Windows.Forms.TabControl();
-            this.tabPage_SELLER = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel_SELLER = new System.Windows.Forms.TableLayoutPanel();
-            this.label_Seller_select = new System.Windows.Forms.Label();
-            this.button_Add_Seller = new System.Windows.Forms.Button();
-            this.comboBox_SELLER = new System.Windows.Forms.ComboBox();
-            this.label_name_seller = new System.Windows.Forms.Label();
-            this.textBox_COM_NAME_SELLER = new System.Windows.Forms.TextBox();
-            this.label_ADDR_seller = new System.Windows.Forms.Label();
-            this.textBox_ADDR_SELLER = new System.Windows.Forms.TextBox();
-            this.label_CONTACT_seller = new System.Windows.Forms.Label();
-            this.textBox_CONTACT_SELLER = new System.Windows.Forms.TextBox();
-            this.label_PHONE_seller = new System.Windows.Forms.Label();
-            this.textBox_PHONE_SELLER = new System.Windows.Forms.TextBox();
-            this.label_ZIPCODE_seller = new System.Windows.Forms.Label();
-            this.textBox_ZIPCODE_SELLER = new System.Windows.Forms.TextBox();
-            this.label_FAX_seller = new System.Windows.Forms.Label();
-            this.textBox_FAX_SELLER = new System.Windows.Forms.TextBox();
-            this.label_EMAIL_seller = new System.Windows.Forms.Label();
-            this.textBox_EMAIL_SELLER = new System.Windows.Forms.TextBox();
-            this.label_COMMENT_seller = new System.Windows.Forms.Label();
-            this.textBox_COMMENT_SELLER = new System.Windows.Forms.TextBox();
             this.tabPage_BUYER = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_Add_Buyer = new System.Windows.Forms.Button();
@@ -74,6 +53,27 @@
             this.label_comment_buyer = new System.Windows.Forms.Label();
             this.textBox_COMMENT_BUYER = new System.Windows.Forms.TextBox();
             this.label_buyer_select = new System.Windows.Forms.Label();
+            this.tabPage_SELLER = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel_SELLER = new System.Windows.Forms.TableLayoutPanel();
+            this.label_Seller_select = new System.Windows.Forms.Label();
+            this.button_Add_Seller = new System.Windows.Forms.Button();
+            this.comboBox_SELLER = new System.Windows.Forms.ComboBox();
+            this.label_name_seller = new System.Windows.Forms.Label();
+            this.textBox_COM_NAME_SELLER = new System.Windows.Forms.TextBox();
+            this.label_ADDR_seller = new System.Windows.Forms.Label();
+            this.textBox_ADDR_SELLER = new System.Windows.Forms.TextBox();
+            this.label_CONTACT_seller = new System.Windows.Forms.Label();
+            this.textBox_CONTACT_SELLER = new System.Windows.Forms.TextBox();
+            this.label_PHONE_seller = new System.Windows.Forms.Label();
+            this.textBox_PHONE_SELLER = new System.Windows.Forms.TextBox();
+            this.label_ZIPCODE_seller = new System.Windows.Forms.Label();
+            this.textBox_ZIPCODE_SELLER = new System.Windows.Forms.TextBox();
+            this.label_FAX_seller = new System.Windows.Forms.Label();
+            this.textBox_FAX_SELLER = new System.Windows.Forms.TextBox();
+            this.label_EMAIL_seller = new System.Windows.Forms.Label();
+            this.textBox_EMAIL_SELLER = new System.Windows.Forms.TextBox();
+            this.label_COMMENT_seller = new System.Windows.Forms.Label();
+            this.textBox_COMMENT_SELLER = new System.Windows.Forms.TextBox();
             this.tabPage_HW = new System.Windows.Forms.TabPage();
             this.button_Add_HW = new System.Windows.Forms.Button();
             this.dataGridView_HW = new System.Windows.Forms.DataGridView();
@@ -95,10 +95,10 @@
             this.button_CONFIRM = new System.Windows.Forms.Button();
             this.groupBox_offersheet = new System.Windows.Forms.GroupBox();
             this.tabControl_Offers_add.SuspendLayout();
-            this.tabPage_SELLER.SuspendLayout();
-            this.tableLayoutPanel_SELLER.SuspendLayout();
             this.tabPage_BUYER.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tabPage_SELLER.SuspendLayout();
+            this.tableLayoutPanel_SELLER.SuspendLayout();
             this.tabPage_HW.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_HW)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -117,256 +117,6 @@
             this.tabControl_Offers_add.SelectedIndex = 0;
             this.tabControl_Offers_add.Size = new System.Drawing.Size(442, 331);
             this.tabControl_Offers_add.TabIndex = 0;
-            // 
-            // tabPage_SELLER
-            // 
-            this.tabPage_SELLER.Controls.Add(this.tableLayoutPanel_SELLER);
-            this.tabPage_SELLER.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPage_SELLER.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_SELLER.Name = "tabPage_SELLER";
-            this.tabPage_SELLER.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_SELLER.Size = new System.Drawing.Size(434, 303);
-            this.tabPage_SELLER.TabIndex = 0;
-            this.tabPage_SELLER.Text = "报价方";
-            this.tabPage_SELLER.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel_SELLER
-            // 
-            this.tableLayoutPanel_SELLER.ColumnCount = 4;
-            this.tableLayoutPanel_SELLER.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_SELLER.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_SELLER.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_SELLER.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_Seller_select, 0, 0);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.button_Add_Seller, 2, 0);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.comboBox_SELLER, 1, 0);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_name_seller, 0, 2);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_COM_NAME_SELLER, 1, 2);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_ADDR_seller, 0, 3);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_ADDR_SELLER, 1, 3);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_CONTACT_seller, 0, 4);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_CONTACT_SELLER, 1, 4);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_PHONE_seller, 2, 4);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_PHONE_SELLER, 3, 4);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_ZIPCODE_seller, 0, 5);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_ZIPCODE_SELLER, 1, 5);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_FAX_seller, 2, 5);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_FAX_SELLER, 3, 5);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_EMAIL_seller, 0, 6);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_EMAIL_SELLER, 1, 6);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.label_COMMENT_seller, 0, 7);
-            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_COMMENT_SELLER, 1, 7);
-            this.tableLayoutPanel_SELLER.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tableLayoutPanel_SELLER.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel_SELLER.Name = "tableLayoutPanel_SELLER";
-            this.tableLayoutPanel_SELLER.RowCount = 10;
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_SELLER.Size = new System.Drawing.Size(434, 300);
-            this.tableLayoutPanel_SELLER.TabIndex = 0;
-            // 
-            // label_Seller_select
-            // 
-            this.label_Seller_select.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_Seller_select.AutoSize = true;
-            this.label_Seller_select.Location = new System.Drawing.Point(20, 6);
-            this.label_Seller_select.Name = "label_Seller_select";
-            this.label_Seller_select.Size = new System.Drawing.Size(68, 17);
-            this.label_Seller_select.TabIndex = 17;
-            this.label_Seller_select.Text = "选择报价方";
-            // 
-            // button_Add_Seller
-            // 
-            this.button_Add_Seller.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_Add_Seller.Location = new System.Drawing.Point(221, 3);
-            this.button_Add_Seller.Name = "button_Add_Seller";
-            this.tableLayoutPanel_SELLER.SetRowSpan(this.button_Add_Seller, 2);
-            this.button_Add_Seller.Size = new System.Drawing.Size(97, 28);
-            this.button_Add_Seller.TabIndex = 18;
-            this.button_Add_Seller.Text = "新增报价方";
-            this.button_Add_Seller.UseVisualStyleBackColor = true;
-            this.button_Add_Seller.Click += new System.EventHandler(this.button_Add_Seller_Click);
-            // 
-            // comboBox_SELLER
-            // 
-            this.comboBox_SELLER.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBox_SELLER.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox_SELLER.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBox_SELLER.FormattingEnabled = true;
-            this.comboBox_SELLER.Location = new System.Drawing.Point(111, 3);
-            this.comboBox_SELLER.Name = "comboBox_SELLER";
-            this.tableLayoutPanel_SELLER.SetRowSpan(this.comboBox_SELLER, 2);
-            this.comboBox_SELLER.Size = new System.Drawing.Size(102, 25);
-            this.comboBox_SELLER.TabIndex = 16;
-            this.comboBox_SELLER.SelectedIndexChanged += new System.EventHandler(this.comboBox_SELLER_SelectedIndexChanged);
-            // 
-            // label_name_seller
-            // 
-            this.label_name_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_name_seller.AutoSize = true;
-            this.label_name_seller.Location = new System.Drawing.Point(38, 64);
-            this.label_name_seller.Name = "label_name_seller";
-            this.label_name_seller.Size = new System.Drawing.Size(32, 17);
-            this.label_name_seller.TabIndex = 1;
-            this.label_name_seller.Text = "名称";
-            // 
-            // textBox_COM_NAME_SELLER
-            // 
-            this.textBox_COM_NAME_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel_SELLER.SetColumnSpan(this.textBox_COM_NAME_SELLER, 2);
-            this.textBox_COM_NAME_SELLER.Location = new System.Drawing.Point(111, 61);
-            this.textBox_COM_NAME_SELLER.Name = "textBox_COM_NAME_SELLER";
-            this.textBox_COM_NAME_SELLER.ReadOnly = true;
-            this.textBox_COM_NAME_SELLER.Size = new System.Drawing.Size(210, 23);
-            this.textBox_COM_NAME_SELLER.TabIndex = 0;
-            // 
-            // label_ADDR_seller
-            // 
-            this.label_ADDR_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_ADDR_seller.AutoSize = true;
-            this.label_ADDR_seller.Location = new System.Drawing.Point(38, 93);
-            this.label_ADDR_seller.Name = "label_ADDR_seller";
-            this.label_ADDR_seller.Size = new System.Drawing.Size(32, 17);
-            this.label_ADDR_seller.TabIndex = 2;
-            this.label_ADDR_seller.Text = "地址";
-            // 
-            // textBox_ADDR_SELLER
-            // 
-            this.textBox_ADDR_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel_SELLER.SetColumnSpan(this.textBox_ADDR_SELLER, 3);
-            this.textBox_ADDR_SELLER.Location = new System.Drawing.Point(112, 90);
-            this.textBox_ADDR_SELLER.Name = "textBox_ADDR_SELLER";
-            this.textBox_ADDR_SELLER.ReadOnly = true;
-            this.textBox_ADDR_SELLER.Size = new System.Drawing.Size(317, 23);
-            this.textBox_ADDR_SELLER.TabIndex = 3;
-            // 
-            // label_CONTACT_seller
-            // 
-            this.label_CONTACT_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_CONTACT_seller.AutoSize = true;
-            this.label_CONTACT_seller.Location = new System.Drawing.Point(32, 122);
-            this.label_CONTACT_seller.Name = "label_CONTACT_seller";
-            this.label_CONTACT_seller.Size = new System.Drawing.Size(44, 17);
-            this.label_CONTACT_seller.TabIndex = 4;
-            this.label_CONTACT_seller.Text = "联系人";
-            // 
-            // textBox_CONTACT_SELLER
-            // 
-            this.textBox_CONTACT_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_CONTACT_SELLER.Location = new System.Drawing.Point(111, 119);
-            this.textBox_CONTACT_SELLER.Name = "textBox_CONTACT_SELLER";
-            this.textBox_CONTACT_SELLER.ReadOnly = true;
-            this.textBox_CONTACT_SELLER.Size = new System.Drawing.Size(102, 23);
-            this.textBox_CONTACT_SELLER.TabIndex = 10;
-            // 
-            // label_PHONE_seller
-            // 
-            this.label_PHONE_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_PHONE_seller.AutoSize = true;
-            this.label_PHONE_seller.Location = new System.Drawing.Point(242, 122);
-            this.label_PHONE_seller.Name = "label_PHONE_seller";
-            this.label_PHONE_seller.Size = new System.Drawing.Size(56, 17);
-            this.label_PHONE_seller.TabIndex = 5;
-            this.label_PHONE_seller.Text = "联系电话";
-            // 
-            // textBox_PHONE_SELLER
-            // 
-            this.textBox_PHONE_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_PHONE_SELLER.Location = new System.Drawing.Point(328, 119);
-            this.textBox_PHONE_SELLER.Name = "textBox_PHONE_SELLER";
-            this.textBox_PHONE_SELLER.ReadOnly = true;
-            this.textBox_PHONE_SELLER.Size = new System.Drawing.Size(102, 23);
-            this.textBox_PHONE_SELLER.TabIndex = 11;
-            // 
-            // label_ZIPCODE_seller
-            // 
-            this.label_ZIPCODE_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_ZIPCODE_seller.AutoSize = true;
-            this.label_ZIPCODE_seller.Location = new System.Drawing.Point(26, 151);
-            this.label_ZIPCODE_seller.Name = "label_ZIPCODE_seller";
-            this.label_ZIPCODE_seller.Size = new System.Drawing.Size(56, 17);
-            this.label_ZIPCODE_seller.TabIndex = 6;
-            this.label_ZIPCODE_seller.Text = "邮政编码";
-            // 
-            // textBox_ZIPCODE_SELLER
-            // 
-            this.textBox_ZIPCODE_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_ZIPCODE_SELLER.Location = new System.Drawing.Point(111, 148);
-            this.textBox_ZIPCODE_SELLER.Name = "textBox_ZIPCODE_SELLER";
-            this.textBox_ZIPCODE_SELLER.ReadOnly = true;
-            this.textBox_ZIPCODE_SELLER.Size = new System.Drawing.Size(102, 23);
-            this.textBox_ZIPCODE_SELLER.TabIndex = 12;
-            // 
-            // label_FAX_seller
-            // 
-            this.label_FAX_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FAX_seller.AutoSize = true;
-            this.label_FAX_seller.Location = new System.Drawing.Point(254, 151);
-            this.label_FAX_seller.Name = "label_FAX_seller";
-            this.label_FAX_seller.Size = new System.Drawing.Size(32, 17);
-            this.label_FAX_seller.TabIndex = 7;
-            this.label_FAX_seller.Text = "传真";
-            // 
-            // textBox_FAX_SELLER
-            // 
-            this.textBox_FAX_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_FAX_SELLER.Location = new System.Drawing.Point(328, 148);
-            this.textBox_FAX_SELLER.Name = "textBox_FAX_SELLER";
-            this.textBox_FAX_SELLER.ReadOnly = true;
-            this.textBox_FAX_SELLER.Size = new System.Drawing.Size(102, 23);
-            this.textBox_FAX_SELLER.TabIndex = 13;
-            // 
-            // label_EMAIL_seller
-            // 
-            this.label_EMAIL_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_EMAIL_seller.AutoSize = true;
-            this.label_EMAIL_seller.Location = new System.Drawing.Point(26, 180);
-            this.label_EMAIL_seller.Name = "label_EMAIL_seller";
-            this.label_EMAIL_seller.Size = new System.Drawing.Size(56, 17);
-            this.label_EMAIL_seller.TabIndex = 8;
-            this.label_EMAIL_seller.Text = "电子邮箱";
-            // 
-            // textBox_EMAIL_SELLER
-            // 
-            this.textBox_EMAIL_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel_SELLER.SetColumnSpan(this.textBox_EMAIL_SELLER, 2);
-            this.textBox_EMAIL_SELLER.Location = new System.Drawing.Point(111, 177);
-            this.textBox_EMAIL_SELLER.Name = "textBox_EMAIL_SELLER";
-            this.textBox_EMAIL_SELLER.ReadOnly = true;
-            this.textBox_EMAIL_SELLER.Size = new System.Drawing.Size(210, 23);
-            this.textBox_EMAIL_SELLER.TabIndex = 14;
-            // 
-            // label_COMMENT_seller
-            // 
-            this.label_COMMENT_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_COMMENT_seller.AutoSize = true;
-            this.label_COMMENT_seller.Location = new System.Drawing.Point(38, 209);
-            this.label_COMMENT_seller.Name = "label_COMMENT_seller";
-            this.label_COMMENT_seller.Size = new System.Drawing.Size(32, 17);
-            this.label_COMMENT_seller.TabIndex = 9;
-            this.label_COMMENT_seller.Text = "备注";
-            // 
-            // textBox_COMMENT_SELLER
-            // 
-            this.textBox_COMMENT_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel_SELLER.SetColumnSpan(this.textBox_COMMENT_SELLER, 3);
-            this.textBox_COMMENT_SELLER.Location = new System.Drawing.Point(111, 210);
-            this.textBox_COMMENT_SELLER.Multiline = true;
-            this.textBox_COMMENT_SELLER.Name = "textBox_COMMENT_SELLER";
-            this.textBox_COMMENT_SELLER.ReadOnly = true;
-            this.tableLayoutPanel_SELLER.SetRowSpan(this.textBox_COMMENT_SELLER, 3);
-            this.textBox_COMMENT_SELLER.Size = new System.Drawing.Size(320, 83);
-            this.textBox_COMMENT_SELLER.TabIndex = 15;
             // 
             // tabPage_BUYER
             // 
@@ -635,6 +385,256 @@
             this.label_buyer_select.TabIndex = 17;
             this.label_buyer_select.Text = "选择购买方";
             // 
+            // tabPage_SELLER
+            // 
+            this.tabPage_SELLER.Controls.Add(this.tableLayoutPanel_SELLER);
+            this.tabPage_SELLER.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPage_SELLER.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_SELLER.Name = "tabPage_SELLER";
+            this.tabPage_SELLER.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_SELLER.Size = new System.Drawing.Size(434, 303);
+            this.tabPage_SELLER.TabIndex = 0;
+            this.tabPage_SELLER.Text = "报价方";
+            this.tabPage_SELLER.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel_SELLER
+            // 
+            this.tableLayoutPanel_SELLER.ColumnCount = 4;
+            this.tableLayoutPanel_SELLER.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_SELLER.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_SELLER.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_SELLER.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_Seller_select, 0, 0);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.button_Add_Seller, 2, 0);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.comboBox_SELLER, 1, 0);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_name_seller, 0, 2);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_COM_NAME_SELLER, 1, 2);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_ADDR_seller, 0, 3);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_ADDR_SELLER, 1, 3);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_CONTACT_seller, 0, 4);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_CONTACT_SELLER, 1, 4);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_PHONE_seller, 2, 4);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_PHONE_SELLER, 3, 4);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_ZIPCODE_seller, 0, 5);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_ZIPCODE_SELLER, 1, 5);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_FAX_seller, 2, 5);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_FAX_SELLER, 3, 5);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_EMAIL_seller, 0, 6);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_EMAIL_SELLER, 1, 6);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.label_COMMENT_seller, 0, 7);
+            this.tableLayoutPanel_SELLER.Controls.Add(this.textBox_COMMENT_SELLER, 1, 7);
+            this.tableLayoutPanel_SELLER.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tableLayoutPanel_SELLER.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel_SELLER.Name = "tableLayoutPanel_SELLER";
+            this.tableLayoutPanel_SELLER.RowCount = 10;
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_SELLER.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_SELLER.Size = new System.Drawing.Size(434, 300);
+            this.tableLayoutPanel_SELLER.TabIndex = 0;
+            // 
+            // label_Seller_select
+            // 
+            this.label_Seller_select.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_Seller_select.AutoSize = true;
+            this.label_Seller_select.Location = new System.Drawing.Point(20, 6);
+            this.label_Seller_select.Name = "label_Seller_select";
+            this.label_Seller_select.Size = new System.Drawing.Size(68, 17);
+            this.label_Seller_select.TabIndex = 17;
+            this.label_Seller_select.Text = "选择报价方";
+            // 
+            // button_Add_Seller
+            // 
+            this.button_Add_Seller.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_Add_Seller.Location = new System.Drawing.Point(221, 3);
+            this.button_Add_Seller.Name = "button_Add_Seller";
+            this.tableLayoutPanel_SELLER.SetRowSpan(this.button_Add_Seller, 2);
+            this.button_Add_Seller.Size = new System.Drawing.Size(97, 28);
+            this.button_Add_Seller.TabIndex = 18;
+            this.button_Add_Seller.Text = "新增报价方";
+            this.button_Add_Seller.UseVisualStyleBackColor = true;
+            this.button_Add_Seller.Click += new System.EventHandler(this.button_Add_Seller_Click);
+            // 
+            // comboBox_SELLER
+            // 
+            this.comboBox_SELLER.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBox_SELLER.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox_SELLER.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.comboBox_SELLER.FormattingEnabled = true;
+            this.comboBox_SELLER.Location = new System.Drawing.Point(111, 3);
+            this.comboBox_SELLER.Name = "comboBox_SELLER";
+            this.tableLayoutPanel_SELLER.SetRowSpan(this.comboBox_SELLER, 2);
+            this.comboBox_SELLER.Size = new System.Drawing.Size(102, 25);
+            this.comboBox_SELLER.TabIndex = 16;
+            this.comboBox_SELLER.SelectedIndexChanged += new System.EventHandler(this.comboBox_SELLER_SelectedIndexChanged);
+            // 
+            // label_name_seller
+            // 
+            this.label_name_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_name_seller.AutoSize = true;
+            this.label_name_seller.Location = new System.Drawing.Point(38, 64);
+            this.label_name_seller.Name = "label_name_seller";
+            this.label_name_seller.Size = new System.Drawing.Size(32, 17);
+            this.label_name_seller.TabIndex = 1;
+            this.label_name_seller.Text = "名称";
+            // 
+            // textBox_COM_NAME_SELLER
+            // 
+            this.textBox_COM_NAME_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel_SELLER.SetColumnSpan(this.textBox_COM_NAME_SELLER, 2);
+            this.textBox_COM_NAME_SELLER.Location = new System.Drawing.Point(111, 61);
+            this.textBox_COM_NAME_SELLER.Name = "textBox_COM_NAME_SELLER";
+            this.textBox_COM_NAME_SELLER.ReadOnly = true;
+            this.textBox_COM_NAME_SELLER.Size = new System.Drawing.Size(210, 23);
+            this.textBox_COM_NAME_SELLER.TabIndex = 0;
+            // 
+            // label_ADDR_seller
+            // 
+            this.label_ADDR_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_ADDR_seller.AutoSize = true;
+            this.label_ADDR_seller.Location = new System.Drawing.Point(38, 93);
+            this.label_ADDR_seller.Name = "label_ADDR_seller";
+            this.label_ADDR_seller.Size = new System.Drawing.Size(32, 17);
+            this.label_ADDR_seller.TabIndex = 2;
+            this.label_ADDR_seller.Text = "地址";
+            // 
+            // textBox_ADDR_SELLER
+            // 
+            this.textBox_ADDR_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel_SELLER.SetColumnSpan(this.textBox_ADDR_SELLER, 3);
+            this.textBox_ADDR_SELLER.Location = new System.Drawing.Point(112, 90);
+            this.textBox_ADDR_SELLER.Name = "textBox_ADDR_SELLER";
+            this.textBox_ADDR_SELLER.ReadOnly = true;
+            this.textBox_ADDR_SELLER.Size = new System.Drawing.Size(317, 23);
+            this.textBox_ADDR_SELLER.TabIndex = 3;
+            // 
+            // label_CONTACT_seller
+            // 
+            this.label_CONTACT_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_CONTACT_seller.AutoSize = true;
+            this.label_CONTACT_seller.Location = new System.Drawing.Point(32, 122);
+            this.label_CONTACT_seller.Name = "label_CONTACT_seller";
+            this.label_CONTACT_seller.Size = new System.Drawing.Size(44, 17);
+            this.label_CONTACT_seller.TabIndex = 4;
+            this.label_CONTACT_seller.Text = "联系人";
+            // 
+            // textBox_CONTACT_SELLER
+            // 
+            this.textBox_CONTACT_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_CONTACT_SELLER.Location = new System.Drawing.Point(111, 119);
+            this.textBox_CONTACT_SELLER.Name = "textBox_CONTACT_SELLER";
+            this.textBox_CONTACT_SELLER.ReadOnly = true;
+            this.textBox_CONTACT_SELLER.Size = new System.Drawing.Size(102, 23);
+            this.textBox_CONTACT_SELLER.TabIndex = 10;
+            // 
+            // label_PHONE_seller
+            // 
+            this.label_PHONE_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_PHONE_seller.AutoSize = true;
+            this.label_PHONE_seller.Location = new System.Drawing.Point(242, 122);
+            this.label_PHONE_seller.Name = "label_PHONE_seller";
+            this.label_PHONE_seller.Size = new System.Drawing.Size(56, 17);
+            this.label_PHONE_seller.TabIndex = 5;
+            this.label_PHONE_seller.Text = "联系电话";
+            // 
+            // textBox_PHONE_SELLER
+            // 
+            this.textBox_PHONE_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_PHONE_SELLER.Location = new System.Drawing.Point(328, 119);
+            this.textBox_PHONE_SELLER.Name = "textBox_PHONE_SELLER";
+            this.textBox_PHONE_SELLER.ReadOnly = true;
+            this.textBox_PHONE_SELLER.Size = new System.Drawing.Size(102, 23);
+            this.textBox_PHONE_SELLER.TabIndex = 11;
+            // 
+            // label_ZIPCODE_seller
+            // 
+            this.label_ZIPCODE_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_ZIPCODE_seller.AutoSize = true;
+            this.label_ZIPCODE_seller.Location = new System.Drawing.Point(26, 151);
+            this.label_ZIPCODE_seller.Name = "label_ZIPCODE_seller";
+            this.label_ZIPCODE_seller.Size = new System.Drawing.Size(56, 17);
+            this.label_ZIPCODE_seller.TabIndex = 6;
+            this.label_ZIPCODE_seller.Text = "邮政编码";
+            // 
+            // textBox_ZIPCODE_SELLER
+            // 
+            this.textBox_ZIPCODE_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_ZIPCODE_SELLER.Location = new System.Drawing.Point(111, 148);
+            this.textBox_ZIPCODE_SELLER.Name = "textBox_ZIPCODE_SELLER";
+            this.textBox_ZIPCODE_SELLER.ReadOnly = true;
+            this.textBox_ZIPCODE_SELLER.Size = new System.Drawing.Size(102, 23);
+            this.textBox_ZIPCODE_SELLER.TabIndex = 12;
+            // 
+            // label_FAX_seller
+            // 
+            this.label_FAX_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FAX_seller.AutoSize = true;
+            this.label_FAX_seller.Location = new System.Drawing.Point(254, 151);
+            this.label_FAX_seller.Name = "label_FAX_seller";
+            this.label_FAX_seller.Size = new System.Drawing.Size(32, 17);
+            this.label_FAX_seller.TabIndex = 7;
+            this.label_FAX_seller.Text = "传真";
+            // 
+            // textBox_FAX_SELLER
+            // 
+            this.textBox_FAX_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_FAX_SELLER.Location = new System.Drawing.Point(328, 148);
+            this.textBox_FAX_SELLER.Name = "textBox_FAX_SELLER";
+            this.textBox_FAX_SELLER.ReadOnly = true;
+            this.textBox_FAX_SELLER.Size = new System.Drawing.Size(102, 23);
+            this.textBox_FAX_SELLER.TabIndex = 13;
+            // 
+            // label_EMAIL_seller
+            // 
+            this.label_EMAIL_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_EMAIL_seller.AutoSize = true;
+            this.label_EMAIL_seller.Location = new System.Drawing.Point(26, 180);
+            this.label_EMAIL_seller.Name = "label_EMAIL_seller";
+            this.label_EMAIL_seller.Size = new System.Drawing.Size(56, 17);
+            this.label_EMAIL_seller.TabIndex = 8;
+            this.label_EMAIL_seller.Text = "电子邮箱";
+            // 
+            // textBox_EMAIL_SELLER
+            // 
+            this.textBox_EMAIL_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel_SELLER.SetColumnSpan(this.textBox_EMAIL_SELLER, 2);
+            this.textBox_EMAIL_SELLER.Location = new System.Drawing.Point(111, 177);
+            this.textBox_EMAIL_SELLER.Name = "textBox_EMAIL_SELLER";
+            this.textBox_EMAIL_SELLER.ReadOnly = true;
+            this.textBox_EMAIL_SELLER.Size = new System.Drawing.Size(210, 23);
+            this.textBox_EMAIL_SELLER.TabIndex = 14;
+            // 
+            // label_COMMENT_seller
+            // 
+            this.label_COMMENT_seller.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_COMMENT_seller.AutoSize = true;
+            this.label_COMMENT_seller.Location = new System.Drawing.Point(38, 209);
+            this.label_COMMENT_seller.Name = "label_COMMENT_seller";
+            this.label_COMMENT_seller.Size = new System.Drawing.Size(32, 17);
+            this.label_COMMENT_seller.TabIndex = 9;
+            this.label_COMMENT_seller.Text = "备注";
+            // 
+            // textBox_COMMENT_SELLER
+            // 
+            this.textBox_COMMENT_SELLER.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel_SELLER.SetColumnSpan(this.textBox_COMMENT_SELLER, 3);
+            this.textBox_COMMENT_SELLER.Location = new System.Drawing.Point(111, 210);
+            this.textBox_COMMENT_SELLER.Multiline = true;
+            this.textBox_COMMENT_SELLER.Name = "textBox_COMMENT_SELLER";
+            this.textBox_COMMENT_SELLER.ReadOnly = true;
+            this.tableLayoutPanel_SELLER.SetRowSpan(this.textBox_COMMENT_SELLER, 3);
+            this.textBox_COMMENT_SELLER.Size = new System.Drawing.Size(320, 83);
+            this.textBox_COMMENT_SELLER.TabIndex = 15;
+            // 
             // tabPage_HW
             // 
             this.tabPage_HW.Controls.Add(this.button_Add_HW);
@@ -781,6 +781,7 @@
             // 
             // comboBox_OFFERSHEET_TYPE
             // 
+            this.comboBox_OFFERSHEET_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OFFERSHEET_TYPE.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.comboBox_OFFERSHEET_TYPE.FormattingEnabled = true;
             this.comboBox_OFFERSHEET_TYPE.Location = new System.Drawing.Point(110, 36);
@@ -848,12 +849,12 @@
             this.Name = "FormOSM_Offers_Add";
             this.Text = "新增报价单";
             this.tabControl_Offers_add.ResumeLayout(false);
-            this.tabPage_SELLER.ResumeLayout(false);
-            this.tableLayoutPanel_SELLER.ResumeLayout(false);
-            this.tableLayoutPanel_SELLER.PerformLayout();
             this.tabPage_BUYER.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tabPage_SELLER.ResumeLayout(false);
+            this.tableLayoutPanel_SELLER.ResumeLayout(false);
+            this.tableLayoutPanel_SELLER.PerformLayout();
             this.tabPage_HW.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_HW)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

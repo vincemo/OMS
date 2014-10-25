@@ -73,7 +73,7 @@ namespace OSM
         /// <param name="e"></param>
         private void button_pass_Click(object sender, EventArgs e)
         {
-            string sql = "update OSM_OFFER_SHEET set OFFERSHEET_STATE = '3' where ID = " + offerSheetID;
+            string sql = "update OSM_OFFER_SHEET set OFFERSHEET_STATE = '2' where ID = " + offerSheetID;
 
             AccessDB adb = new AccessDB();
             if (adb.SQLExecute(sql))
@@ -84,7 +84,7 @@ namespace OSM
                 double require_payment = double.Parse(dr[0].ToString());
 
                 //生成订单存入数据库
-                string insertSQL = "insert into OSM_ORDER_SHEET(OFFERSHEET_ID,ORDER_STATE,REQUIRE_PAYMENT) values ('" + offerSheetID + "','1'," + require_payment + ")";
+                string insertSQL = "insert into OSM_ORDER_SHEET(OFFERSHEET_ID,ORDER_STATE,REQUIRE_PAYMENT,ORDER_DATE,PAY_STATE) values ('" + offerSheetID + "','1'," + require_payment + ",#" + DateTime.Now.ToString("yyyy-MM-dd") + "#,'1')";
                 if (adb.SQLExecute(insertSQL))
                 {
                     MessageBox.Show("已将审核通过的报价单生成订单","消息");
@@ -102,7 +102,7 @@ namespace OSM
         /// <param name="e"></param>
         private void button_unpass_Click(object sender, EventArgs e)
         {
-            string sql = "update OSM_OFFER_SHEET set OFFERSHEET_STATE = '4' where ID = " + offerSheetID;
+            string sql = "update OSM_OFFER_SHEET set OFFERSHEET_STATE = '3' where ID = " + offerSheetID;
 
             AccessDB adb = new AccessDB();
             if (adb.SQLExecute(sql))

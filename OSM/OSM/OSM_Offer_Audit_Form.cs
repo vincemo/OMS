@@ -23,17 +23,10 @@ namespace OSM
         {
             InitializeComponent();
 
-            Dictionary<string, string> typeDict = new Dictionary<string, string>();
-            typeDict.Add("1", "类型1");
-            typeDict.Add("2", "类型2");
-            typeDict.Add("3", "类型3");
-            typeDict.Add("4", "类型4");
+            dateTimePicker_OfferSheet_Audit.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
-            BindingSource bs = new BindingSource();
-            bs.DataSource = typeDict;
-            comboBox_OfferSheet_Audit.DataSource = bs;
-            comboBox_OfferSheet_Audit.ValueMember = "Key";
-            comboBox_OfferSheet_Audit.DisplayMember = "Value";
+            string  whereString = "where PID = 10";
+            SJZDController.setZD_ComboBox(whereString, comboBox_OfferSheet_Audit);
 
             refreshOfferSheetList(dataGridView_OfferSheet_Audit, "where OFFERSHEET_STATE = '1'");
         }
