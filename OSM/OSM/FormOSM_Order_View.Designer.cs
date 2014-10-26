@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOSM_Order_View));
             this.groupBox_OrderInfo = new System.Windows.Forms.GroupBox();
-            this.groupBox_HW = new System.Windows.Forms.GroupBox();
-            this.dataGridView_HW = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_OfferSheetCode = new System.Windows.Forms.Label();
             this.textBox_OfferSheetCode = new System.Windows.Forms.TextBox();
@@ -44,11 +42,13 @@
             this.label_PayState = new System.Windows.Forms.Label();
             this.comboBox_PayState = new System.Windows.Forms.ComboBox();
             this.label_AlreadyPay = new System.Windows.Forms.Label();
-            this.label_RequirePayment = new System.Windows.Forms.Label();
             this.textBox_AlreadyPayment = new System.Windows.Forms.TextBox();
-            this.textBox_RequirePayment = new System.Windows.Forms.TextBox();
             this.label_PrePayment = new System.Windows.Forms.Label();
             this.textBox_PrePayment = new System.Windows.Forms.TextBox();
+            this.label_RequirePayment = new System.Windows.Forms.Label();
+            this.textBox_RequirePayment = new System.Windows.Forms.TextBox();
+            this.groupBox_HW = new System.Windows.Forms.GroupBox();
+            this.dataGridView_HW = new System.Windows.Forms.DataGridView();
             this.button_OK = new System.Windows.Forms.Button();
             this.button_CANCEL = new System.Windows.Forms.Button();
             this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,10 +56,11 @@
             this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_TOTALPRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox_OrderInfo.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.groupBox_HW.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_HW)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox_OrderInfo
@@ -71,32 +72,6 @@
             this.groupBox_OrderInfo.TabIndex = 0;
             this.groupBox_OrderInfo.TabStop = false;
             this.groupBox_OrderInfo.Text = "订单信息";
-            // 
-            // groupBox_HW
-            // 
-            this.groupBox_HW.Controls.Add(this.dataGridView_HW);
-            this.groupBox_HW.Location = new System.Drawing.Point(13, 216);
-            this.groupBox_HW.Name = "groupBox_HW";
-            this.groupBox_HW.Size = new System.Drawing.Size(464, 182);
-            this.groupBox_HW.TabIndex = 1;
-            this.groupBox_HW.TabStop = false;
-            this.groupBox_HW.Text = "订单货物记录";
-            // 
-            // dataGridView_HW
-            // 
-            this.dataGridView_HW.AllowUserToAddRows = false;
-            this.dataGridView_HW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_HW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.HW_NAME,
-            this.HW_TYPE,
-            this.HW_CODE,
-            this.HW_NUMBER,
-            this.HW_PRICE});
-            this.dataGridView_HW.Location = new System.Drawing.Point(7, 23);
-            this.dataGridView_HW.Name = "dataGridView_HW";
-            this.dataGridView_HW.RowTemplate.Height = 23;
-            this.dataGridView_HW.Size = new System.Drawing.Size(451, 150);
-            this.dataGridView_HW.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -166,7 +141,7 @@
             this.comboBox_OrderState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_OrderState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OrderState.FormattingEnabled = true;
-            this.comboBox_OrderState.Location = new System.Drawing.Point(115, 36);
+            this.comboBox_OrderState.Location = new System.Drawing.Point(115, 34);
             this.comboBox_OrderState.Name = "comboBox_OrderState";
             this.comboBox_OrderState.Size = new System.Drawing.Size(106, 25);
             this.comboBox_OrderState.TabIndex = 3;
@@ -186,7 +161,7 @@
             this.dateTimePicker_OrderDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dateTimePicker_OrderDate.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_OrderDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_OrderDate.Location = new System.Drawing.Point(339, 36);
+            this.dateTimePicker_OrderDate.Location = new System.Drawing.Point(339, 35);
             this.dateTimePicker_OrderDate.Name = "dateTimePicker_OrderDate";
             this.dateTimePicker_OrderDate.Size = new System.Drawing.Size(109, 23);
             this.dateTimePicker_OrderDate.TabIndex = 5;
@@ -206,7 +181,7 @@
             this.comboBox_PayMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PayMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PayMode.FormattingEnabled = true;
-            this.comboBox_PayMode.Location = new System.Drawing.Point(115, 65);
+            this.comboBox_PayMode.Location = new System.Drawing.Point(115, 67);
             this.comboBox_PayMode.Name = "comboBox_PayMode";
             this.comboBox_PayMode.Size = new System.Drawing.Size(106, 25);
             this.comboBox_PayMode.TabIndex = 7;
@@ -227,7 +202,7 @@
             this.comboBox_PayState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PayState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PayState.FormattingEnabled = true;
-            this.comboBox_PayState.Location = new System.Drawing.Point(340, 65);
+            this.comboBox_PayState.Location = new System.Drawing.Point(340, 67);
             this.comboBox_PayState.Name = "comboBox_PayState";
             this.comboBox_PayState.Size = new System.Drawing.Size(106, 25);
             this.comboBox_PayState.TabIndex = 9;
@@ -242,16 +217,6 @@
             this.label_AlreadyPay.TabIndex = 10;
             this.label_AlreadyPay.Text = "已付款";
             // 
-            // label_RequirePayment
-            // 
-            this.label_RequirePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_RequirePayment.AutoSize = true;
-            this.label_RequirePayment.Location = new System.Drawing.Point(34, 132);
-            this.label_RequirePayment.Name = "label_RequirePayment";
-            this.label_RequirePayment.Size = new System.Drawing.Size(44, 17);
-            this.label_RequirePayment.TabIndex = 11;
-            this.label_RequirePayment.Text = "应付款";
-            // 
             // textBox_AlreadyPayment
             // 
             this.textBox_AlreadyPayment.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -259,14 +224,6 @@
             this.textBox_AlreadyPayment.Name = "textBox_AlreadyPayment";
             this.textBox_AlreadyPayment.Size = new System.Drawing.Size(100, 23);
             this.textBox_AlreadyPayment.TabIndex = 12;
-            // 
-            // textBox_RequirePayment
-            // 
-            this.textBox_RequirePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_RequirePayment.Location = new System.Drawing.Point(118, 129);
-            this.textBox_RequirePayment.Name = "textBox_RequirePayment";
-            this.textBox_RequirePayment.Size = new System.Drawing.Size(100, 23);
-            this.textBox_RequirePayment.TabIndex = 13;
             // 
             // label_PrePayment
             // 
@@ -286,6 +243,51 @@
             this.textBox_PrePayment.Size = new System.Drawing.Size(100, 23);
             this.textBox_PrePayment.TabIndex = 15;
             // 
+            // label_RequirePayment
+            // 
+            this.label_RequirePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_RequirePayment.AutoSize = true;
+            this.label_RequirePayment.Location = new System.Drawing.Point(34, 132);
+            this.label_RequirePayment.Name = "label_RequirePayment";
+            this.label_RequirePayment.Size = new System.Drawing.Size(44, 17);
+            this.label_RequirePayment.TabIndex = 11;
+            this.label_RequirePayment.Text = "应付款";
+            // 
+            // textBox_RequirePayment
+            // 
+            this.textBox_RequirePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_RequirePayment.Location = new System.Drawing.Point(118, 129);
+            this.textBox_RequirePayment.Name = "textBox_RequirePayment";
+            this.textBox_RequirePayment.Size = new System.Drawing.Size(100, 23);
+            this.textBox_RequirePayment.TabIndex = 13;
+            // 
+            // groupBox_HW
+            // 
+            this.groupBox_HW.Controls.Add(this.dataGridView_HW);
+            this.groupBox_HW.Location = new System.Drawing.Point(13, 216);
+            this.groupBox_HW.Name = "groupBox_HW";
+            this.groupBox_HW.Size = new System.Drawing.Size(464, 182);
+            this.groupBox_HW.TabIndex = 1;
+            this.groupBox_HW.TabStop = false;
+            this.groupBox_HW.Text = "订单货物记录";
+            // 
+            // dataGridView_HW
+            // 
+            this.dataGridView_HW.AllowUserToAddRows = false;
+            this.dataGridView_HW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_HW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.HW_NAME,
+            this.HW_TYPE,
+            this.HW_CODE,
+            this.HW_NUMBER,
+            this.HW_PRICE,
+            this.HW_TOTALPRICE});
+            this.dataGridView_HW.Location = new System.Drawing.Point(7, 23);
+            this.dataGridView_HW.Name = "dataGridView_HW";
+            this.dataGridView_HW.RowTemplate.Height = 23;
+            this.dataGridView_HW.Size = new System.Drawing.Size(451, 150);
+            this.dataGridView_HW.TabIndex = 0;
+            // 
             // button_OK
             // 
             this.button_OK.Location = new System.Drawing.Point(281, 404);
@@ -302,7 +304,7 @@
             this.button_CANCEL.Name = "button_CANCEL";
             this.button_CANCEL.Size = new System.Drawing.Size(75, 23);
             this.button_CANCEL.TabIndex = 3;
-            this.button_CANCEL.Text = "关闭";
+            this.button_CANCEL.Text = "取消";
             this.button_CANCEL.UseVisualStyleBackColor = true;
             this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
@@ -336,6 +338,12 @@
             this.HW_PRICE.HeaderText = "单价";
             this.HW_PRICE.Name = "HW_PRICE";
             // 
+            // HW_TOTALPRICE
+            // 
+            this.HW_TOTALPRICE.DataPropertyName = "HW_TOTALPRICE";
+            this.HW_TOTALPRICE.HeaderText = "总价";
+            this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
+            // 
             // FormOSM_Order_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -353,10 +361,10 @@
             this.Name = "FormOSM_Order_View";
             this.Text = "订单查看";
             this.groupBox_OrderInfo.ResumeLayout(false);
-            this.groupBox_HW.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_HW)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.groupBox_HW.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_HW)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -390,5 +398,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_CODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_NUMBER;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_PRICE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HW_TOTALPRICE;
     }
 }

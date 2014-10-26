@@ -17,6 +17,7 @@ namespace OSM
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormOSM_Login());
             FormOSM_Login Log = new FormOSM_Login();
+            Log.StartPosition = FormStartPosition.CenterScreen;
             Log.ShowDialog();
             
             if (Log.DialogResult == DialogResult.OK)

@@ -1,6 +1,6 @@
 ﻿namespace OSM
 {
-    partial class OSM_Orders_Form
+    partial class OSM_Order_Delivery_Form
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox__Order = new System.Windows.Forms.GroupBox();
+            this.groupBox_Order_Delivery = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_Date = new System.Windows.Forms.Label();
             this.comboBox_OrderState = new System.Windows.Forms.ComboBox();
@@ -40,6 +40,7 @@
             this.label_PayState = new System.Windows.Forms.Label();
             this.comboBox_PayState = new System.Windows.Forms.ComboBox();
             this.dataGridView_Order = new System.Windows.Forms.DataGridView();
+            this.OSM_Pager_Order = new OSM.OSM_Pager();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OFFERSHEET_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDER_STATE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,24 +48,23 @@
             this.PAY_STATE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.REQUIRE_PAYMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewOrderBtn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.viewOfferBtn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.OSM_Pager_Order = new OSM.OSM_Pager();
-            this.groupBox__Order.SuspendLayout();
+            this.auditBtn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.groupBox_Order_Delivery.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Order)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox__Order
+            // groupBox_Order_Delivery
             // 
-            this.groupBox__Order.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox__Order.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox__Order.Location = new System.Drawing.Point(3, 3);
-            this.groupBox__Order.Name = "groupBox__Order";
-            this.groupBox__Order.Size = new System.Drawing.Size(262, 493);
-            this.groupBox__Order.TabIndex = 2;
-            this.groupBox__Order.TabStop = false;
-            this.groupBox__Order.Text = "订单查询条件";
+            this.groupBox_Order_Delivery.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox_Order_Delivery.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox_Order_Delivery.Location = new System.Drawing.Point(3, 3);
+            this.groupBox_Order_Delivery.Name = "groupBox_Order_Delivery";
+            this.groupBox_Order_Delivery.Size = new System.Drawing.Size(262, 493);
+            this.groupBox_Order_Delivery.TabIndex = 3;
+            this.groupBox_Order_Delivery.TabStop = false;
+            this.groupBox_Order_Delivery.Text = "订单查询条件";
             // 
             // tableLayoutPanel1
             // 
@@ -191,6 +191,7 @@
             // dataGridView_Order
             // 
             this.dataGridView_Order.AllowUserToAddRows = false;
+            this.dataGridView_Order.AllowUserToDeleteRows = false;
             this.dataGridView_Order.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_Order.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView_Order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -202,19 +203,28 @@
             this.PAY_STATE_DESC,
             this.REQUIRE_PAYMENT,
             this.viewOrderBtn,
-            this.viewOfferBtn});
-            this.dataGridView_Order.Location = new System.Drawing.Point(271, 0);
+            this.auditBtn});
+            this.dataGridView_Order.Location = new System.Drawing.Point(271, 25);
             this.dataGridView_Order.Name = "dataGridView_Order";
+            this.dataGridView_Order.ReadOnly = true;
             this.dataGridView_Order.RowTemplate.Height = 23;
-            this.dataGridView_Order.Size = new System.Drawing.Size(750, 465);
-            this.dataGridView_Order.TabIndex = 3;
+            this.dataGridView_Order.Size = new System.Drawing.Size(750, 443);
+            this.dataGridView_Order.TabIndex = 4;
             this.dataGridView_Order.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Order_CellContentClick);
+            // 
+            // OSM_Pager_Order
+            // 
+            this.OSM_Pager_Order.Location = new System.Drawing.Point(271, 474);
+            this.OSM_Pager_Order.Name = "OSM_Pager_Order";
+            this.OSM_Pager_Order.Size = new System.Drawing.Size(750, 30);
+            this.OSM_Pager_Order.TabIndex = 5;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
             // OFFERSHEET_CODE
@@ -222,6 +232,7 @@
             this.OFFERSHEET_CODE.DataPropertyName = "OFFERSHEET_CODE";
             this.OFFERSHEET_CODE.HeaderText = "报价单编号";
             this.OFFERSHEET_CODE.Name = "OFFERSHEET_CODE";
+            this.OFFERSHEET_CODE.ReadOnly = true;
             this.OFFERSHEET_CODE.Width = 140;
             // 
             // ORDER_STATE_DESC
@@ -229,6 +240,7 @@
             this.ORDER_STATE_DESC.DataPropertyName = "ORDER_STATE_DESC";
             this.ORDER_STATE_DESC.HeaderText = "订单状态";
             this.ORDER_STATE_DESC.Name = "ORDER_STATE_DESC";
+            this.ORDER_STATE_DESC.ReadOnly = true;
             this.ORDER_STATE_DESC.Width = 80;
             // 
             // ORDER_DATE
@@ -236,6 +248,7 @@
             this.ORDER_DATE.DataPropertyName = "ORDER_DATE";
             this.ORDER_DATE.HeaderText = "订单日期";
             this.ORDER_DATE.Name = "ORDER_DATE";
+            this.ORDER_DATE.ReadOnly = true;
             this.ORDER_DATE.Width = 80;
             // 
             // PAY_STATE_DESC
@@ -243,45 +256,43 @@
             this.PAY_STATE_DESC.DataPropertyName = "PAY_STATE_DESC";
             this.PAY_STATE_DESC.HeaderText = "付款状态";
             this.PAY_STATE_DESC.Name = "PAY_STATE_DESC";
+            this.PAY_STATE_DESC.ReadOnly = true;
             // 
             // REQUIRE_PAYMENT
             // 
             this.REQUIRE_PAYMENT.DataPropertyName = "REQUIRE_PAYMENT";
             this.REQUIRE_PAYMENT.HeaderText = "总价";
             this.REQUIRE_PAYMENT.Name = "REQUIRE_PAYMENT";
+            this.REQUIRE_PAYMENT.ReadOnly = true;
             // 
             // viewOrderBtn
             // 
             this.viewOrderBtn.HeaderText = "";
             this.viewOrderBtn.Name = "viewOrderBtn";
+            this.viewOrderBtn.ReadOnly = true;
             this.viewOrderBtn.Text = "查看订单";
             this.viewOrderBtn.UseColumnTextForLinkValue = true;
             this.viewOrderBtn.Width = 70;
             // 
-            // viewOfferBtn
+            // auditBtn
             // 
-            this.viewOfferBtn.HeaderText = "";
-            this.viewOfferBtn.Name = "viewOfferBtn";
-            this.viewOfferBtn.Text = "对应报价单";
-            this.viewOfferBtn.UseColumnTextForLinkValue = true;
+            this.auditBtn.HeaderText = "";
+            this.auditBtn.Name = "auditBtn";
+            this.auditBtn.ReadOnly = true;
+            this.auditBtn.Text = "发货审核";
+            this.auditBtn.UseColumnTextForLinkValue = true;
+            this.auditBtn.Width = 60;
             // 
-            // OSM_Pager_Order
-            // 
-            this.OSM_Pager_Order.Location = new System.Drawing.Point(271, 471);
-            this.OSM_Pager_Order.Name = "OSM_Pager_Order";
-            this.OSM_Pager_Order.Size = new System.Drawing.Size(750, 30);
-            this.OSM_Pager_Order.TabIndex = 4;
-            // 
-            // OSM_Orders_Form
+            // OSM_Order_Delivery_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.OSM_Pager_Order);
             this.Controls.Add(this.dataGridView_Order);
-            this.Controls.Add(this.groupBox__Order);
-            this.Name = "OSM_Orders_Form";
+            this.Controls.Add(this.groupBox_Order_Delivery);
+            this.Name = "OSM_Order_Delivery_Form";
             this.Size = new System.Drawing.Size(1024, 510);
-            this.groupBox__Order.ResumeLayout(false);
+            this.groupBox_Order_Delivery.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -292,7 +303,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox__Order;
+        private System.Windows.Forms.GroupBox groupBox_Order_Delivery;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label_Date;
         private System.Windows.Forms.ComboBox comboBox_OrderState;
@@ -301,6 +312,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button button_Query;
         private System.Windows.Forms.Button button_Reset;
+        private System.Windows.Forms.Label label_PayState;
+        private System.Windows.Forms.ComboBox comboBox_PayState;
         private System.Windows.Forms.DataGridView dataGridView_Order;
         private OSM_Pager OSM_Pager_Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
@@ -310,8 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PAY_STATE_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn REQUIRE_PAYMENT;
         private System.Windows.Forms.DataGridViewLinkColumn viewOrderBtn;
-        private System.Windows.Forms.DataGridViewLinkColumn viewOfferBtn;
-        private System.Windows.Forms.Label label_PayState;
-        private System.Windows.Forms.ComboBox comboBox_PayState;
+        private System.Windows.Forms.DataGridViewLinkColumn auditBtn;
     }
 }

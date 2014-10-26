@@ -149,6 +149,12 @@
     <Compile Include="OSM_Orders_Form.Designer.cs">
       <DependentUpon>OSM_Orders_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSM_Order_Delivery_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_Order_Delivery_Form.Designer.cs">
+      <DependentUpon>OSM_Order_Delivery_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSM_Pager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Orders_Form.resx">
       <DependentUpon>OSM_Orders_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_Order_Delivery_Form.resx">
+      <DependentUpon>OSM_Order_Delivery_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Pager.resx">
       <DependentUpon>OSM_Pager.cs</DependentUpon>

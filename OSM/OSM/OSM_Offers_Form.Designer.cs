@@ -72,7 +72,7 @@
             this.viewBtn,
             this.editBtn,
             this.delBtn});
-            this.dataGridView_OfferSheet.Location = new System.Drawing.Point(266, 0);
+            this.dataGridView_OfferSheet.Location = new System.Drawing.Point(271, 3);
             this.dataGridView_OfferSheet.Name = "dataGridView_OfferSheet";
             this.dataGridView_OfferSheet.RowTemplate.Height = 23;
             this.dataGridView_OfferSheet.Size = new System.Drawing.Size(750, 465);
@@ -169,7 +169,7 @@
             // 
             this.groupBox__OfferSheet.Controls.Add(this.tableLayoutPanel1);
             this.groupBox__OfferSheet.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox__OfferSheet.Location = new System.Drawing.Point(4, 4);
+            this.groupBox__OfferSheet.Location = new System.Drawing.Point(3, 3);
             this.groupBox__OfferSheet.Name = "groupBox__OfferSheet";
             this.groupBox__OfferSheet.Size = new System.Drawing.Size(262, 493);
             this.groupBox__OfferSheet.TabIndex = 1;
@@ -277,7 +277,7 @@
             // 
             // OSM_Pager_offerSheet
             // 
-            this.OSM_Pager_offerSheet.Location = new System.Drawing.Point(266, 467);
+            this.OSM_Pager_offerSheet.Location = new System.Drawing.Point(271, 474);
             this.OSM_Pager_offerSheet.Name = "OSM_Pager_offerSheet";
             this.OSM_Pager_offerSheet.Size = new System.Drawing.Size(750, 30);
             this.OSM_Pager_offerSheet.TabIndex = 2;

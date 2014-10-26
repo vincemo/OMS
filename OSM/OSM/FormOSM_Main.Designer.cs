@@ -107,21 +107,21 @@
             // TSMItem_offer_add
             // 
             this.TSMItem_offer_add.Name = "TSMItem_offer_add";
-            this.TSMItem_offer_add.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_offer_add.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_offer_add.Text = "新增报价单";
             this.TSMItem_offer_add.Click += new System.EventHandler(this.TSMItem_offer_add_Click);
             // 
             // TSMItem_offer_query
             // 
             this.TSMItem_offer_query.Name = "TSMItem_offer_query";
-            this.TSMItem_offer_query.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_offer_query.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_offer_query.Text = "报价单查询";
             this.TSMItem_offer_query.Click += new System.EventHandler(this.TSMItem_offer_query_Click);
             // 
             // TSMItem_offer_aduit
             // 
             this.TSMItem_offer_aduit.Name = "TSMItem_offer_aduit";
-            this.TSMItem_offer_aduit.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_offer_aduit.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_offer_aduit.Text = "报价单审核";
             this.TSMItem_offer_aduit.Click += new System.EventHandler(this.TSMItem_offer_aduit_Click);
             // 
@@ -145,7 +145,7 @@
             // 
             this.TSMItem_order_delivery.Name = "TSMItem_order_delivery";
             this.TSMItem_order_delivery.Size = new System.Drawing.Size(152, 22);
-            this.TSMItem_order_delivery.Text = "订单发货";
+            this.TSMItem_order_delivery.Text = "订单发货审核";
             this.TSMItem_order_delivery.Click += new System.EventHandler(this.TSMItem_order_delivery_Click);
             // 
             // TSMItem_Purchase
@@ -160,13 +160,13 @@
             // TSMItem_purchase_query
             // 
             this.TSMItem_purchase_query.Name = "TSMItem_purchase_query";
-            this.TSMItem_purchase_query.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_purchase_query.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_purchase_query.Text = "采购单查询";
             // 
             // TSMItem_purchase_arrive
             // 
             this.TSMItem_purchase_arrive.Name = "TSMItem_purchase_arrive";
-            this.TSMItem_purchase_arrive.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_purchase_arrive.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_purchase_arrive.Text = "采购到货";
             // 
             // TSMItem_Deliver
@@ -181,13 +181,13 @@
             // TSMItem_deliver_query
             // 
             this.TSMItem_deliver_query.Name = "TSMItem_deliver_query";
-            this.TSMItem_deliver_query.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_deliver_query.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_deliver_query.Text = "发货单查询";
             // 
             // TSMItem_deliver_pay
             // 
             this.TSMItem_deliver_pay.Name = "TSMItem_deliver_pay";
-            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_deliver_pay.Text = "发货收款";
             // 
             // TSMItem_Options
@@ -225,7 +225,7 @@
             // 
             this.panel_Main.Location = new System.Drawing.Point(12, 28);
             this.panel_Main.Name = "panel_Main";
-            this.panel_Main.Size = new System.Drawing.Size(1024, 500);
+            this.panel_Main.Size = new System.Drawing.Size(1034, 519);
             this.panel_Main.TabIndex = 4;
             // 
             // FormOSM_Main

@@ -158,13 +158,17 @@ namespace OSM
         }
 
         /// <summary>
-        /// 新增订单点击事件
+        /// 订单发货点击事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void TSMItem_order_delivery_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("订单发货");
+            //MessageBox.Show("订单发货审核");
+            panel_Main.Controls.Clear();
+            OSM_Order_Delivery_Form orderAuditForm = new OSM_Order_Delivery_Form();
+            orderAuditForm.setMainForm(this);
+            panel_Main.Controls.Add(orderAuditForm);
         }
     }
 }

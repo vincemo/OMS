@@ -25,8 +25,11 @@ namespace OSM
 
             dateTimePicker_OrderDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
-            string whereString = "where PID = 2 ";
+            string whereString = "where PID = 2 order by ID";
             SJZDController.setZD_ComboBox(whereString, comboBox_OrderState);
+
+            whereString = "where PID = 24 order by ID";
+            SJZDController.setZD_ComboBox(whereString, comboBox_PayState);
 
             //查询订单视图返回结果
             queryFromOrderSheetV(dataGridView_Order);
@@ -67,6 +70,7 @@ namespace OSM
         private void button_Reset_Click(object sender, EventArgs e)
         {
             comboBox_OrderState.SelectedIndex = -1;
+            comboBox_PayState.SelectedIndex = -1;
             dateTimePicker_OrderDate.CustomFormat = " ";
         }
 
@@ -98,6 +102,12 @@ namespace OSM
             {
                 KeyValuePair<string,string> kv = (KeyValuePair<string,string>)comboBox_OrderState.SelectedItem;
                 whereString += " and ORDER_STATE = '" + kv.Key + "'";
+            }
+
+            if (comboBox_PayState.SelectedIndex != -1)
+            {
+                KeyValuePair<string,string> kv = (KeyValuePair<string,string>)comboBox_PayState.SelectedItem;
+                whereString += " and PAY_STATE = '" + kv.Key + "' ";
             }
 
             queryFromOrderSheetV(dataGridView_Order, whereString);
@@ -162,6 +172,7 @@ namespace OSM
             //设置窗口状态为查看
             orderView.setViewState(0);
             orderView.viewOrderSheet(hashtable);
+            orderView.StartPosition = FormStartPosition.CenterParent;
             orderView.ShowDialog();
         }
 
@@ -194,6 +205,7 @@ namespace OSM
             form_add_offers.dataGridView_viewBtn_click_reaction(hashtable);
             form_add_offers.setMainForm(main_form);
             form_add_offers.setViewState(1);
+            form_add_offers.StartPosition = FormStartPosition.CenterParent;
             form_add_offers.ShowDialog();
         }
     }

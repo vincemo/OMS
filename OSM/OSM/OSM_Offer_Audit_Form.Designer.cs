@@ -58,7 +58,7 @@
             // 
             this.groupBox__OfferSheet.Controls.Add(this.tableLayoutPanel1);
             this.groupBox__OfferSheet.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox__OfferSheet.Location = new System.Drawing.Point(3, 0);
+            this.groupBox__OfferSheet.Location = new System.Drawing.Point(6, 3);
             this.groupBox__OfferSheet.Name = "groupBox__OfferSheet";
             this.groupBox__OfferSheet.Size = new System.Drawing.Size(262, 493);
             this.groupBox__OfferSheet.TabIndex = 2;
@@ -99,7 +99,7 @@
             this.comboBox_OfferSheet_Audit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_OfferSheet_Audit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OfferSheet_Audit.FormattingEnabled = true;
-            this.comboBox_OfferSheet_Audit.Location = new System.Drawing.Point(85, 53);
+            this.comboBox_OfferSheet_Audit.Location = new System.Drawing.Point(85, 50);
             this.comboBox_OfferSheet_Audit.Name = "comboBox_OfferSheet_Audit";
             this.comboBox_OfferSheet_Audit.Size = new System.Drawing.Size(152, 25);
             this.comboBox_OfferSheet_Audit.TabIndex = 3;
@@ -180,7 +180,7 @@
             this.OFFERSHEET_STATE_DESC,
             this.viewBtn,
             this.auditBtn});
-            this.dataGridView_OfferSheet_Audit.Location = new System.Drawing.Point(274, 0);
+            this.dataGridView_OfferSheet_Audit.Location = new System.Drawing.Point(274, 3);
             this.dataGridView_OfferSheet_Audit.Name = "dataGridView_OfferSheet_Audit";
             this.dataGridView_OfferSheet_Audit.RowTemplate.Height = 23;
             this.dataGridView_OfferSheet_Audit.Size = new System.Drawing.Size(750, 465);
@@ -255,7 +255,7 @@
             // 
             // OSM_Pager_OfferSheet_Audit
             // 
-            this.OSM_Pager_OfferSheet_Audit.Location = new System.Drawing.Point(274, 466);
+            this.OSM_Pager_OfferSheet_Audit.Location = new System.Drawing.Point(274, 474);
             this.OSM_Pager_OfferSheet_Audit.Name = "OSM_Pager_OfferSheet_Audit";
             this.OSM_Pager_OfferSheet_Audit.Size = new System.Drawing.Size(750, 30);
             this.OSM_Pager_OfferSheet_Audit.TabIndex = 4;
