@@ -170,5 +170,13 @@ namespace OSM
             orderAuditForm.setMainForm(this);
             panel_Main.Controls.Add(orderAuditForm);
         }
+
+        private void TSMItem_purchase_query_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            OSM_Purchase_Form purchaseForm = new OSM_Purchase_Form();
+            purchaseForm.setMainForm(this);
+            panel_Main.Controls.Add(purchaseForm);
+        }
     }
 }

@@ -50,6 +50,7 @@ namespace OSM
         /// 查询订单视图返回结果给DataGridView
         /// </summary>
         /// <param name="dgv"></param>
+        /// <param name="whereString"></param>
         private void queryFromOrderSheetV(DataGridView dgv, string whereString = "")
         {
             string sql = "select * from OSM_ORDER_SHEET_V ";
@@ -289,7 +290,7 @@ namespace OSM
         {
             AccessDB adb = new AccessDB();
             int count = 0;
-            string insertSql = "insert into OSM_PURCHASE_SHEET(ORDER_ID,HW_TYPE,HW_NAME,HW_CODE,PURCHASE_NUMBER) values (";
+            string insertSql = "insert into OSM_PURCHASE_SHEET(ORDER_ID,HW_TYPE,HW_NAME,HW_CODE,PURCHASE_NUMBER,PURCHASE_STATE,INIT_DATE) values (";
 
             for (int i = 0; i < purchaseList.Count; i++)
             {
@@ -298,7 +299,7 @@ namespace OSM
                 valueString += "'" + ht["HW_TYPE"].ToString() + "',";
                 valueString += "'" + ht["HW_NAME"].ToString() + "',";
                 valueString += "'" + ht["HW_CODE"].ToString() + "',";
-                valueString += ht["HW_NUMBER"].ToString() + ")";
+                valueString += ht["HW_NUMBER"].ToString() + ",'1',#" + DateTime.Now.ToString("yyyy-MM-dd") + "#)";
 
                 string sql = insertSql + valueString;
                 if (adb.SQLExecute(sql))

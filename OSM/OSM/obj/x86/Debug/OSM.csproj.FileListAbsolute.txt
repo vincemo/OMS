@@ -33,3 +33,4 @@ D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.pdb
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.csprojResolveAssemblyReference.cache
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Order_View.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Order_Delivery_Form.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Purchase_Form.resources

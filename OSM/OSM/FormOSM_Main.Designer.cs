@@ -137,14 +137,14 @@
             // TSMItem_order_query
             // 
             this.TSMItem_order_query.Name = "TSMItem_order_query";
-            this.TSMItem_order_query.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_order_query.Size = new System.Drawing.Size(148, 22);
             this.TSMItem_order_query.Text = "订单查询";
             this.TSMItem_order_query.Click += new System.EventHandler(this.TSMItem_order_query_Click);
             // 
             // TSMItem_order_delivery
             // 
             this.TSMItem_order_delivery.Name = "TSMItem_order_delivery";
-            this.TSMItem_order_delivery.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_order_delivery.Size = new System.Drawing.Size(148, 22);
             this.TSMItem_order_delivery.Text = "订单发货审核";
             this.TSMItem_order_delivery.Click += new System.EventHandler(this.TSMItem_order_delivery_Click);
             // 
@@ -160,13 +160,14 @@
             // TSMItem_purchase_query
             // 
             this.TSMItem_purchase_query.Name = "TSMItem_purchase_query";
-            this.TSMItem_purchase_query.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_purchase_query.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_purchase_query.Text = "采购单查询";
+            this.TSMItem_purchase_query.Click += new System.EventHandler(this.TSMItem_purchase_query_Click);
             // 
             // TSMItem_purchase_arrive
             // 
             this.TSMItem_purchase_arrive.Name = "TSMItem_purchase_arrive";
-            this.TSMItem_purchase_arrive.Size = new System.Drawing.Size(136, 22);
+            this.TSMItem_purchase_arrive.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_purchase_arrive.Text = "采购到货";
             // 
             // TSMItem_Deliver
@@ -181,13 +182,13 @@
             // TSMItem_deliver_query
             // 
             this.TSMItem_deliver_query.Name = "TSMItem_deliver_query";
-            this.TSMItem_deliver_query.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_deliver_query.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_deliver_query.Text = "发货单查询";
             // 
             // TSMItem_deliver_pay
             // 
             this.TSMItem_deliver_pay.Name = "TSMItem_deliver_pay";
-            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(152, 22);
+            this.TSMItem_deliver_pay.Size = new System.Drawing.Size(136, 22);
             this.TSMItem_deliver_pay.Text = "发货收款";
             // 
             // TSMItem_Options

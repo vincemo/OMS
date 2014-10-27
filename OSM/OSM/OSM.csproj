@@ -161,6 +161,12 @@
     <Compile Include="OSM_Pager.Designer.cs">
       <DependentUpon>OSM_Pager.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSM_Purchase_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_Purchase_Form.Designer.cs">
+      <DependentUpon>OSM_Purchase_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormOSM_Buyer_Add.resx">
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Pager.resx">
       <DependentUpon>OSM_Pager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_Purchase_Form.resx">
+      <DependentUpon>OSM_Purchase_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

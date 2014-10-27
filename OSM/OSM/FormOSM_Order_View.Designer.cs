@@ -49,14 +49,14 @@
             this.textBox_RequirePayment = new System.Windows.Forms.TextBox();
             this.groupBox_HW = new System.Windows.Forms.GroupBox();
             this.dataGridView_HW = new System.Windows.Forms.DataGridView();
-            this.button_OK = new System.Windows.Forms.Button();
-            this.button_CANCEL = new System.Windows.Forms.Button();
             this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_TOTALPRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_OK = new System.Windows.Forms.Button();
+            this.button_CANCEL = new System.Windows.Forms.Button();
             this.groupBox_OrderInfo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox_HW.SuspendLayout();
@@ -141,7 +141,7 @@
             this.comboBox_OrderState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_OrderState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OrderState.FormattingEnabled = true;
-            this.comboBox_OrderState.Location = new System.Drawing.Point(115, 34);
+            this.comboBox_OrderState.Location = new System.Drawing.Point(115, 36);
             this.comboBox_OrderState.Name = "comboBox_OrderState";
             this.comboBox_OrderState.Size = new System.Drawing.Size(106, 25);
             this.comboBox_OrderState.TabIndex = 3;
@@ -181,7 +181,7 @@
             this.comboBox_PayMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PayMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PayMode.FormattingEnabled = true;
-            this.comboBox_PayMode.Location = new System.Drawing.Point(115, 67);
+            this.comboBox_PayMode.Location = new System.Drawing.Point(115, 65);
             this.comboBox_PayMode.Name = "comboBox_PayMode";
             this.comboBox_PayMode.Size = new System.Drawing.Size(106, 25);
             this.comboBox_PayMode.TabIndex = 7;
@@ -202,7 +202,7 @@
             this.comboBox_PayState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PayState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PayState.FormattingEnabled = true;
-            this.comboBox_PayState.Location = new System.Drawing.Point(340, 67);
+            this.comboBox_PayState.Location = new System.Drawing.Point(340, 65);
             this.comboBox_PayState.Name = "comboBox_PayState";
             this.comboBox_PayState.Size = new System.Drawing.Size(106, 25);
             this.comboBox_PayState.TabIndex = 9;
@@ -288,26 +288,6 @@
             this.dataGridView_HW.Size = new System.Drawing.Size(451, 150);
             this.dataGridView_HW.TabIndex = 0;
             // 
-            // button_OK
-            // 
-            this.button_OK.Location = new System.Drawing.Point(281, 404);
-            this.button_OK.Name = "button_OK";
-            this.button_OK.Size = new System.Drawing.Size(75, 23);
-            this.button_OK.TabIndex = 2;
-            this.button_OK.Text = "确认";
-            this.button_OK.UseVisualStyleBackColor = true;
-            this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
-            // 
-            // button_CANCEL
-            // 
-            this.button_CANCEL.Location = new System.Drawing.Point(388, 404);
-            this.button_CANCEL.Name = "button_CANCEL";
-            this.button_CANCEL.Size = new System.Drawing.Size(75, 23);
-            this.button_CANCEL.TabIndex = 3;
-            this.button_CANCEL.Text = "取消";
-            this.button_CANCEL.UseVisualStyleBackColor = true;
-            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
-            // 
             // HW_NAME
             // 
             this.HW_NAME.DataPropertyName = "HW_NAME";
@@ -343,6 +323,26 @@
             this.HW_TOTALPRICE.DataPropertyName = "HW_TOTALPRICE";
             this.HW_TOTALPRICE.HeaderText = "总价";
             this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
+            // 
+            // button_OK
+            // 
+            this.button_OK.Location = new System.Drawing.Point(281, 404);
+            this.button_OK.Name = "button_OK";
+            this.button_OK.Size = new System.Drawing.Size(75, 23);
+            this.button_OK.TabIndex = 2;
+            this.button_OK.Text = "确认";
+            this.button_OK.UseVisualStyleBackColor = true;
+            this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
+            // 
+            // button_CANCEL
+            // 
+            this.button_CANCEL.Location = new System.Drawing.Point(388, 404);
+            this.button_CANCEL.Name = "button_CANCEL";
+            this.button_CANCEL.Size = new System.Drawing.Size(75, 23);
+            this.button_CANCEL.TabIndex = 3;
+            this.button_CANCEL.Text = "取消";
+            this.button_CANCEL.UseVisualStyleBackColor = true;
+            this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
             // FormOSM_Order_View
             // 
