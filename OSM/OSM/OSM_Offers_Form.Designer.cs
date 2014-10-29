@@ -33,6 +33,7 @@
             this.OFFERSHEET_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GMF_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BJF_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OFFERSHEET_REGION_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OFFERSHEET_TYPE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OFFERSHEET_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OFFERSHEET_STATE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +67,7 @@
             this.OFFERSHEET_CODE,
             this.GMF_NAME,
             this.BJF_NAME,
+            this.OFFERSHEET_REGION_DESC,
             this.OFFERSHEET_TYPE_DESC,
             this.OFFERSHEET_DATE,
             this.OFFERSHEET_STATE_DESC,
@@ -112,11 +114,17 @@
             this.BJF_NAME.Name = "BJF_NAME";
             this.BJF_NAME.ReadOnly = true;
             // 
+            // OFFERSHEET_REGION_DESC
+            // 
+            this.OFFERSHEET_REGION_DESC.DataPropertyName = "OFFERSHEET_REGION_DESC";
+            this.OFFERSHEET_REGION_DESC.HeaderText = "所属区域";
+            this.OFFERSHEET_REGION_DESC.Name = "OFFERSHEET_REGION_DESC";
+            // 
             // OFFERSHEET_TYPE_DESC
             // 
             this.OFFERSHEET_TYPE_DESC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.OFFERSHEET_TYPE_DESC.DataPropertyName = "OFFERSHEET_TYPE_DESC";
-            this.OFFERSHEET_TYPE_DESC.HeaderText = "报价单类型";
+            this.OFFERSHEET_TYPE_DESC.HeaderText = "所属行业";
             this.OFFERSHEET_TYPE_DESC.Name = "OFFERSHEET_TYPE_DESC";
             this.OFFERSHEET_TYPE_DESC.ReadOnly = true;
             this.OFFERSHEET_TYPE_DESC.Width = 90;
@@ -317,6 +325,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_CODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn GMF_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn BJF_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_REGION_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_TYPE_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_STATE_DESC;

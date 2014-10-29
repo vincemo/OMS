@@ -25,7 +25,7 @@ namespace OSM
             InitializeComponent();
             hw = new HW();
 
-            string whereString = "where PID = 15 ";
+            string whereString = "where PID = 43 ";
             SJZDController.setZD_ComboBox(whereString, comboBox_HW_TYPE);
         }
 

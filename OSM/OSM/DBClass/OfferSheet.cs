@@ -14,6 +14,8 @@ namespace OSM.DBClass
         private string OFFERSHEET_TYPE;
         private string OFFERSHEET_STATE;
         private string OFFERSHEET_DATE;
+        private string OFFERSHEET_REGION;
+        private string CONFIRM_DATE;
 
         public int getID()
         {
@@ -83,6 +85,26 @@ namespace OSM.DBClass
         public void setOFFERSHEET_DATE(string offersheet_date)
         {
             OFFERSHEET_DATE = offersheet_date;
+        }
+
+        public string getOFFERSHEET_REGION()
+        {
+            return OFFERSHEET_REGION;
+        }
+
+        public void setOFFERSHEET_REGION(string offersheet_region)
+        {
+            OFFERSHEET_REGION = offersheet_region;
+        }
+
+        public string getCONFIRM_DATE()
+        {
+            return CONFIRM_DATE;
+        }
+
+        public void setCONFIRM_DATE(string confirm_date)
+        {
+            CONFIRM_DATE = confirm_date;
         }
     }
 }

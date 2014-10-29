@@ -174,11 +174,11 @@
             // 
             this.label_type_hw.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_type_hw.AutoSize = true;
-            this.label_type_hw.Location = new System.Drawing.Point(254, 64);
+            this.label_type_hw.Location = new System.Drawing.Point(230, 64);
             this.label_type_hw.Name = "label_type_hw";
-            this.label_type_hw.Size = new System.Drawing.Size(32, 17);
+            this.label_type_hw.Size = new System.Drawing.Size(80, 17);
             this.label_type_hw.TabIndex = 4;
-            this.label_type_hw.Text = "类型";
+            this.label_type_hw.Text = "产品所属设备";
             // 
             // label_code_hw
             // 

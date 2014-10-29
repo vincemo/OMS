@@ -77,23 +77,24 @@
             this.tabPage_HW = new System.Windows.Forms.TabPage();
             this.button_Add_HW = new System.Windows.Forms.Button();
             this.dataGridView_HW = new System.Windows.Forms.DataGridView();
-            this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_TOTALPRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OFFERSHEET_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label_offersheet_date = new System.Windows.Forms.Label();
             this.label_offersheet_type = new System.Windows.Forms.Label();
+            this.label_offersheet_region = new System.Windows.Forms.Label();
             this.textBox_OFFERSHEET_CODE = new System.Windows.Forms.TextBox();
             this.label_offersheet_code = new System.Windows.Forms.Label();
-            this.comboBox_OFFERSHEET_TYPE = new System.Windows.Forms.ComboBox();
+            this.comboBox_OFFERSHEET_REGION = new System.Windows.Forms.ComboBox();
             this.dateTimePicker_OFFERSHEET_DATE = new System.Windows.Forms.DateTimePicker();
             this.button_CANCEL = new System.Windows.Forms.Button();
             this.button_CONFIRM = new System.Windows.Forms.Button();
             this.groupBox_offersheet = new System.Windows.Forms.GroupBox();
+            this.label_offersheet_date = new System.Windows.Forms.Label();
+            this.comboBox_OFFERSHEET_TYPE = new System.Windows.Forms.ComboBox();
+            this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_TOTALPRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl_Offers_add.SuspendLayout();
             this.tabPage_BUYER.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -112,7 +113,7 @@
             this.tabControl_Offers_add.Controls.Add(this.tabPage_HW);
             this.tabControl_Offers_add.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl_Offers_add.ItemSize = new System.Drawing.Size(48, 20);
-            this.tabControl_Offers_add.Location = new System.Drawing.Point(10, 98);
+            this.tabControl_Offers_add.Location = new System.Drawing.Point(10, 124);
             this.tabControl_Offers_add.Name = "tabControl_Offers_add";
             this.tabControl_Offers_add.SelectedIndex = 0;
             this.tabControl_Offers_add.Size = new System.Drawing.Size(442, 331);
@@ -661,149 +662,112 @@
             // dataGridView_HW
             // 
             this.dataGridView_HW.AllowUserToAddRows = false;
+            this.dataGridView_HW.AllowUserToDeleteRows = false;
             this.dataGridView_HW.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_HW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_HW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.HW_NAME,
+            this.HW_CODE,
             this.HW_TYPE,
             this.HW_NUMBER,
             this.HW_PRICE,
-            this.HW_TOTALPRICE,
-            this.HW_CODE,
-            this.OFFERSHEET_CODE});
+            this.HW_TOTALPRICE});
             this.dataGridView_HW.Location = new System.Drawing.Point(6, 48);
             this.dataGridView_HW.Name = "dataGridView_HW";
+            this.dataGridView_HW.ReadOnly = true;
             this.dataGridView_HW.RowTemplate.Height = 23;
             this.dataGridView_HW.Size = new System.Drawing.Size(422, 249);
             this.dataGridView_HW.TabIndex = 0;
             // 
-            // HW_NAME
-            // 
-            this.HW_NAME.DataPropertyName = "HW_NAME";
-            this.HW_NAME.HeaderText = "货物名称";
-            this.HW_NAME.Name = "HW_NAME";
-            // 
-            // HW_TYPE
-            // 
-            this.HW_TYPE.DataPropertyName = "HW_TYPE";
-            this.HW_TYPE.HeaderText = "货物类型";
-            this.HW_TYPE.Name = "HW_TYPE";
-            // 
-            // HW_NUMBER
-            // 
-            this.HW_NUMBER.DataPropertyName = "HW_NUMBER";
-            this.HW_NUMBER.HeaderText = "数量";
-            this.HW_NUMBER.Name = "HW_NUMBER";
-            // 
-            // HW_PRICE
-            // 
-            this.HW_PRICE.DataPropertyName = "HW_PRICE";
-            this.HW_PRICE.HeaderText = "单价";
-            this.HW_PRICE.Name = "HW_PRICE";
-            // 
-            // HW_TOTALPRICE
-            // 
-            this.HW_TOTALPRICE.DataPropertyName = "HW_TOTALPRICE";
-            this.HW_TOTALPRICE.HeaderText = "总价";
-            this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
-            // 
-            // HW_CODE
-            // 
-            this.HW_CODE.DataPropertyName = "HW_CODE";
-            this.HW_CODE.HeaderText = "货物代码";
-            this.HW_CODE.Name = "HW_CODE";
-            // 
-            // OFFERSHEET_CODE
-            // 
-            this.OFFERSHEET_CODE.DataPropertyName = "OFFERSHEET_CODE";
-            this.OFFERSHEET_CODE.HeaderText = "报价单编号";
-            this.OFFERSHEET_CODE.Name = "OFFERSHEET_CODE";
-            // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.label_offersheet_date, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label_offersheet_type, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label_offersheet_date, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label_offersheet_type, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label_offersheet_region, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.textBox_OFFERSHEET_CODE, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label_offersheet_code, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.comboBox_OFFERSHEET_TYPE, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.dateTimePicker_OFFERSHEET_DATE, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.comboBox_OFFERSHEET_REGION, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dateTimePicker_OFFERSHEET_DATE, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.comboBox_OFFERSHEET_TYPE, 3, 1);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 20);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 20);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(430, 66);
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(430, 92);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // label_offersheet_date
-            // 
-            this.label_offersheet_date.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_offersheet_date.AutoSize = true;
-            this.label_offersheet_date.Location = new System.Drawing.Point(239, 41);
-            this.label_offersheet_date.Name = "label_offersheet_date";
-            this.label_offersheet_date.Size = new System.Drawing.Size(56, 17);
-            this.label_offersheet_date.TabIndex = 22;
-            this.label_offersheet_date.Text = "填写日期";
             // 
             // label_offersheet_type
             // 
-            this.label_offersheet_type.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label_offersheet_type.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_offersheet_type.AutoSize = true;
-            this.label_offersheet_type.Location = new System.Drawing.Point(3, 41);
+            this.label_offersheet_type.Location = new System.Drawing.Point(240, 37);
             this.label_offersheet_type.Name = "label_offersheet_type";
-            this.label_offersheet_type.Size = new System.Drawing.Size(32, 17);
-            this.label_offersheet_type.TabIndex = 20;
-            this.label_offersheet_type.Text = "类型";
+            this.label_offersheet_type.Size = new System.Drawing.Size(56, 17);
+            this.label_offersheet_type.TabIndex = 22;
+            this.label_offersheet_type.Text = "所属行业";
+            // 
+            // label_offersheet_region
+            // 
+            this.label_offersheet_region.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_offersheet_region.AutoSize = true;
+            this.label_offersheet_region.Location = new System.Drawing.Point(26, 37);
+            this.label_offersheet_region.Name = "label_offersheet_region";
+            this.label_offersheet_region.Size = new System.Drawing.Size(56, 17);
+            this.label_offersheet_region.TabIndex = 20;
+            this.label_offersheet_region.Text = "所属区域";
             // 
             // textBox_OFFERSHEET_CODE
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.textBox_OFFERSHEET_CODE, 3);
-            this.textBox_OFFERSHEET_CODE.Location = new System.Drawing.Point(110, 3);
+            this.textBox_OFFERSHEET_CODE.Location = new System.Drawing.Point(111, 4);
             this.textBox_OFFERSHEET_CODE.Name = "textBox_OFFERSHEET_CODE";
-            this.textBox_OFFERSHEET_CODE.Size = new System.Drawing.Size(317, 23);
+            this.textBox_OFFERSHEET_CODE.Size = new System.Drawing.Size(315, 23);
             this.textBox_OFFERSHEET_CODE.TabIndex = 19;
             // 
             // label_offersheet_code
             // 
-            this.label_offersheet_code.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label_offersheet_code.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_offersheet_code.AutoSize = true;
-            this.label_offersheet_code.Location = new System.Drawing.Point(3, 8);
+            this.label_offersheet_code.Location = new System.Drawing.Point(20, 7);
             this.label_offersheet_code.Name = "label_offersheet_code";
             this.label_offersheet_code.Size = new System.Drawing.Size(68, 17);
             this.label_offersheet_code.TabIndex = 18;
             this.label_offersheet_code.Text = "报价单编号";
             // 
-            // comboBox_OFFERSHEET_TYPE
+            // comboBox_OFFERSHEET_REGION
             // 
-            this.comboBox_OFFERSHEET_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_OFFERSHEET_TYPE.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.comboBox_OFFERSHEET_TYPE.FormattingEnabled = true;
-            this.comboBox_OFFERSHEET_TYPE.Location = new System.Drawing.Point(110, 36);
-            this.comboBox_OFFERSHEET_TYPE.Name = "comboBox_OFFERSHEET_TYPE";
-            this.comboBox_OFFERSHEET_TYPE.Size = new System.Drawing.Size(101, 25);
-            this.comboBox_OFFERSHEET_TYPE.TabIndex = 21;
-            this.comboBox_OFFERSHEET_TYPE.SelectedIndexChanged += new System.EventHandler(this.comboBox_OFFERSHEET_TYPE_SelectedIndexChanged);
+            this.comboBox_OFFERSHEET_REGION.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_OFFERSHEET_REGION.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.comboBox_OFFERSHEET_REGION.FormattingEnabled = true;
+            this.comboBox_OFFERSHEET_REGION.Location = new System.Drawing.Point(111, 34);
+            this.comboBox_OFFERSHEET_REGION.Name = "comboBox_OFFERSHEET_REGION";
+            this.comboBox_OFFERSHEET_REGION.Size = new System.Drawing.Size(100, 25);
+            this.comboBox_OFFERSHEET_REGION.TabIndex = 21;
+            this.comboBox_OFFERSHEET_REGION.SelectedIndexChanged += new System.EventHandler(this.comboBox_OFFERSHEET_TYPE_SelectedIndexChanged);
             // 
             // dateTimePicker_OFFERSHEET_DATE
             // 
             this.dateTimePicker_OFFERSHEET_DATE.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_OFFERSHEET_DATE.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_OFFERSHEET_DATE.Location = new System.Drawing.Point(324, 36);
+            this.dateTimePicker_OFFERSHEET_DATE.Location = new System.Drawing.Point(111, 64);
             this.dateTimePicker_OFFERSHEET_DATE.Name = "dateTimePicker_OFFERSHEET_DATE";
-            this.dateTimePicker_OFFERSHEET_DATE.Size = new System.Drawing.Size(103, 23);
+            this.dateTimePicker_OFFERSHEET_DATE.Size = new System.Drawing.Size(100, 23);
             this.dateTimePicker_OFFERSHEET_DATE.TabIndex = 23;
             this.dateTimePicker_OFFERSHEET_DATE.ValueChanged += new System.EventHandler(this.dateTimePicker_OFFERSHEET_DATE_ValueChanged);
             // 
             // button_CANCEL
             // 
             this.button_CANCEL.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.button_CANCEL.Location = new System.Drawing.Point(348, 435);
+            this.button_CANCEL.Location = new System.Drawing.Point(342, 461);
             this.button_CANCEL.Name = "button_CANCEL";
             this.button_CANCEL.Size = new System.Drawing.Size(76, 25);
             this.button_CANCEL.TabIndex = 1;
@@ -814,7 +778,7 @@
             // button_CONFIRM
             // 
             this.button_CONFIRM.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.button_CONFIRM.Location = new System.Drawing.Point(245, 435);
+            this.button_CONFIRM.Location = new System.Drawing.Point(256, 461);
             this.button_CONFIRM.Name = "button_CONFIRM";
             this.button_CONFIRM.Size = new System.Drawing.Size(76, 25);
             this.button_CONFIRM.TabIndex = 2;
@@ -828,16 +792,78 @@
             this.groupBox_offersheet.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox_offersheet.Location = new System.Drawing.Point(10, 0);
             this.groupBox_offersheet.Name = "groupBox_offersheet";
-            this.groupBox_offersheet.Size = new System.Drawing.Size(442, 92);
+            this.groupBox_offersheet.Size = new System.Drawing.Size(442, 118);
             this.groupBox_offersheet.TabIndex = 3;
             this.groupBox_offersheet.TabStop = false;
             this.groupBox_offersheet.Text = "报价单基本信息";
+            // 
+            // label_offersheet_date
+            // 
+            this.label_offersheet_date.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_offersheet_date.AutoSize = true;
+            this.label_offersheet_date.Location = new System.Drawing.Point(26, 67);
+            this.label_offersheet_date.Name = "label_offersheet_date";
+            this.label_offersheet_date.Size = new System.Drawing.Size(56, 17);
+            this.label_offersheet_date.TabIndex = 24;
+            this.label_offersheet_date.Text = "填写日期";
+            // 
+            // comboBox_OFFERSHEET_TYPE
+            // 
+            this.comboBox_OFFERSHEET_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_OFFERSHEET_TYPE.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.comboBox_OFFERSHEET_TYPE.FormattingEnabled = true;
+            this.comboBox_OFFERSHEET_TYPE.Location = new System.Drawing.Point(325, 34);
+            this.comboBox_OFFERSHEET_TYPE.Name = "comboBox_OFFERSHEET_TYPE";
+            this.comboBox_OFFERSHEET_TYPE.Size = new System.Drawing.Size(101, 25);
+            this.comboBox_OFFERSHEET_TYPE.TabIndex = 25;
+            // 
+            // HW_NAME
+            // 
+            this.HW_NAME.DataPropertyName = "HW_NAME";
+            this.HW_NAME.HeaderText = "名称";
+            this.HW_NAME.Name = "HW_NAME";
+            this.HW_NAME.ReadOnly = true;
+            // 
+            // HW_CODE
+            // 
+            this.HW_CODE.DataPropertyName = "HW_CODE";
+            this.HW_CODE.HeaderText = "代码";
+            this.HW_CODE.Name = "HW_CODE";
+            this.HW_CODE.ReadOnly = true;
+            // 
+            // HW_TYPE
+            // 
+            this.HW_TYPE.DataPropertyName = "HW_TYPE";
+            this.HW_TYPE.HeaderText = "所属设备";
+            this.HW_TYPE.Name = "HW_TYPE";
+            this.HW_TYPE.ReadOnly = true;
+            // 
+            // HW_NUMBER
+            // 
+            this.HW_NUMBER.DataPropertyName = "HW_NUMBER";
+            this.HW_NUMBER.HeaderText = "数量";
+            this.HW_NUMBER.Name = "HW_NUMBER";
+            this.HW_NUMBER.ReadOnly = true;
+            // 
+            // HW_PRICE
+            // 
+            this.HW_PRICE.DataPropertyName = "HW_PRICE";
+            this.HW_PRICE.HeaderText = "单价";
+            this.HW_PRICE.Name = "HW_PRICE";
+            this.HW_PRICE.ReadOnly = true;
+            // 
+            // HW_TOTALPRICE
+            // 
+            this.HW_TOTALPRICE.DataPropertyName = "HW_TOTALPRICE";
+            this.HW_TOTALPRICE.HeaderText = "总价";
+            this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
+            this.HW_TOTALPRICE.ReadOnly = true;
             // 
             // FormOSM_Offers_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 464);
+            this.ClientSize = new System.Drawing.Size(462, 498);
             this.Controls.Add(this.groupBox_offersheet);
             this.Controls.Add(this.button_CONFIRM);
             this.Controls.Add(this.button_CANCEL);
@@ -917,19 +943,20 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label_offersheet_code;
         private System.Windows.Forms.TextBox textBox_OFFERSHEET_CODE;
-        private System.Windows.Forms.Label label_offersheet_date;
         private System.Windows.Forms.Label label_offersheet_type;
-        private System.Windows.Forms.ComboBox comboBox_OFFERSHEET_TYPE;
+        private System.Windows.Forms.Label label_offersheet_region;
+        private System.Windows.Forms.ComboBox comboBox_OFFERSHEET_REGION;
         private System.Windows.Forms.DateTimePicker dateTimePicker_OFFERSHEET_DATE;
         private System.Windows.Forms.GroupBox groupBox_offersheet;
         private System.Windows.Forms.DataGridView dataGridView_HW;
         private System.Windows.Forms.Button button_Add_HW;
+        private System.Windows.Forms.Label label_offersheet_date;
+        private System.Windows.Forms.ComboBox comboBox_OFFERSHEET_TYPE;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HW_CODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_TYPE;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_NUMBER;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_TOTALPRICE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HW_CODE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_CODE;
     }
 }

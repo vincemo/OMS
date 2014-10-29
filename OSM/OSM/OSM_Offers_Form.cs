@@ -169,19 +169,22 @@ namespace OSM
             if (dt.Rows.Count == 1)
             {
                 DataRow dr = dt.Rows[0];
-                hashtable.Add("ID", dr.ItemArray[0]);
-                hashtable.Add("OFFERSHEET_CODE", dr.ItemArray[1]);
-                hashtable.Add("GMF_ID", dr.ItemArray[2]);
-                hashtable.Add("BJF_ID", dr.ItemArray[3]);
-                hashtable.Add("OFFERSHEET_TYPE", dr.ItemArray[4]);
-                hashtable.Add("OFFERSHEET_DATE", dr.ItemArray[5]);
-                hashtable.Add("OFFERSHEET_STATE", dr.ItemArray[6]);
+                hashtable.Add("ID", dr["ID"]);
+                hashtable.Add("OFFERSHEET_CODE", dr["OFFERSHEET_CODE"]);
+                hashtable.Add("GMF_ID", dr["GMF_ID"]);
+                hashtable.Add("BJF_ID", dr["BJF_ID"]);
+                hashtable.Add("OFFERSHEET_TYPE", dr["OFFERSHEET_TYPE"]);
+                hashtable.Add("OFFERSHEET_DATE", dr["OFFERSHEET_DATE"]);
+                hashtable.Add("OFFERSHEET_STATE", dr["OFFERSHEET_STATE"]);
+                hashtable.Add("OFFERSHEET_REGION", dr["OFFERSHEET_REGION"]);
+                hashtable.Add("CONFIRM_DATE", dr["CONFIRM_DATE"]);
             }
 
             FormOSM_Offers_Add form_add_offers = new FormOSM_Offers_Add();
             form_add_offers.dataGridView_editBtn_click_reaction(hashtable);
             form_add_offers.setMainForm(main_form);
             form_add_offers.setViewState(2);
+            form_add_offers.StartPosition = FormStartPosition.CenterParent;
             form_add_offers.ShowDialog();
         }
 
@@ -201,19 +204,22 @@ namespace OSM
             if (dt.Rows.Count == 1)
             {
                 DataRow dr = dt.Rows[0];
-                hashtable.Add("ID", dr.ItemArray[0]);
-                hashtable.Add("OFFERSHEET_CODE", dr.ItemArray[1]);
-                hashtable.Add("GMF_ID", dr.ItemArray[2]);
-                hashtable.Add("BJF_ID", dr.ItemArray[3]);
-                hashtable.Add("OFFERSHEET_TYPE", dr.ItemArray[4]);
-                hashtable.Add("OFFERSHEET_DATE", dr.ItemArray[5]);
-                hashtable.Add("OFFERSHEET_STATE", dr.ItemArray[6]);
+                hashtable.Add("ID", dr["ID"]);
+                hashtable.Add("OFFERSHEET_CODE", dr["OFFERSHEET_CODE"]);
+                hashtable.Add("GMF_ID", dr["GMF_ID"]);
+                hashtable.Add("BJF_ID", dr["BJF_ID"]);
+                hashtable.Add("OFFERSHEET_TYPE", dr["OFFERSHEET_TYPE"]);
+                hashtable.Add("OFFERSHEET_DATE", dr["OFFERSHEET_DATE"]);
+                hashtable.Add("OFFERSHEET_STATE", dr["OFFERSHEET_STATE"]);
+                hashtable.Add("OFFERSHEET_REGION", dr["OFFERSHEET_REGION"]);
+                hashtable.Add("CONFIRM_DATE", dr["CONFIRM_DATE"]);
             }
 
             FormOSM_Offers_Add form_add_offers = new FormOSM_Offers_Add();
             form_add_offers.dataGridView_viewBtn_click_reaction(hashtable);
             form_add_offers.setMainForm(main_form);
             form_add_offers.setViewState(1);
+            form_add_offers.StartPosition = FormStartPosition.CenterParent;
             form_add_offers.ShowDialog();
         }
 

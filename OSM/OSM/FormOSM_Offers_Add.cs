@@ -40,7 +40,12 @@ namespace OSM
             offer_sheet = new OfferSheet();
             //hw = new HW();
 
+            dataGridView_HW.AutoGenerateColumns = false;
+
             string whereString = "where PID = 10";
+            SJZDController.setZD_ComboBox(whereString, comboBox_OFFERSHEET_REGION);
+
+            whereString = "where PID = 33";
             SJZDController.setZD_ComboBox(whereString, comboBox_OFFERSHEET_TYPE);
 
             string offsht_code = "U" + uuid + "OSC" + DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -75,7 +80,7 @@ namespace OSM
         /// <param name="dgv"></param>
         private void queryByHW(DataGridView dgv)
         {
-            string sql = "select HW_NAME,HW_TYPE,HW_NUMBER,HW_PRICE,HW_TOTALPRICE,HW_CODE,OFFERSHEET_CODE from OSM_HW where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "' ";
+            string sql = "select * from OSM_HW where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "' ";
             sql += "order by ID DESC";
 
             AccessDB adb = new AccessDB();
@@ -88,7 +93,7 @@ namespace OSM
         /// </summary>
         public void refresh_hw_datagrid()
         {
-            string sql = "select HW_NAME,HW_TYPE,HW_NUMBER,HW_PRICE,HW_TOTALPRICE,HW_CODE,OFFERSHEET_CODE from OSM_HW where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "' ";
+            string sql = "select * from OSM_HW where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "' ";
             sql += "order by ID DESC";
 
             AccessDB adb = new AccessDB();
@@ -434,7 +439,7 @@ namespace OSM
         /// <param name="e"></param>
         private void comboBox_OFFERSHEET_TYPE_SelectedIndexChanged(object sender, EventArgs e)
         {
-            KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_TYPE.SelectedItem;
+            KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_REGION.SelectedItem;
             string offer_sheet_type = kv.Key;
             offer_sheet.setOFFERSHEET_TYPE(offer_sheet_type);
         }
@@ -478,6 +483,7 @@ namespace OSM
         public void dataGridView_viewBtn_click_reaction(Hashtable hashtable)
         {
             textBox_OFFERSHEET_CODE.ReadOnly = true;
+            comboBox_OFFERSHEET_REGION.Enabled = false;
             comboBox_OFFERSHEET_TYPE.Enabled = false;
             dateTimePicker_OFFERSHEET_DATE.Enabled = false;
             label_buyer_select.Visible = false;
@@ -487,6 +493,7 @@ namespace OSM
             button_Add_Buyer.Visible = false;
             button_Add_Seller.Visible = false;
             button_Add_HW.Visible = false;
+            dataGridView_HW.AllowUserToAddRows = false;
 
             offerSheet_dataBindingUp(hashtable);
         }
@@ -497,18 +504,29 @@ namespace OSM
         /// <param name="hashtable"></param>
         private void offerSheet_dataBindingUp(Hashtable hashtable)
         {
-            offer_sheet.setID((int)hashtable["ID"]);
-            offer_sheet.setOFFERSHEET_CODE(hashtable["OFFERSHEET_CODE"].ToString());
-            offer_sheet.setBJF_ID((int)hashtable["BJF_ID"]);
-            offer_sheet.setGMF_ID((int)hashtable["GMF_ID"]);
-            offer_sheet.setOFFERSHEET_TYPE(hashtable["OFFERSHEET_TYPE"].ToString());
-            offer_sheet.setOFFERSHEET_DATE(((DateTime)hashtable["OFFERSHEET_DATE"]).ToString("yyyy-MM-dd"));
-            offer_sheet.setOFFERSHEET_STATE(hashtable["OFFERSHEET_STATE"].ToString());
+            //offer_sheet.setID((int)hashtable["ID"]);
+            //offer_sheet.setOFFERSHEET_CODE(hashtable["OFFERSHEET_CODE"].ToString());
+            //offer_sheet.setBJF_ID((int)hashtable["BJF_ID"]);
+            //offer_sheet.setGMF_ID((int)hashtable["GMF_ID"]);
+            //offer_sheet.setOFFERSHEET_TYPE(hashtable["OFFERSHEET_TYPE"].ToString());
+            //offer_sheet.setOFFERSHEET_DATE(((DateTime)hashtable["OFFERSHEET_DATE"]).ToString("yyyy-MM-dd"));
+            //offer_sheet.setOFFERSHEET_STATE(hashtable["OFFERSHEET_STATE"].ToString());
 
-            //获取定价单编号
+            //获取报价单编号
             textBox_OFFERSHEET_CODE.Text = hashtable["OFFERSHEET_CODE"].ToString();
 
-            //获取定价单类型
+            //获取报价单区域
+            for (int i = 0; i < comboBox_OFFERSHEET_REGION.Items.Count; i++)
+            {
+                KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_REGION.Items[i];
+                if (hashtable["OFFERSHEET_REGION"].ToString() == kv.Key)
+                {
+                    comboBox_OFFERSHEET_REGION.SelectedIndex = i;
+                    break;
+                }
+            }
+
+            //获取报价单行业
             for (int i = 0; i < comboBox_OFFERSHEET_TYPE.Items.Count; i++)
             {
                 KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_TYPE.Items[i];
