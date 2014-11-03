@@ -78,23 +78,25 @@
             this.button_Add_HW = new System.Windows.Forms.Button();
             this.dataGridView_HW = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label_offersheet_date = new System.Windows.Forms.Label();
             this.label_offersheet_type = new System.Windows.Forms.Label();
             this.label_offersheet_region = new System.Windows.Forms.Label();
             this.textBox_OFFERSHEET_CODE = new System.Windows.Forms.TextBox();
             this.label_offersheet_code = new System.Windows.Forms.Label();
             this.comboBox_OFFERSHEET_REGION = new System.Windows.Forms.ComboBox();
             this.dateTimePicker_OFFERSHEET_DATE = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_OFFERSHEET_TYPE = new System.Windows.Forms.ComboBox();
             this.button_CANCEL = new System.Windows.Forms.Button();
             this.button_CONFIRM = new System.Windows.Forms.Button();
             this.groupBox_offersheet = new System.Windows.Forms.GroupBox();
-            this.label_offersheet_date = new System.Windows.Forms.Label();
-            this.comboBox_OFFERSHEET_TYPE = new System.Windows.Forms.ComboBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_TYPE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_TOTALPRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.tabControl_Offers_add.SuspendLayout();
             this.tabPage_BUYER.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -181,7 +183,7 @@
             this.button_Add_Buyer.Location = new System.Drawing.Point(221, 3);
             this.button_Add_Buyer.Name = "button_Add_Buyer";
             this.tableLayoutPanel1.SetRowSpan(this.button_Add_Buyer, 2);
-            this.button_Add_Buyer.Size = new System.Drawing.Size(97, 28);
+            this.button_Add_Buyer.Size = new System.Drawing.Size(97, 25);
             this.button_Add_Buyer.TabIndex = 18;
             this.button_Add_Buyer.Text = "新增购买方";
             this.button_Add_Buyer.UseVisualStyleBackColor = true;
@@ -459,7 +461,7 @@
             this.button_Add_Seller.Location = new System.Drawing.Point(221, 3);
             this.button_Add_Seller.Name = "button_Add_Seller";
             this.tableLayoutPanel_SELLER.SetRowSpan(this.button_Add_Seller, 2);
-            this.button_Add_Seller.Size = new System.Drawing.Size(97, 28);
+            this.button_Add_Seller.Size = new System.Drawing.Size(97, 25);
             this.button_Add_Seller.TabIndex = 18;
             this.button_Add_Seller.Text = "新增报价方";
             this.button_Add_Seller.UseVisualStyleBackColor = true;
@@ -655,7 +657,7 @@
             this.button_Add_HW.Name = "button_Add_HW";
             this.button_Add_HW.Size = new System.Drawing.Size(97, 28);
             this.button_Add_HW.TabIndex = 19;
-            this.button_Add_HW.Text = "新增货物";
+            this.button_Add_HW.Text = "新增货物明细";
             this.button_Add_HW.UseVisualStyleBackColor = true;
             this.button_Add_HW.Click += new System.EventHandler(this.button_Add_HW_Click);
             // 
@@ -666,18 +668,21 @@
             this.dataGridView_HW.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_HW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_HW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.HW_NAME,
             this.HW_CODE,
-            this.HW_TYPE,
+            this.HW_TYPE_DESC,
             this.HW_NUMBER,
             this.HW_PRICE,
-            this.HW_TOTALPRICE});
+            this.HW_TOTALPRICE,
+            this.DelBtn});
             this.dataGridView_HW.Location = new System.Drawing.Point(6, 48);
             this.dataGridView_HW.Name = "dataGridView_HW";
             this.dataGridView_HW.ReadOnly = true;
             this.dataGridView_HW.RowTemplate.Height = 23;
             this.dataGridView_HW.Size = new System.Drawing.Size(422, 249);
             this.dataGridView_HW.TabIndex = 0;
+            this.dataGridView_HW.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_HW_CellContentClick);
             // 
             // tableLayoutPanel2
             // 
@@ -704,6 +709,16 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(430, 92);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label_offersheet_date
+            // 
+            this.label_offersheet_date.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_offersheet_date.AutoSize = true;
+            this.label_offersheet_date.Location = new System.Drawing.Point(26, 67);
+            this.label_offersheet_date.Name = "label_offersheet_date";
+            this.label_offersheet_date.Size = new System.Drawing.Size(56, 17);
+            this.label_offersheet_date.TabIndex = 24;
+            this.label_offersheet_date.Text = "填写日期";
             // 
             // label_offersheet_type
             // 
@@ -752,7 +767,7 @@
             this.comboBox_OFFERSHEET_REGION.Name = "comboBox_OFFERSHEET_REGION";
             this.comboBox_OFFERSHEET_REGION.Size = new System.Drawing.Size(100, 25);
             this.comboBox_OFFERSHEET_REGION.TabIndex = 21;
-            this.comboBox_OFFERSHEET_REGION.SelectedIndexChanged += new System.EventHandler(this.comboBox_OFFERSHEET_TYPE_SelectedIndexChanged);
+            this.comboBox_OFFERSHEET_REGION.SelectedIndexChanged += new System.EventHandler(this.comboBox_OFFERSHEET_REGION_SelectedIndexChanged);
             // 
             // dateTimePicker_OFFERSHEET_DATE
             // 
@@ -763,6 +778,17 @@
             this.dateTimePicker_OFFERSHEET_DATE.Size = new System.Drawing.Size(100, 23);
             this.dateTimePicker_OFFERSHEET_DATE.TabIndex = 23;
             this.dateTimePicker_OFFERSHEET_DATE.ValueChanged += new System.EventHandler(this.dateTimePicker_OFFERSHEET_DATE_ValueChanged);
+            // 
+            // comboBox_OFFERSHEET_TYPE
+            // 
+            this.comboBox_OFFERSHEET_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_OFFERSHEET_TYPE.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.comboBox_OFFERSHEET_TYPE.FormattingEnabled = true;
+            this.comboBox_OFFERSHEET_TYPE.Location = new System.Drawing.Point(325, 34);
+            this.comboBox_OFFERSHEET_TYPE.Name = "comboBox_OFFERSHEET_TYPE";
+            this.comboBox_OFFERSHEET_TYPE.Size = new System.Drawing.Size(101, 25);
+            this.comboBox_OFFERSHEET_TYPE.TabIndex = 25;
+            this.comboBox_OFFERSHEET_TYPE.SelectedIndexChanged += new System.EventHandler(this.comboBox_OFFERSHEET_TYPE_SelectedIndexChanged);
             // 
             // button_CANCEL
             // 
@@ -797,25 +823,13 @@
             this.groupBox_offersheet.TabStop = false;
             this.groupBox_offersheet.Text = "报价单基本信息";
             // 
-            // label_offersheet_date
+            // ID
             // 
-            this.label_offersheet_date.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_offersheet_date.AutoSize = true;
-            this.label_offersheet_date.Location = new System.Drawing.Point(26, 67);
-            this.label_offersheet_date.Name = "label_offersheet_date";
-            this.label_offersheet_date.Size = new System.Drawing.Size(56, 17);
-            this.label_offersheet_date.TabIndex = 24;
-            this.label_offersheet_date.Text = "填写日期";
-            // 
-            // comboBox_OFFERSHEET_TYPE
-            // 
-            this.comboBox_OFFERSHEET_TYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_OFFERSHEET_TYPE.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.comboBox_OFFERSHEET_TYPE.FormattingEnabled = true;
-            this.comboBox_OFFERSHEET_TYPE.Location = new System.Drawing.Point(325, 34);
-            this.comboBox_OFFERSHEET_TYPE.Name = "comboBox_OFFERSHEET_TYPE";
-            this.comboBox_OFFERSHEET_TYPE.Size = new System.Drawing.Size(101, 25);
-            this.comboBox_OFFERSHEET_TYPE.TabIndex = 25;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
             // 
             // HW_NAME
             // 
@@ -831,12 +845,12 @@
             this.HW_CODE.Name = "HW_CODE";
             this.HW_CODE.ReadOnly = true;
             // 
-            // HW_TYPE
+            // HW_TYPE_DESC
             // 
-            this.HW_TYPE.DataPropertyName = "HW_TYPE";
-            this.HW_TYPE.HeaderText = "所属设备";
-            this.HW_TYPE.Name = "HW_TYPE";
-            this.HW_TYPE.ReadOnly = true;
+            this.HW_TYPE_DESC.DataPropertyName = "HW_TYPE_DESC";
+            this.HW_TYPE_DESC.HeaderText = "所属设备";
+            this.HW_TYPE_DESC.Name = "HW_TYPE_DESC";
+            this.HW_TYPE_DESC.ReadOnly = true;
             // 
             // HW_NUMBER
             // 
@@ -858,6 +872,14 @@
             this.HW_TOTALPRICE.HeaderText = "总价";
             this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
             this.HW_TOTALPRICE.ReadOnly = true;
+            // 
+            // DelBtn
+            // 
+            this.DelBtn.HeaderText = "";
+            this.DelBtn.Name = "DelBtn";
+            this.DelBtn.ReadOnly = true;
+            this.DelBtn.Text = "删除";
+            this.DelBtn.UseColumnTextForLinkValue = true;
             // 
             // FormOSM_Offers_Add
             // 
@@ -952,11 +974,13 @@
         private System.Windows.Forms.Button button_Add_HW;
         private System.Windows.Forms.Label label_offersheet_date;
         private System.Windows.Forms.ComboBox comboBox_OFFERSHEET_TYPE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_CODE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HW_TYPE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HW_TYPE_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_NUMBER;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_TOTALPRICE;
+        private System.Windows.Forms.DataGridViewLinkColumn DelBtn;
     }
 }

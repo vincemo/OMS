@@ -43,9 +43,9 @@
             this.OSM_Pager_Purchase = new OSM.OSM_Pager();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_TYPE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_TYPE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PURCHASE_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PURCHASE_STATE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.INIT_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,7 +104,7 @@
             this.comboBox_PurchaseState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PurchaseState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PurchaseState.FormattingEnabled = true;
-            this.comboBox_PurchaseState.Location = new System.Drawing.Point(85, 53);
+            this.comboBox_PurchaseState.Location = new System.Drawing.Point(85, 50);
             this.comboBox_PurchaseState.Name = "comboBox_PurchaseState";
             this.comboBox_PurchaseState.Size = new System.Drawing.Size(152, 25);
             this.comboBox_PurchaseState.TabIndex = 3;
@@ -177,14 +177,14 @@
             this.label_HWType.Name = "label_HWType";
             this.label_HWType.Size = new System.Drawing.Size(56, 17);
             this.label_HWType.TabIndex = 5;
-            this.label_HWType.Text = "货物类型";
+            this.label_HWType.Text = "所属设备";
             // 
             // comboBox_HWType
             // 
             this.comboBox_HWType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_HWType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_HWType.FormattingEnabled = true;
-            this.comboBox_HWType.Location = new System.Drawing.Point(85, 95);
+            this.comboBox_HWType.Location = new System.Drawing.Point(85, 92);
             this.comboBox_HWType.Name = "comboBox_HWType";
             this.comboBox_HWType.Size = new System.Drawing.Size(152, 25);
             this.comboBox_HWType.TabIndex = 6;
@@ -199,9 +199,9 @@
             this.dataGridView_Purchase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.ORDER_ID,
-            this.HW_TYPE_DESC,
             this.HW_NAME,
             this.HW_CODE,
+            this.HW_TYPE_DESC,
             this.PURCHASE_NUMBER,
             this.PURCHASE_STATE_DESC,
             this.INIT_DATE,
@@ -237,13 +237,6 @@
             this.ORDER_ID.ReadOnly = true;
             this.ORDER_ID.Visible = false;
             // 
-            // HW_TYPE_DESC
-            // 
-            this.HW_TYPE_DESC.DataPropertyName = "HW_TYPE_DESC";
-            this.HW_TYPE_DESC.HeaderText = "货物类型";
-            this.HW_TYPE_DESC.Name = "HW_TYPE_DESC";
-            this.HW_TYPE_DESC.ReadOnly = true;
-            // 
             // HW_NAME
             // 
             this.HW_NAME.DataPropertyName = "HW_NAME";
@@ -257,6 +250,13 @@
             this.HW_CODE.HeaderText = "货物代码";
             this.HW_CODE.Name = "HW_CODE";
             this.HW_CODE.ReadOnly = true;
+            // 
+            // HW_TYPE_DESC
+            // 
+            this.HW_TYPE_DESC.DataPropertyName = "HW_TYPE_DESC";
+            this.HW_TYPE_DESC.HeaderText = "所属设备";
+            this.HW_TYPE_DESC.Name = "HW_TYPE_DESC";
+            this.HW_TYPE_DESC.ReadOnly = true;
             // 
             // PURCHASE_NUMBER
             // 
@@ -322,9 +322,9 @@
         private OSM_Pager OSM_Pager_Purchase;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDER_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HW_TYPE_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_CODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HW_TYPE_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn PURCHASE_NUMBER;
         private System.Windows.Forms.DataGridViewTextBoxColumn PURCHASE_STATE_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn INIT_DATE;

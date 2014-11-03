@@ -53,7 +53,7 @@ namespace OSM
 
             fillSellerComboBox(comboBox_SELLER);
             fillBuyerComboBox(comboBox_BUYER);
-            queryByHW(dataGridView_HW);
+            //queryByHW(dataGridView_HW);
         }
 
         /// <summary>
@@ -80,7 +80,18 @@ namespace OSM
         /// <param name="dgv"></param>
         private void queryByHW(DataGridView dgv)
         {
-            string sql = "select * from OSM_HW where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "' ";
+            switch (view_state)
+            {
+                case 0:
+                    break;
+                case 1:
+                    dgv.Columns["delBtn"].Visible = false;
+                    break;
+                case 2:
+                    break;
+            }
+
+            string sql = "select * from OSM_HW_LIST_V where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "' ";
             sql += "order by ID DESC";
 
             AccessDB adb = new AccessDB();
@@ -93,7 +104,7 @@ namespace OSM
         /// </summary>
         public void refresh_hw_datagrid()
         {
-            string sql = "select * from OSM_HW where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "' ";
+            string sql = "select * from OSM_HW_LIST_V where OFFERSHEET_CODE = '" + textBox_OFFERSHEET_CODE.Text + "' ";
             sql += "order by ID DESC";
 
             AccessDB adb = new AccessDB();
@@ -108,7 +119,7 @@ namespace OSM
         private void fillSellerComboBox(ComboBox cbox)
         {
             string sql = "select ID,COM_NAME from OSM_BJF";
-            fillComboBox(sql, cbox);
+            SJZDController.fillComboBox(sql, cbox);
         }
 
         /// <summary>
@@ -117,7 +128,7 @@ namespace OSM
         public void refresh_seller_comboBox()
         {
             string sql = "select ID,COM_NAME from OSM_BJF";
-            fillComboBox(sql, comboBox_SELLER);
+            SJZDController.fillComboBox(sql, comboBox_SELLER);
         }
 
         /// <summary>
@@ -127,7 +138,7 @@ namespace OSM
         private void fillBuyerComboBox(ComboBox cbox)
         {
             string sql = "select ID,COM_NAME from OSM_GMF";
-            fillComboBox(sql, cbox);
+            SJZDController.fillComboBox(sql, cbox);
         }
 
         /// <summary>
@@ -136,34 +147,9 @@ namespace OSM
         public void refresh_buyer_comboBox()
         {
             string sql = "select ID,COM_NAME from OSM_GMF";
-            fillComboBox(sql, comboBox_BUYER);
+            SJZDController.fillComboBox(sql, comboBox_BUYER);
         }
 
-        /// <summary>
-        /// 执行comboBox的SQL查询结果填充
-        /// </summary>
-        /// <param name="sql"></param>
-        /// <param name="cbox"></param>
-        private void fillComboBox(string sql, ComboBox cbox)
-        {
-            AccessDB adb = new AccessDB();
-            DataTable dt = adb.SQLTableQuery(sql);
-
-            Dictionary<int, string> sellerDict = new Dictionary<int, string>();
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                int id = (int)dr.ItemArray[0];
-                string com_name = dr.ItemArray[1].ToString();
-                sellerDict.Add(id, com_name);
-            }
-
-            BindingSource bs = new BindingSource();
-            bs.DataSource = sellerDict;
-            cbox.DataSource = bs;
-            cbox.ValueMember = "Key";
-            cbox.DisplayMember = "Value";
-        }
 
         /// <summary>
         /// 确认按钮点击事件
@@ -175,6 +161,11 @@ namespace OSM
             //状态为新增
             if (view_state == 0)
             {
+                if (dataGridView_HW.Rows.Count == 0)
+                {
+                    MessageBox.Show("请添加货物明细，否则无法新增！", "警告");
+                    return;
+                }
                 //将报价单编号用于构造报价单对象
                 offer_sheet.setOFFERSHEET_CODE(textBox_OFFERSHEET_CODE.Text);
                 //由于是新增报价单，所以状态是初始状态1
@@ -218,9 +209,10 @@ namespace OSM
         /// <returns>是否添加成功</returns>
         private bool addOfferSheet(OfferSheet offer_sheet)
         {
-            string sql = "insert into OSM_OFFER_SHEET(OFFERSHEET_CODE,GMF_ID,BJF_ID,OFFERSHEET_TYPE,OFFERSHEET_DATE,OFFERSHEET_STATE) ";
+            string sql = "insert into OSM_OFFER_SHEET(OFFERSHEET_CODE,GMF_ID,BJF_ID,OFFERSHEET_TYPE,OFFERSHEET_DATE,OFFERSHEET_STATE,OFFERSHEET_REGION) ";
             sql += "values('" + offer_sheet.getOFFERSHEET_CODE() + "'," + offer_sheet.getGMF_ID() + "," + offer_sheet.getBJF_ID();
-            sql += ",'" + offer_sheet.getOFFERSHEET_TYPE() + "','" + offer_sheet.getOFFERSHEET_DATE() + "','" + offer_sheet.getOFFERSHEET_STATE() + "')";
+            sql += ",'" + offer_sheet.getOFFERSHEET_TYPE() + "','" + offer_sheet.getOFFERSHEET_DATE() + "','";
+            sql += offer_sheet.getOFFERSHEET_STATE() + "','" + offer_sheet.getOFFERSHEET_REGION() + "')";
 
             AccessDB adb = new AccessDB();
             bool isExecuteSucc = adb.SQLExecute(sql);
@@ -245,7 +237,9 @@ namespace OSM
         {
             string sql = "update OSM_OFFER_SHEET set OFFERSHEET_CODE = '" + offer_sheet.getOFFERSHEET_CODE() + "',";
             sql += "GMF_ID=" + offer_sheet.getGMF_ID().ToString() + ",BJF_ID=" + offer_sheet.getBJF_ID() + ",";
-            sql += "OFFERSHEET_TYPE='" + offer_sheet.getOFFERSHEET_TYPE() + "',OFFERSHEET_DATE = #" + offer_sheet.getOFFERSHEET_DATE() + "#,OFFERSHEET_STATE='" + offer_sheet.getOFFERSHEET_STATE() + "'  ";
+            sql += "OFFERSHEET_TYPE='" + offer_sheet.getOFFERSHEET_TYPE() + "',OFFERSHEET_DATE = #" + offer_sheet.getOFFERSHEET_DATE() + "#,"; 
+            sql += "OFFERSHEET_STATE='" + offer_sheet.getOFFERSHEET_STATE() + "',";
+            sql += "OFFERSHEET_REGION = '" + offer_sheet.getOFFERSHEET_REGION() + "' ";
             sql += "where ID = " + offer_sheet.getID().ToString();
 
             AccessDB adb = new AccessDB();
@@ -433,15 +427,27 @@ namespace OSM
         }
 
         /// <summary>
-        /// 报价单类型下拉列表select事件
+        /// 报价单行业下拉列表select事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void comboBox_OFFERSHEET_TYPE_SelectedIndexChanged(object sender, EventArgs e)
         {
-            KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_REGION.SelectedItem;
+            KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_TYPE.SelectedItem;
             string offer_sheet_type = kv.Key;
             offer_sheet.setOFFERSHEET_TYPE(offer_sheet_type);
+        }
+
+        /// <summary>
+        /// 报价单地区下拉列表select事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBox_OFFERSHEET_REGION_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_OFFERSHEET_REGION.SelectedItem;
+            string offer_sheet_region = kv.Key;
+            offer_sheet.setOFFERSHEET_REGION(offer_sheet_region);
         }
 
         /// <summary>
@@ -462,6 +468,7 @@ namespace OSM
         public void setViewState(int state)
         {
             view_state = state;
+            queryByHW(dataGridView_HW);
         }
 
         /// <summary>
@@ -504,13 +511,13 @@ namespace OSM
         /// <param name="hashtable"></param>
         private void offerSheet_dataBindingUp(Hashtable hashtable)
         {
-            //offer_sheet.setID((int)hashtable["ID"]);
-            //offer_sheet.setOFFERSHEET_CODE(hashtable["OFFERSHEET_CODE"].ToString());
-            //offer_sheet.setBJF_ID((int)hashtable["BJF_ID"]);
-            //offer_sheet.setGMF_ID((int)hashtable["GMF_ID"]);
-            //offer_sheet.setOFFERSHEET_TYPE(hashtable["OFFERSHEET_TYPE"].ToString());
-            //offer_sheet.setOFFERSHEET_DATE(((DateTime)hashtable["OFFERSHEET_DATE"]).ToString("yyyy-MM-dd"));
-            //offer_sheet.setOFFERSHEET_STATE(hashtable["OFFERSHEET_STATE"].ToString());
+            offer_sheet.setID((int)hashtable["ID"]);
+            offer_sheet.setOFFERSHEET_CODE(hashtable["OFFERSHEET_CODE"].ToString());
+            offer_sheet.setBJF_ID((int)hashtable["BJF_ID"]);
+            offer_sheet.setGMF_ID((int)hashtable["GMF_ID"]);
+            offer_sheet.setOFFERSHEET_TYPE(hashtable["OFFERSHEET_TYPE"].ToString());
+            offer_sheet.setOFFERSHEET_DATE(((DateTime)hashtable["OFFERSHEET_DATE"]).ToString("yyyy-MM-dd"));
+            offer_sheet.setOFFERSHEET_STATE(hashtable["OFFERSHEET_STATE"].ToString());
 
             //获取报价单编号
             textBox_OFFERSHEET_CODE.Text = hashtable["OFFERSHEET_CODE"].ToString();
@@ -565,5 +572,21 @@ namespace OSM
             //获取货物列表
             queryByHW(dataGridView_HW);
         }
+
+        /// <summary>
+        /// 货物DataGridView单元格点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView_HW_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView_HW.Columns[e.ColumnIndex].Name == "DelBtn")
+            {
+                string product_id = dataGridView_HW.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                MessageBox.Show(product_id);
+            }
+        }
+
+        
     }
 }

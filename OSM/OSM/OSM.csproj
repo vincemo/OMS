@@ -106,6 +106,12 @@
     <Compile Include="FormOSM_password.Designer.cs">
       <DependentUpon>FormOSM_password.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOSM_Product_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_Product_Add.Designer.cs">
+      <DependentUpon>FormOSM_Product_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOSM_Seller_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_password.resx">
       <DependentUpon>FormOSM_password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_Product_Add.resx">
+      <DependentUpon>FormOSM_Product_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_Seller_Add.resx">
       <DependentUpon>FormOSM_Seller_Add.cs</DependentUpon>

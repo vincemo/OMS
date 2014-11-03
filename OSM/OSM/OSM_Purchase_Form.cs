@@ -29,7 +29,7 @@ namespace OSM
             string whereString = "where PID = 30";
             SJZDController.setZD_ComboBox(whereString, comboBox_PurchaseState);
 
-            whereString = "where PID = 15";
+            whereString = "where PID = 43";
             SJZDController.setZD_ComboBox(whereString, comboBox_HWType);
 
             //查询采购单视图返回结果
@@ -148,16 +148,16 @@ namespace OSM
             if (dt.Rows.Count == 1)
             {
                 DataRow dr = dt.Rows[0];
-                hashtable.Add("ID", dr.ItemArray[0]);
-                hashtable.Add("OFFERSHEET_ID", dr.ItemArray[1]);
-                hashtable.Add("ORDER_STATE", dr.ItemArray[2]);
-                hashtable.Add("ORDER_DATE", dr.ItemArray[3]);
-                hashtable.Add("PAY_MODE", dr.ItemArray[4]);
-                hashtable.Add("PAY_STATE", dr.ItemArray[5]);
-                hashtable.Add("ALREADY_PAYMENT", dr.ItemArray[6]);
-                hashtable.Add("PRE_PAYMENT", dr.ItemArray[7]);
-                hashtable.Add("REQUIRE_PAYMENT", dr.ItemArray[8]);
-                hashtable.Add("OFFERSHEET_CODE", dr.ItemArray[9]);
+                hashtable.Add("ID", dr["ID"]);
+                hashtable.Add("OFFERSHEET_ID", dr["OFFERSHEET_ID"]);
+                hashtable.Add("ORDER_STATE", dr["ORDER_STATE"]);
+                hashtable.Add("ORDER_DATE", dr["ORDER_DATE"]);
+                hashtable.Add("PAY_MODE", dr["PAY_MODE"]);
+                hashtable.Add("PAY_STATE", dr["PAY_STATE"]);
+                hashtable.Add("ALREADY_PAYMENT", dr["ALREADY_PAYMENT"]);
+                hashtable.Add("PRE_PAYMENT", dr["PRE_PAYMENT"]);
+                hashtable.Add("REQUIRE_PAYMENT", dr["REQUIRE_PAYMENT"]);
+                hashtable.Add("OFFERSHEET_CODE", dr["OFFERSHEET_CODE"]);
             }
 
             FormOSM_Order_View orderView = new FormOSM_Order_View();

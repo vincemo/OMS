@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 using OSM.DBClass;
 
 namespace OSM
@@ -27,6 +28,10 @@ namespace OSM
 
             string whereString = "where PID = 43 ";
             SJZDController.setZD_ComboBox(whereString, comboBox_HW_TYPE);
+            comboBox_HW_TYPE.Enabled = false;
+
+            //产品列表数据填充
+            fillProductComboBox();
         }
 
         /// <summary>
@@ -78,7 +83,7 @@ namespace OSM
 
             if (comboBox_HW_TYPE.SelectedIndex == -1)
             {
-                MessageBox.Show("类型不能为空！", "警告");
+                MessageBox.Show("所属设备不能为空！", "警告");
                 return;
             }
 
@@ -142,8 +147,8 @@ namespace OSM
             int number = int.Parse(textBox_HW_NUMBER.Text);
             double price = double.Parse(textBox_HW_PRICE.Text);
 
-            hw.setHW_NAME(textBox_HW_NAME.Text);
-            hw.setHW_CODE(textBox_HW_CODE.Text);
+            //hw.setHW_NAME(textBox_HW_NAME.Text);
+            //hw.setHW_CODE(textBox_HW_CODE.Text);
             hw.setHW_NUMBER(number);
             hw.setHW_PRICE(price);
             hw.setHW_TOTALPRICE(price * number);
@@ -157,9 +162,9 @@ namespace OSM
         /// <returns></returns>
         private bool addHW(HW hw)
         {
-            string sql = "insert into OSM_HW(OFFERSHEET_CODE,HW_TYPE,HW_NAME,HW_CODE,HW_NUMBER,HW_PRICE,HW_TOTALPRICE,COMMENT) ";
-            sql += "values('" + hw.getOFFERSHEET_CODE() + "','" + hw.getHW_TYPE() + "','" + hw.getHW_NAME();
-            sql += "','" + hw.getHW_CODE() + "'," + hw.getHW_NUMBER().ToString() + "," + hw.getHW_PRICE().ToString(); 
+            string sql = "insert into OSM_HW(OFFERSHEET_CODE,PRODUCT_ID,HW_NUMBER,HW_PRICE,HW_TOTALPRICE,COMMENT) ";
+            sql += "values('" + hw.getOFFERSHEET_CODE() + "'," + hw.getPRODUCT_ID() + ","; 
+            sql += hw.getHW_NUMBER().ToString() + "," + hw.getHW_PRICE().ToString(); 
             sql += "," + hw.getHW_TOTALPRICE().ToString() + ",'" + hw.getCOMMENT() + "')";
 
             AccessDB adb = new AccessDB();
@@ -176,15 +181,69 @@ namespace OSM
         }
 
         /// <summary>
-        /// 货物类型下拉列表index变化触发事件
+        /// 新增产品按钮点击事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void comboBox_HW_TYPE_SelectedIndexChanged(object sender, EventArgs e)
+        private void button_AddProduct_Click(object sender, EventArgs e)
         {
-            KeyValuePair<string, string> kv = ((KeyValuePair<string, string>)comboBox_HW_TYPE.SelectedItem);
-            string hw_type = kv.Key.ToString();
-            hw.setHW_TYPE(hw_type);
+            FormOSM_Product_Add addProduct = new FormOSM_Product_Add();
+            addProduct.setHWWindow(this);
+            addProduct.ShowDialog();
+        }
+
+        /// <summary>
+        /// 产品列表数据填充
+        /// </summary>
+        /// <param name="comboBox_Product"></param>
+        private void fillProductComboBox()
+        {
+            string sql = "select ID,HW_CODE from OSM_STORAGE";
+            SJZDController.fillComboBox(sql, comboBox_Product);
+        }
+
+        /// <summary>
+        /// 刷新产品列表
+        /// </summary>
+        public void refresh_product_comboBox()
+        {
+            fillProductComboBox();
+        }
+
+        /// <summary>
+        /// 产品选择下拉列表选择触发事件
+        /// 选择后将对应代码产品信息填入货物信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void comboBox_Product_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            KeyValuePair<int, string> kv = (KeyValuePair<int, string>)comboBox_Product.SelectedItem;
+
+            int product_id = kv.Key;
+            string sql = "SELECT * FROM OSM_STORAGE WHERE ID = " + product_id;
+            AccessDB adb = new AccessDB();
+            DataTable dt = adb.SQLTableQuery(sql);
+            
+            if (dt.Rows.Count == 1)
+            {
+                DataRow dr = dt.Rows[0];
+
+                textBox_HW_NAME.Text = dr["HW_NAME"].ToString();
+                textBox_HW_CODE.Text = dr["HW_CODE"].ToString();
+
+                for (int i = 0; i < comboBox_HW_TYPE.Items.Count; i++)
+                {
+                    KeyValuePair<string, string> item = (KeyValuePair<string, string>)comboBox_HW_TYPE.Items[i];
+                    if (item.Key == dr["HW_TYPE"].ToString())
+                    {
+                        comboBox_HW_TYPE.SelectedIndex = i;
+                        break;
+                    }
+                }
+
+                hw.setPRODUCT_ID(int.Parse(dr["ID"].ToString()));
+            }
         }
     }
 }

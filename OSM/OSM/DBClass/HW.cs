@@ -9,9 +9,10 @@ namespace OSM.DBClass
     {
         private int ID;
         private string OFFERSHEET_CODE;
-        private string HW_TYPE;
-        private string HW_NAME;
-        private string HW_CODE;
+        private int PRODUCT_ID;
+        //private string HW_TYPE;
+        //private string HW_NAME;
+        //private string HW_CODE;
         private int HW_NUMBER;
         private double HW_PRICE;
         private double HW_TOTALPRICE;
@@ -37,7 +38,17 @@ namespace OSM.DBClass
             OFFERSHEET_CODE = offersheet_code;
         }
 
-        public string getHW_TYPE()
+        public int getPRODUCT_ID()
+        {
+            return PRODUCT_ID;
+        }
+
+        public void setPRODUCT_ID(int product_id)
+        {
+            PRODUCT_ID = product_id;
+        }
+
+        /*public string getHW_TYPE()
         {
             return HW_TYPE;
         }
@@ -65,7 +76,7 @@ namespace OSM.DBClass
         public void setHW_CODE(string hw_code)
         {
             HW_CODE = hw_code;
-        }
+        }*/
 
         public int getHW_NUMBER()
         {

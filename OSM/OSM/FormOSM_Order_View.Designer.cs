@@ -49,14 +49,14 @@
             this.textBox_RequirePayment = new System.Windows.Forms.TextBox();
             this.groupBox_HW = new System.Windows.Forms.GroupBox();
             this.dataGridView_HW = new System.Windows.Forms.DataGridView();
+            this.button_OK = new System.Windows.Forms.Button();
+            this.button_CANCEL = new System.Windows.Forms.Button();
             this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_TYPE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_TOTALPRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_OK = new System.Windows.Forms.Button();
-            this.button_CANCEL = new System.Windows.Forms.Button();
             this.groupBox_OrderInfo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox_HW.SuspendLayout();
@@ -141,7 +141,7 @@
             this.comboBox_OrderState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_OrderState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OrderState.FormattingEnabled = true;
-            this.comboBox_OrderState.Location = new System.Drawing.Point(115, 36);
+            this.comboBox_OrderState.Location = new System.Drawing.Point(115, 34);
             this.comboBox_OrderState.Name = "comboBox_OrderState";
             this.comboBox_OrderState.Size = new System.Drawing.Size(106, 25);
             this.comboBox_OrderState.TabIndex = 3;
@@ -181,7 +181,7 @@
             this.comboBox_PayMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PayMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PayMode.FormattingEnabled = true;
-            this.comboBox_PayMode.Location = new System.Drawing.Point(115, 65);
+            this.comboBox_PayMode.Location = new System.Drawing.Point(115, 67);
             this.comboBox_PayMode.Name = "comboBox_PayMode";
             this.comboBox_PayMode.Size = new System.Drawing.Size(106, 25);
             this.comboBox_PayMode.TabIndex = 7;
@@ -202,7 +202,7 @@
             this.comboBox_PayState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PayState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PayState.FormattingEnabled = true;
-            this.comboBox_PayState.Location = new System.Drawing.Point(340, 65);
+            this.comboBox_PayState.Location = new System.Drawing.Point(340, 67);
             this.comboBox_PayState.Name = "comboBox_PayState";
             this.comboBox_PayState.Size = new System.Drawing.Size(106, 25);
             this.comboBox_PayState.TabIndex = 9;
@@ -277,8 +277,8 @@
             this.dataGridView_HW.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_HW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.HW_NAME,
-            this.HW_TYPE,
             this.HW_CODE,
+            this.HW_TYPE_DESC,
             this.HW_NUMBER,
             this.HW_PRICE,
             this.HW_TOTALPRICE});
@@ -287,42 +287,6 @@
             this.dataGridView_HW.RowTemplate.Height = 23;
             this.dataGridView_HW.Size = new System.Drawing.Size(451, 150);
             this.dataGridView_HW.TabIndex = 0;
-            // 
-            // HW_NAME
-            // 
-            this.HW_NAME.DataPropertyName = "HW_NAME";
-            this.HW_NAME.HeaderText = "名称";
-            this.HW_NAME.Name = "HW_NAME";
-            // 
-            // HW_TYPE
-            // 
-            this.HW_TYPE.DataPropertyName = "HW_TYPE";
-            this.HW_TYPE.HeaderText = "种类";
-            this.HW_TYPE.Name = "HW_TYPE";
-            // 
-            // HW_CODE
-            // 
-            this.HW_CODE.DataPropertyName = "HW_CODE";
-            this.HW_CODE.HeaderText = "代码";
-            this.HW_CODE.Name = "HW_CODE";
-            // 
-            // HW_NUMBER
-            // 
-            this.HW_NUMBER.DataPropertyName = "HW_NUMBER";
-            this.HW_NUMBER.HeaderText = "数量";
-            this.HW_NUMBER.Name = "HW_NUMBER";
-            // 
-            // HW_PRICE
-            // 
-            this.HW_PRICE.DataPropertyName = "HW_PRICE";
-            this.HW_PRICE.HeaderText = "单价";
-            this.HW_PRICE.Name = "HW_PRICE";
-            // 
-            // HW_TOTALPRICE
-            // 
-            this.HW_TOTALPRICE.DataPropertyName = "HW_TOTALPRICE";
-            this.HW_TOTALPRICE.HeaderText = "总价";
-            this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
             // 
             // button_OK
             // 
@@ -343,6 +307,42 @@
             this.button_CANCEL.Text = "取消";
             this.button_CANCEL.UseVisualStyleBackColor = true;
             this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
+            // 
+            // HW_NAME
+            // 
+            this.HW_NAME.DataPropertyName = "HW_NAME";
+            this.HW_NAME.HeaderText = "名称";
+            this.HW_NAME.Name = "HW_NAME";
+            // 
+            // HW_CODE
+            // 
+            this.HW_CODE.DataPropertyName = "HW_CODE";
+            this.HW_CODE.HeaderText = "代码";
+            this.HW_CODE.Name = "HW_CODE";
+            // 
+            // HW_TYPE_DESC
+            // 
+            this.HW_TYPE_DESC.DataPropertyName = "HW_TYPE_DESC";
+            this.HW_TYPE_DESC.HeaderText = "所属设备";
+            this.HW_TYPE_DESC.Name = "HW_TYPE_DESC";
+            // 
+            // HW_NUMBER
+            // 
+            this.HW_NUMBER.DataPropertyName = "HW_NUMBER";
+            this.HW_NUMBER.HeaderText = "数量";
+            this.HW_NUMBER.Name = "HW_NUMBER";
+            // 
+            // HW_PRICE
+            // 
+            this.HW_PRICE.DataPropertyName = "HW_PRICE";
+            this.HW_PRICE.HeaderText = "单价";
+            this.HW_PRICE.Name = "HW_PRICE";
+            // 
+            // HW_TOTALPRICE
+            // 
+            this.HW_TOTALPRICE.DataPropertyName = "HW_TOTALPRICE";
+            this.HW_TOTALPRICE.HeaderText = "总价";
+            this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
             // 
             // FormOSM_Order_View
             // 
@@ -394,8 +394,8 @@
         private System.Windows.Forms.Button button_OK;
         private System.Windows.Forms.Button button_CANCEL;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HW_TYPE;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_CODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HW_TYPE_DESC;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_NUMBER;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn HW_TOTALPRICE;

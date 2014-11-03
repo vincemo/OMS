@@ -158,16 +158,16 @@ namespace OSM
             if (dt.Rows.Count == 1)
             {
                 DataRow dr = dt.Rows[0];
-                hashtable.Add("ID", dr.ItemArray[0]);
-                hashtable.Add("OFFERSHEET_ID", dr.ItemArray[1]);
-                hashtable.Add("ORDER_STATE", dr.ItemArray[2]);
-                hashtable.Add("ORDER_DATE", dr.ItemArray[3]);
-                hashtable.Add("PAY_MODE", dr.ItemArray[4]);
-                hashtable.Add("PAY_STATE", dr.ItemArray[5]);
-                hashtable.Add("ALREADY_PAYMENT", dr.ItemArray[6]);
-                hashtable.Add("PRE_PAYMENT", dr.ItemArray[7]);
-                hashtable.Add("REQUIRE_PAYMENT", dr.ItemArray[8]);
-                hashtable.Add("OFFERSHEET_CODE", dr.ItemArray[9]);
+                hashtable.Add("ID", dr["ID"]);
+                hashtable.Add("OFFERSHEET_ID", dr["OFFERSHEET_ID"]);
+                hashtable.Add("ORDER_STATE", dr["ORDER_STATE"]);
+                hashtable.Add("ORDER_DATE", dr["ORDER_DATE"]);
+                hashtable.Add("PAY_MODE", dr["PAY_MODE"]);
+                hashtable.Add("PAY_STATE", dr["PAY_STATE"]);
+                hashtable.Add("ALREADY_PAYMENT", dr["ALREADY_PAYMENT"]);
+                hashtable.Add("PRE_PAYMENT", dr["PRE_PAYMENT"]);
+                hashtable.Add("REQUIRE_PAYMENT", dr["REQUIRE_PAYMENT"]);
+                hashtable.Add("OFFERSHEET_CODE", dr["OFFERSHEET_CODE"]);
             }
 
             FormOSM_Order_View orderView = new FormOSM_Order_View();
@@ -186,7 +186,7 @@ namespace OSM
         /// <param name="offersheet_code">报价单编号</param>
         private void checkOfferHW(string order_id, string offersheet_code)
         {
-            string sql = "select HW_TYPE,HW_NAME,HW_CODE,HW_NUMBER from OSM_HW where OFFERSHEET_CODE = '" + offersheet_code + "'";
+            string sql = "select PRODUCT_ID,HW_NUMBER from OSM_HW where OFFERSHEET_CODE = '" + offersheet_code + "'";
 
             AccessDB adb = new AccessDB();
             DataTable dt = adb.SQLTableQuery(sql);
@@ -197,9 +197,9 @@ namespace OSM
                 DataRow dr = dt.Rows[i];
                 Hashtable ht = new Hashtable();
 
-                ht.Add("HW_TYPE", dr["HW_TYPE"]);
-                ht.Add("HW_NAME", dr["HW_NAME"]);
-                ht.Add("HW_CODE", dr["HW_CODE"]);
+                ht.Add("PRODUCT_ID", dr["PRODUCT_ID"]);
+                //ht.Add("HW_NAME", dr["HW_NAME"]);
+                //ht.Add("HW_CODE", dr["HW_CODE"]);
                 ht.Add("HW_NUMBER", dr["HW_NUMBER"]);
 
                 hashList.Add(ht);
@@ -240,10 +240,10 @@ namespace OSM
             for (int i = 0; i < hashList.Count; i++)
             {
                 Hashtable ht = hashList[i];
-                string hw_code = ht["HW_CODE"].ToString();
+                string product_id = ht["PRODUCT_ID"].ToString();
                 int hw_need_number = int.Parse(ht["HW_NUMBER"].ToString());
 
-                string sql = "select HW_CODE,HW_NUMBER from OSM_STORAGE where HW_CODE = '" + hw_code + "'";
+                string sql = "select ID,HW_NUMBER from OSM_STORAGE where ID = " + product_id + "";
                 DataTable dt = adb.SQLTableQuery(sql);
                 if (dt.Rows.Count == 1)
                 {
@@ -290,15 +290,15 @@ namespace OSM
         {
             AccessDB adb = new AccessDB();
             int count = 0;
-            string insertSql = "insert into OSM_PURCHASE_SHEET(ORDER_ID,HW_TYPE,HW_NAME,HW_CODE,PURCHASE_NUMBER,PURCHASE_STATE,INIT_DATE) values (";
+            string insertSql = "insert into OSM_PURCHASE_SHEET(ORDER_ID,PRODUCT_ID,PURCHASE_NUMBER,PURCHASE_STATE,INIT_DATE) values (";
 
             for (int i = 0; i < purchaseList.Count; i++)
             {
                 Hashtable ht = purchaseList[i];
                 string valueString = order_id + ",";
-                valueString += "'" + ht["HW_TYPE"].ToString() + "',";
-                valueString += "'" + ht["HW_NAME"].ToString() + "',";
-                valueString += "'" + ht["HW_CODE"].ToString() + "',";
+                valueString +=  ht["PRODUCT_ID"].ToString() + ",";
+                //valueString += "'" + ht["HW_NAME"].ToString() + "',";
+                //valueString += "'" + ht["HW_CODE"].ToString() + "',";
                 valueString += ht["HW_NUMBER"].ToString() + ",'1',#" + DateTime.Now.ToString("yyyy-MM-dd") + "#)";
 
                 string sql = insertSql + valueString;

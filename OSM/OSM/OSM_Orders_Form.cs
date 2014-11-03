@@ -155,16 +155,16 @@ namespace OSM
             if (dt.Rows.Count == 1)
             {
                 DataRow dr = dt.Rows[0];
-                hashtable.Add("ID", dr.ItemArray[0]);
-                hashtable.Add("OFFERSHEET_ID", dr.ItemArray[1]);
-                hashtable.Add("ORDER_STATE", dr.ItemArray[2]);
-                hashtable.Add("ORDER_DATE", dr.ItemArray[3]);
-                hashtable.Add("PAY_MODE", dr.ItemArray[4]);
-                hashtable.Add("PAY_STATE", dr.ItemArray[5]);
-                hashtable.Add("ALREADY_PAYMENT", dr.ItemArray[6]);
-                hashtable.Add("PRE_PAYMENT", dr.ItemArray[7]);
-                hashtable.Add("REQUIRE_PAYMENT", dr.ItemArray[8]);
-                hashtable.Add("OFFERSHEET_CODE", dr.ItemArray[9]);
+                hashtable.Add("ID", dr["ID"]);
+                hashtable.Add("OFFERSHEET_ID", dr["OFFERSHEET_ID"]);
+                hashtable.Add("ORDER_STATE", dr["ORDER_STATE"]);
+                hashtable.Add("ORDER_DATE", dr["ORDER_DATE"]);
+                hashtable.Add("PAY_MODE", dr["PAY_MODE"]);
+                hashtable.Add("PAY_STATE", dr["PAY_STATE"]);
+                hashtable.Add("ALREADY_PAYMENT", dr["ALREADY_PAYMENT"]);
+                hashtable.Add("PRE_PAYMENT", dr["PRE_PAYMENT"]);
+                hashtable.Add("REQUIRE_PAYMENT", dr["REQUIRE_PAYMENT"]);
+                hashtable.Add("OFFERSHEET_CODE", dr["OFFERSHEET_CODE"]);
             }
             
             FormOSM_Order_View orderView = new FormOSM_Order_View();
@@ -192,13 +192,15 @@ namespace OSM
             if (dt.Rows.Count == 1)
             {
                 DataRow dr = dt.Rows[0];
-                hashtable.Add("ID", dr.ItemArray[0]);
-                hashtable.Add("OFFERSHEET_CODE", dr.ItemArray[1]);
-                hashtable.Add("GMF_ID", dr.ItemArray[2]);
-                hashtable.Add("BJF_ID", dr.ItemArray[3]);
-                hashtable.Add("OFFERSHEET_TYPE", dr.ItemArray[4]);
-                hashtable.Add("OFFERSHEET_DATE", dr.ItemArray[5]);
-                hashtable.Add("OFFERSHEET_STATE", dr.ItemArray[6]);
+                hashtable.Add("ID", dr["ID"]);
+                hashtable.Add("OFFERSHEET_CODE", dr["OFFERSHEET_CODE"]);
+                hashtable.Add("GMF_ID", dr["GMF_ID"]);
+                hashtable.Add("BJF_ID", dr["BJF_ID"]);
+                hashtable.Add("OFFERSHEET_TYPE", dr["OFFERSHEET_TYPE"]);
+                hashtable.Add("OFFERSHEET_DATE", dr["OFFERSHEET_DATE"]);
+                hashtable.Add("OFFERSHEET_STATE", dr["OFFERSHEET_STATE"]);
+                hashtable.Add("OFFERSHEET_REGION", dr["OFFERSHEET_REGION"]);
+                hashtable.Add("CONFIRM_DATE", dr["CONFIRM_DATE"]);
             }
 
             FormOSM_Offers_Add form_add_offers = new FormOSM_Offers_Add();

@@ -121,7 +121,7 @@ namespace OSM
                 }
             }
 
-            string sql = "select * from OSM_HW where OFFERSHEET_CODE = '" + ht["OFFERSHEET_CODE"].ToString() + "'";
+            string sql = "select * from OSM_HW_LIST_V where OFFERSHEET_CODE = '" + ht["OFFERSHEET_CODE"].ToString() + "'";
             AccessDB adb = new AccessDB();
             DataTable dt = adb.SQLTableQuery(sql);
             dataGridView_HW.AutoGenerateColumns = false;
