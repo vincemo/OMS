@@ -77,6 +77,14 @@
             this.tabPage_HW = new System.Windows.Forms.TabPage();
             this.button_Add_HW = new System.Windows.Forms.Button();
             this.dataGridView_HW = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_TYPE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW_TOTALPRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DelBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label_offersheet_date = new System.Windows.Forms.Label();
             this.label_offersheet_type = new System.Windows.Forms.Label();
@@ -89,14 +97,6 @@
             this.button_CANCEL = new System.Windows.Forms.Button();
             this.button_CONFIRM = new System.Windows.Forms.Button();
             this.groupBox_offersheet = new System.Windows.Forms.GroupBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_TYPE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HW_TOTALPRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DelBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.tabControl_Offers_add.SuspendLayout();
             this.tabPage_BUYER.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -684,6 +684,64 @@
             this.dataGridView_HW.TabIndex = 0;
             this.dataGridView_HW.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_HW_CellContentClick);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // HW_NAME
+            // 
+            this.HW_NAME.DataPropertyName = "HW_NAME";
+            this.HW_NAME.HeaderText = "名称";
+            this.HW_NAME.Name = "HW_NAME";
+            this.HW_NAME.ReadOnly = true;
+            // 
+            // HW_CODE
+            // 
+            this.HW_CODE.DataPropertyName = "HW_CODE";
+            this.HW_CODE.HeaderText = "代码";
+            this.HW_CODE.Name = "HW_CODE";
+            this.HW_CODE.ReadOnly = true;
+            // 
+            // HW_TYPE_DESC
+            // 
+            this.HW_TYPE_DESC.DataPropertyName = "HW_TYPE_DESC";
+            this.HW_TYPE_DESC.HeaderText = "所属设备";
+            this.HW_TYPE_DESC.Name = "HW_TYPE_DESC";
+            this.HW_TYPE_DESC.ReadOnly = true;
+            // 
+            // HW_NUMBER
+            // 
+            this.HW_NUMBER.DataPropertyName = "HW_NUMBER";
+            this.HW_NUMBER.HeaderText = "数量";
+            this.HW_NUMBER.Name = "HW_NUMBER";
+            this.HW_NUMBER.ReadOnly = true;
+            // 
+            // HW_PRICE
+            // 
+            this.HW_PRICE.DataPropertyName = "HW_PRICE";
+            this.HW_PRICE.HeaderText = "单价";
+            this.HW_PRICE.Name = "HW_PRICE";
+            this.HW_PRICE.ReadOnly = true;
+            // 
+            // HW_TOTALPRICE
+            // 
+            this.HW_TOTALPRICE.DataPropertyName = "HW_TOTALPRICE";
+            this.HW_TOTALPRICE.HeaderText = "总价";
+            this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
+            this.HW_TOTALPRICE.ReadOnly = true;
+            // 
+            // DelBtn
+            // 
+            this.DelBtn.HeaderText = "";
+            this.DelBtn.Name = "DelBtn";
+            this.DelBtn.ReadOnly = true;
+            this.DelBtn.Text = "删除";
+            this.DelBtn.UseColumnTextForLinkValue = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
@@ -822,64 +880,6 @@
             this.groupBox_offersheet.TabIndex = 3;
             this.groupBox_offersheet.TabStop = false;
             this.groupBox_offersheet.Text = "报价单基本信息";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // HW_NAME
-            // 
-            this.HW_NAME.DataPropertyName = "HW_NAME";
-            this.HW_NAME.HeaderText = "名称";
-            this.HW_NAME.Name = "HW_NAME";
-            this.HW_NAME.ReadOnly = true;
-            // 
-            // HW_CODE
-            // 
-            this.HW_CODE.DataPropertyName = "HW_CODE";
-            this.HW_CODE.HeaderText = "代码";
-            this.HW_CODE.Name = "HW_CODE";
-            this.HW_CODE.ReadOnly = true;
-            // 
-            // HW_TYPE_DESC
-            // 
-            this.HW_TYPE_DESC.DataPropertyName = "HW_TYPE_DESC";
-            this.HW_TYPE_DESC.HeaderText = "所属设备";
-            this.HW_TYPE_DESC.Name = "HW_TYPE_DESC";
-            this.HW_TYPE_DESC.ReadOnly = true;
-            // 
-            // HW_NUMBER
-            // 
-            this.HW_NUMBER.DataPropertyName = "HW_NUMBER";
-            this.HW_NUMBER.HeaderText = "数量";
-            this.HW_NUMBER.Name = "HW_NUMBER";
-            this.HW_NUMBER.ReadOnly = true;
-            // 
-            // HW_PRICE
-            // 
-            this.HW_PRICE.DataPropertyName = "HW_PRICE";
-            this.HW_PRICE.HeaderText = "单价";
-            this.HW_PRICE.Name = "HW_PRICE";
-            this.HW_PRICE.ReadOnly = true;
-            // 
-            // HW_TOTALPRICE
-            // 
-            this.HW_TOTALPRICE.DataPropertyName = "HW_TOTALPRICE";
-            this.HW_TOTALPRICE.HeaderText = "总价";
-            this.HW_TOTALPRICE.Name = "HW_TOTALPRICE";
-            this.HW_TOTALPRICE.ReadOnly = true;
-            // 
-            // DelBtn
-            // 
-            this.DelBtn.HeaderText = "";
-            this.DelBtn.Name = "DelBtn";
-            this.DelBtn.ReadOnly = true;
-            this.DelBtn.Text = "删除";
-            this.DelBtn.UseColumnTextForLinkValue = true;
             // 
             // FormOSM_Offers_Add
             // 

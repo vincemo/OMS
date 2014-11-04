@@ -124,6 +124,91 @@ namespace OSM
                 offerSheetAuditBox.StartPosition = FormStartPosition.CenterParent;
                 offerSheetAuditBox.ShowDialog();
             }
+
+            if (dataGridView_OfferSheet_Audit.Columns[e.ColumnIndex].Name == "passBtn")
+            {
+                DialogResult result = MessageBox.Show("确定通过审核？", "提醒", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    string offersheet_id = dataGridView_OfferSheet_Audit.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                    string offersheet_code = dataGridView_OfferSheet_Audit.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString();
+
+                    PassOfferSheet(offersheet_id, offersheet_code);
+                }
+            }
+
+            if (dataGridView_OfferSheet_Audit.Columns[e.ColumnIndex].Name == "failBtn")
+            {
+                DialogResult result = MessageBox.Show("确定审核不通过？", "提醒", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    string offersheet_id = dataGridView_OfferSheet_Audit.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+
+                    FailOfferSheet(offersheet_id);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 对应报价单审核通过
+        /// </summary>
+        /// <param name="offerSheetID">报价单ID</param>
+        /// <param name="offerSheetCode">报价单编号</param>
+        private void PassOfferSheet(string offerSheetID, string offerSheetCode)
+        {
+            AccessDB adb = new AccessDB();
+
+            string query = "select sum(HW_TOTALPRICE) from OSM_HW where OFFERSHEET_CODE = '" + offerSheetCode + "'";
+            DataTable dt = adb.SQLTableQuery(query);
+            if (dt.Rows.Count > 0)
+            {
+                DataRow dr = dt.Rows[0];
+                double require_payment = 0;
+                try
+                {
+                    require_payment = double.Parse(dr[0].ToString());
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("该报价单没有对应的货物列表，无法通过审核！" + exception.ToString(), "警告");
+                    return;
+                }
+
+
+                //生成订单存入数据库
+                string insertSQL = "insert into OSM_ORDER_SHEET(OFFERSHEET_ID,ORDER_STATE,REQUIRE_PAYMENT,ORDER_DATE,PAY_STATE) values ('"; 
+                insertSQL += offerSheetID + "','1'," + require_payment + ",#" + DateTime.Now.ToString("yyyy-MM-dd") + "#,'1')";
+
+                if (adb.SQLExecute(insertSQL))
+                {
+                    MessageBox.Show("已将审核通过的报价单生成订单", "消息");
+
+                    string sql = "update OSM_OFFER_SHEET set OFFERSHEET_STATE = '2' where ID = " + offerSheetID;
+                    if (adb.SQLExecute(sql))
+                    {
+                        main_form.TSMItem_offer_aduit_Refresh();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("该报价单没有对应的货物列表，无法通过审核！", "警告");
+            }
+        }
+
+        /// <summary>
+        /// 对应报价单审核不通过
+        /// </summary>
+        /// <param name="offerSheetID">报价单ID</param>
+        private void FailOfferSheet(string offerSheetID)
+        {
+            string sql = "update OSM_OFFER_SHEET set OFFERSHEET_STATE = '3' where ID = " + offerSheetID;
+
+            AccessDB adb = new AccessDB();
+            if (adb.SQLExecute(sql))
+            {
+                main_form.TSMItem_offer_aduit_Refresh();
+            }
         }
 
         /// <summary>

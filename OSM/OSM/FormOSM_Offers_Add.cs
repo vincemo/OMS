@@ -582,11 +582,27 @@ namespace OSM
         {
             if (dataGridView_HW.Columns[e.ColumnIndex].Name == "DelBtn")
             {
-                string product_id = dataGridView_HW.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-                MessageBox.Show(product_id);
+                string hw_id = dataGridView_HW.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                //MessageBox.Show(hw_id);
+                DelHwByID(hw_id);
             }
         }
 
+        /// <summary>
+        /// 根据ID删除货物明细记录
+        /// </summary>
+        /// <param name="hw_id"></param>
+        private void DelHwByID(string hw_id)
+        {
+            AccessDB adb = new AccessDB();
+            string whereString = "where ID = " + hw_id;
+
+            if (adb.SQLTableDelete("OSM_HW", whereString) > 0)
+            {
+                MessageBox.Show("删除成功！", "消息");
+                queryByHW(dataGridView_HW);
+            }
+        }
         
     }
 }

@@ -49,6 +49,8 @@
             this.OFFERSHEET_STATE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.auditBtn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.passBtn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.failBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox__OfferSheet.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -100,7 +102,7 @@
             this.comboBox_OfferSheet_Audit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_OfferSheet_Audit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OfferSheet_Audit.FormattingEnabled = true;
-            this.comboBox_OfferSheet_Audit.Location = new System.Drawing.Point(85, 53);
+            this.comboBox_OfferSheet_Audit.Location = new System.Drawing.Point(85, 50);
             this.comboBox_OfferSheet_Audit.Name = "comboBox_OfferSheet_Audit";
             this.comboBox_OfferSheet_Audit.Size = new System.Drawing.Size(152, 25);
             this.comboBox_OfferSheet_Audit.TabIndex = 3;
@@ -181,7 +183,9 @@
             this.OFFERSHEET_DATE,
             this.OFFERSHEET_STATE_DESC,
             this.viewBtn,
-            this.auditBtn});
+            this.auditBtn,
+            this.passBtn,
+            this.failBtn});
             this.dataGridView_OfferSheet_Audit.Location = new System.Drawing.Point(274, 3);
             this.dataGridView_OfferSheet_Audit.Name = "dataGridView_OfferSheet_Audit";
             this.dataGridView_OfferSheet_Audit.RowTemplate.Height = 23;
@@ -266,7 +270,24 @@
             this.auditBtn.Name = "auditBtn";
             this.auditBtn.Text = "审核";
             this.auditBtn.UseColumnTextForLinkValue = true;
+            this.auditBtn.Visible = false;
             this.auditBtn.Width = 50;
+            // 
+            // passBtn
+            // 
+            this.passBtn.HeaderText = "";
+            this.passBtn.Name = "passBtn";
+            this.passBtn.Text = "通过";
+            this.passBtn.UseColumnTextForLinkValue = true;
+            this.passBtn.Width = 50;
+            // 
+            // failBtn
+            // 
+            this.failBtn.HeaderText = "";
+            this.failBtn.Name = "failBtn";
+            this.failBtn.Text = "不通过";
+            this.failBtn.UseColumnTextForLinkValue = true;
+            this.failBtn.Width = 50;
             // 
             // OSM_Offer_Audit_Form
             // 
@@ -309,5 +330,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OFFERSHEET_STATE_DESC;
         private System.Windows.Forms.DataGridViewLinkColumn viewBtn;
         private System.Windows.Forms.DataGridViewLinkColumn auditBtn;
+        private System.Windows.Forms.DataGridViewLinkColumn passBtn;
+        private System.Windows.Forms.DataGridViewLinkColumn failBtn;
     }
 }
