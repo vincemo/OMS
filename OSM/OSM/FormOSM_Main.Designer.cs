@@ -169,6 +169,7 @@
             this.TSMItem_purchase_arrive.Name = "TSMItem_purchase_arrive";
             this.TSMItem_purchase_arrive.Size = new System.Drawing.Size(152, 22);
             this.TSMItem_purchase_arrive.Text = "采购到货";
+            this.TSMItem_purchase_arrive.Click += new System.EventHandler(this.TSMItem_purchase_arrive_Click);
             // 
             // TSMItem_Deliver
             // 

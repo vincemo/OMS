@@ -112,6 +112,12 @@
     <Compile Include="FormOSM_Product_Add.Designer.cs">
       <DependentUpon>FormOSM_Product_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOSM_Purchase_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_Purchase_Confirm.Designer.cs">
+      <DependentUpon>FormOSM_Purchase_Confirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOSM_Seller_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,12 @@
     <Compile Include="OSM_Pager.Designer.cs">
       <DependentUpon>OSM_Pager.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSM_Purchase_Complete.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_Purchase_Complete.Designer.cs">
+      <DependentUpon>OSM_Purchase_Complete.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSM_Purchase_Form.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,6 +208,9 @@
     <EmbeddedResource Include="FormOSM_Product_Add.resx">
       <DependentUpon>FormOSM_Product_Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_Purchase_Confirm.resx">
+      <DependentUpon>FormOSM_Purchase_Confirm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_Seller_Add.resx">
       <DependentUpon>FormOSM_Seller_Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -222,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Pager.resx">
       <DependentUpon>OSM_Pager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_Purchase_Complete.resx">
+      <DependentUpon>OSM_Purchase_Complete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Purchase_Form.resx">
       <DependentUpon>OSM_Purchase_Form.cs</DependentUpon>

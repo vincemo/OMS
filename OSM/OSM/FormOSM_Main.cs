@@ -171,12 +171,30 @@ namespace OSM
             panel_Main.Controls.Add(orderAuditForm);
         }
 
+        /// <summary>
+        /// 采购单查询点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TSMItem_purchase_query_Click(object sender, EventArgs e)
         {
             panel_Main.Controls.Clear();
             OSM_Purchase_Form purchaseForm = new OSM_Purchase_Form();
             purchaseForm.setMainForm(this);
             panel_Main.Controls.Add(purchaseForm);
+        }
+
+        /// <summary>
+        /// 采购到货点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TSMItem_purchase_arrive_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            OSM_Purchase_Complete purchaseCompleteForm = new OSM_Purchase_Complete();
+            purchaseCompleteForm.setMainForm(this);
+            panel_Main.Controls.Add(purchaseCompleteForm);
         }
     }
 }

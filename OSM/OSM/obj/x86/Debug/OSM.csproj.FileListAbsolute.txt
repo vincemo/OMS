@@ -35,3 +35,5 @@ D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Order_View.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Order_Delivery_Form.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Purchase_Form.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Product_Add.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Purchase_Complete.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Purchase_Confirm.resources

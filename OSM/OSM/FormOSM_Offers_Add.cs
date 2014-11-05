@@ -478,7 +478,7 @@ namespace OSM
         public void dataGridView_editBtn_click_reaction(Hashtable hashtable)
         {
             textBox_OFFERSHEET_CODE.ReadOnly = true;
-            button_Add_HW.Visible = false;
+            //button_Add_HW.Visible = false;
 
             offerSheet_dataBindingUp(hashtable);
         }
