@@ -122,7 +122,7 @@ namespace OSM
         private void textBox_HW_NUMBER_KeyPress(object sender, KeyPressEventArgs e)
         {
             //只能输入整数数字
-            if ((e.KeyChar < 48 || e.KeyChar > 57))// && (e.KeyChar != 8) && (e.KeyChar != 46)
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar != 8))//  && (e.KeyChar != 46)
                 e.Handled = true;
         }
 
@@ -134,7 +134,7 @@ namespace OSM
         private void textBox_HW_PRICE_KeyPress(object sender, KeyPressEventArgs e)
         {
             //只能输入双精度数字
-            if ((e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar != 46))// && (e.KeyChar != 8) 
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && (e.KeyChar != 46) && (e.KeyChar != 8))
                 e.Handled = true;
         }
 

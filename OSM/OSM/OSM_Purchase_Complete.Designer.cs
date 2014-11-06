@@ -40,7 +40,6 @@
             this.label_HWType = new System.Windows.Forms.Label();
             this.comboBox_HWType = new System.Windows.Forms.ComboBox();
             this.dataGridView_Purchase_Complete = new System.Windows.Forms.DataGridView();
-            this.OSM_Pager_Purchase_Complete = new OSM.OSM_Pager();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HW_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@
             this.INIT_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewOrderBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.confirmBtn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.OSM_Pager_Purchase_Complete = new OSM.OSM_Pager();
             this.groupBox_Purchase.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -105,7 +105,7 @@
             this.comboBox_PurchaseState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PurchaseState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PurchaseState.FormattingEnabled = true;
-            this.comboBox_PurchaseState.Location = new System.Drawing.Point(85, 50);
+            this.comboBox_PurchaseState.Location = new System.Drawing.Point(85, 53);
             this.comboBox_PurchaseState.Name = "comboBox_PurchaseState";
             this.comboBox_PurchaseState.Size = new System.Drawing.Size(152, 25);
             this.comboBox_PurchaseState.TabIndex = 3;
@@ -185,7 +185,7 @@
             this.comboBox_HWType.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_HWType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_HWType.FormattingEnabled = true;
-            this.comboBox_HWType.Location = new System.Drawing.Point(85, 92);
+            this.comboBox_HWType.Location = new System.Drawing.Point(85, 95);
             this.comboBox_HWType.Name = "comboBox_HWType";
             this.comboBox_HWType.Size = new System.Drawing.Size(152, 25);
             this.comboBox_HWType.TabIndex = 6;
@@ -215,13 +215,6 @@
             this.dataGridView_Purchase_Complete.Size = new System.Drawing.Size(750, 443);
             this.dataGridView_Purchase_Complete.TabIndex = 6;
             this.dataGridView_Purchase_Complete.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Purchase_Complete_CellContentClick);
-            // 
-            // OSM_Pager_Purchase_Complete
-            // 
-            this.OSM_Pager_Purchase_Complete.Location = new System.Drawing.Point(271, 474);
-            this.OSM_Pager_Purchase_Complete.Name = "OSM_Pager_Purchase_Complete";
-            this.OSM_Pager_Purchase_Complete.Size = new System.Drawing.Size(750, 30);
-            this.OSM_Pager_Purchase_Complete.TabIndex = 7;
             // 
             // ID
             // 
@@ -298,6 +291,13 @@
             this.confirmBtn.Text = "到货确认";
             this.confirmBtn.UseColumnTextForLinkValue = true;
             this.confirmBtn.Width = 60;
+            // 
+            // OSM_Pager_Purchase_Complete
+            // 
+            this.OSM_Pager_Purchase_Complete.Location = new System.Drawing.Point(271, 474);
+            this.OSM_Pager_Purchase_Complete.Name = "OSM_Pager_Purchase_Complete";
+            this.OSM_Pager_Purchase_Complete.Size = new System.Drawing.Size(750, 30);
+            this.OSM_Pager_Purchase_Complete.TabIndex = 7;
             // 
             // OSM_Purchase_Complete
             // 

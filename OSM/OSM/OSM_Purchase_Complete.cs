@@ -56,6 +56,15 @@ namespace OSM
         }
 
         /// <summary>
+        /// 采购单到货审核dataGridView刷新
+        /// </summary>
+        public void refresh_dataGridView()
+        {
+            //查询未到货采购单视图
+            queryFromPurchaseSheetV(dataGridView_Purchase_Complete, " where PURCHASE_STATE = '1' ");
+        }
+
+        /// <summary>
         /// 查询订单视图返回结果给DataGridView
         /// </summary>
         /// <param name="dgv"></param>
@@ -186,8 +195,35 @@ namespace OSM
         /// <param name="purchase_id">采购记录编号</param>
         private void confirmPurchase(string purchase_id)
         {
-            //TO-DO:
-            MessageBox.Show(purchase_id);
+            string sql = "SELECT OSM_PURCHASE_SHEET.ORDER_ID, OSM_PURCHASE_SHEET.PRODUCT_ID, OSM_STORAGE.HW_TYPE, OSM_STORAGE.HW_NAME, OSM_STORAGE.HW_CODE, OSM_PURCHASE_SHEET.PURCHASE_NUMBER ";
+            sql += " FROM OSM_STORAGE INNER JOIN OSM_PURCHASE_SHEET ON OSM_STORAGE.ID = OSM_PURCHASE_SHEET.PRODUCT_ID";
+            sql += " WHERE OSM_PURCHASE_SHEET.ID = " + purchase_id;
+
+            AccessDB adb = new AccessDB();
+            DataTable dt = adb.SQLTableQuery(sql);
+
+            Hashtable hashtable = new Hashtable();
+            
+
+            if (dt.Rows.Count == 1)
+            {
+                DataRow dr = dt.Rows[0];
+                hashtable.Add("ID", purchase_id);
+                hashtable.Add("ORDER_ID", dr["ORDER_ID"]);
+                hashtable.Add("PRODUCT_ID", dr["PRODUCT_ID"]);
+                hashtable.Add("HW_TYPE", dr["HW_TYPE"]);
+                hashtable.Add("HW_NAME", dr["HW_NAME"]);
+                hashtable.Add("HW_CODE", dr["HW_CODE"]);
+                hashtable.Add("PURCHASE_NUMBER", dr["PURCHASE_NUMBER"]);
+            }
+
+            FormOSM_Purchase_Confirm fpc = new FormOSM_Purchase_Confirm();
+            fpc.Set_fWindow(this);
+            fpc.viewProduct(hashtable);
+            fpc.StartPosition = FormStartPosition.CenterParent;
+            fpc.ShowDialog();
+
+            //MessageBox.Show(purchase_id);
         }
     }
 }
