@@ -143,6 +143,12 @@
     <Compile Include="FormOSM_Main.Designer.cs">
       <DependentUpon>FormOSM_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSM_DeliverySheet_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_DeliverySheet_Form.Designer.cs">
+      <DependentUpon>OSM_DeliverySheet_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSM_Offers_Form.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_Main.resx">
       <DependentUpon>FormOSM_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_DeliverySheet_Form.resx">
+      <DependentUpon>OSM_DeliverySheet_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Offers_Form.resx">
       <DependentUpon>OSM_Offers_Form.cs</DependentUpon>

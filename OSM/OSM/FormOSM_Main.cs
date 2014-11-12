@@ -196,5 +196,29 @@ namespace OSM
             purchaseCompleteForm.setMainForm(this);
             panel_Main.Controls.Add(purchaseCompleteForm);
         }
+
+        /// <summary>
+        /// 发货单查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TSMItem_deliver_query_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("发货单查询");
+            panel_Main.Controls.Clear();
+            OSM_DeliverySheet_Form deliverySheetForm = new OSM_DeliverySheet_Form();
+            deliverySheetForm.setMainForm(this);
+            panel_Main.Controls.Add(deliverySheetForm);
+        }
+
+        /// <summary>
+        /// 发货收款
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TSMItem_deliver_pay_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("发货收款");
+        }
     }
 }

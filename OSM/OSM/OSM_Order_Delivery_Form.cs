@@ -252,11 +252,17 @@ namespace OSM
                     int hw_diff_number = hw_need_number - hw_storage_number;
                     if (hw_diff_number > 0)
                     {
+                        string updateSQL = "update OSM_STORAGE set HW_NUMBER = 0 where ID = " + product_id;
+                        adb.SQLExecute(updateSQL);
+
                         ht["HW_NUMBER"] = hw_diff_number;
                         purchaseList.Add(ht);
                     }
                     else
                     {
+                        string updateSQL = "update OSM_STORAGE set HW_NUMBER = " + (-hw_diff_number) + " where ID = " + product_id;
+                        adb.SQLExecute(updateSQL);
+
                         break;
                     }
                 }

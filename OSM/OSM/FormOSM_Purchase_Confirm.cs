@@ -107,8 +107,15 @@ namespace OSM
                 {
                     //到货数量大于等于需采购数量,改变采购记录状态，改变库存数量
                     AccessDB adb = new AccessDB();
+                    string sql = "select HW_NUMBER,REAL_NUMBER from OSM_STORAGE where ID = " + product_id;
+                    DataTable dt = adb.SQLTableQuery(sql);
+                    DataRow dr = dt.Rows[0];
+                    int hw_number = int.Parse(dr["HW_NUMBER"].ToString());
+                    int real_number = int.Parse(dr["REAL_NUMBER"].ToString());
+                    real_number += number_real;
+                    hw_number += number_real - number_want;
 
-                    string updateSQL = "update OSM_STORAGE set HW_NUMBER = " + number_real + " where ID = " + product_id;
+                    string updateSQL = "update OSM_STORAGE set HW_NUMBER = " + hw_number + ", REAL_NUMBER = " + real_number + " where ID = " + product_id;
 
                     if (adb.SQLExecute(updateSQL))
                     {
@@ -171,7 +178,11 @@ namespace OSM
                 string updateSQL = "update OSM_ORDER_SHEET set ORDER_STATE = '3' where ID = " + order_id;
                 if (adb.SQLExecute(updateSQL))
                 {
-                    MessageBox.Show("对应订单已可以发货！", "消息");
+                    string insertSQL = "insert into OSM_DILIVERY_SHEET(ORDER_ID,DILIVERY_STATE) values(" + order_id + ",'1')";
+                    if (adb.SQLExecute(insertSQL))
+                    {
+                        MessageBox.Show("对应订单已可以发货,已生成发货单！", "消息");
+                    }
                 }
             }
         }
