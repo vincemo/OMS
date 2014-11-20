@@ -16,6 +16,9 @@ namespace OSM
         //父窗口
         private FormOSM_Main main_form;
 
+        //付款方式
+        private string pay_mode;
+
         /// <summary>
         /// 构造函数
         /// </summary>
@@ -38,6 +41,15 @@ namespace OSM
         public void setMainForm(FormOSM_Main mainForm)
         {
             main_form = mainForm;
+        }
+
+        /// <summary>
+        /// 设置付款方式
+        /// </summary>
+        /// <param name="pmode"></param>
+        public void setPayMode(string pmode)
+        {
+            pay_mode = pmode;
         }
 
         /// <summary>
@@ -174,20 +186,30 @@ namespace OSM
                     return;
                 }
 
+                FormOSM_PayMode_Select fps = new FormOSM_PayMode_Select();
+                fps.setOfferForm(this);
+                fps.StartPosition = FormStartPosition.CenterParent;
+                fps.ShowDialog();
 
-                //生成订单存入数据库
-                string insertSQL = "insert into OSM_ORDER_SHEET(OFFERSHEET_ID,ORDER_STATE,REQUIRE_PAYMENT,ORDER_DATE,PAY_STATE) values ('"; 
-                insertSQL += offerSheetID + "','1'," + require_payment + ",#" + DateTime.Now.ToString("yyyy-MM-dd") + "#,'1')";
-
-                if (adb.SQLExecute(insertSQL))
+                if (!string.IsNullOrWhiteSpace(pay_mode))
                 {
-                    MessageBox.Show("已将审核通过的报价单生成订单", "消息");
-
-                    string sql = "update OSM_OFFER_SHEET set OFFERSHEET_STATE = '2' where ID = " + offerSheetID;
-                    if (adb.SQLExecute(sql))
+                    //生成订单存入数据库
+                    string insertSQL = "insert into OSM_ORDER_SHEET(OFFERSHEET_ID,ORDER_STATE,REQUIRE_PAYMENT,ORDER_DATE,PAY_STATE,PAY_MODE) values ('";
+                    insertSQL += offerSheetID + "','1'," + require_payment + ",#" + DateTime.Now.ToString("yyyy-MM-dd") + "#,'1','" + pay_mode + "')";
+                    if (adb.SQLExecute(insertSQL))
                     {
-                        main_form.TSMItem_offer_aduit_Refresh();
+                        MessageBox.Show("已将审核通过的报价单生成订单", "消息");
+
+                        string sql = "update OSM_OFFER_SHEET set OFFERSHEET_STATE = '2' where ID = " + offerSheetID;
+                        if (adb.SQLExecute(sql))
+                        {
+                            main_form.TSMItem_offer_aduit_Refresh();
+                        }
                     }
+                }
+                else
+                {
+                    MessageBox.Show("请确定付款方式！", "警告");
                 }
             }
             else

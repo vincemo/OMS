@@ -218,7 +218,32 @@ namespace OSM
         /// <param name="e"></param>
         private void TSMItem_deliver_pay_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("发货收款");
+            //MessageBox.Show("发货收款");
+            panel_Main.Controls.Clear();
+            OSM_Delivery_Audit_Form deliveryAuditForm = new OSM_Delivery_Audit_Form();
+            deliveryAuditForm.setMainForm(this);
+            panel_Main.Controls.Add(deliveryAuditForm);
+        }
+
+        /// <summary>
+        /// 订单发货审核
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TSMItem_OrderDelivery_Audit_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            OSM_Order_Delivery_Aduit_Form odaf = new OSM_Order_Delivery_Aduit_Form();
+            odaf.setMainForm(this);
+            panel_Main.Controls.Add(odaf);
+        }
+
+        private void TSMItem_Delivery_Arrive_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            OSM_Delivery_Arrive_Form daf = new OSM_Delivery_Arrive_Form();
+            daf.setMainForm(this);
+            panel_Main.Controls.Add(daf);
         }
     }
 }

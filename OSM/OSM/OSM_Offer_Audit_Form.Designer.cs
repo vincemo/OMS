@@ -38,7 +38,6 @@
             this.button_Query = new System.Windows.Forms.Button();
             this.button_Reset = new System.Windows.Forms.Button();
             this.dataGridView_OfferSheet_Audit = new System.Windows.Forms.DataGridView();
-            this.OSM_Pager_OfferSheet_Audit = new OSM.OSM_Pager();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OFFERSHEET_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GMF_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@
             this.auditBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.passBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.failBtn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.OSM_Pager_OfferSheet_Audit = new OSM.OSM_Pager();
             this.groupBox__OfferSheet.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -102,7 +102,7 @@
             this.comboBox_OfferSheet_Audit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_OfferSheet_Audit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_OfferSheet_Audit.FormattingEnabled = true;
-            this.comboBox_OfferSheet_Audit.Location = new System.Drawing.Point(85, 50);
+            this.comboBox_OfferSheet_Audit.Location = new System.Drawing.Point(85, 53);
             this.comboBox_OfferSheet_Audit.Name = "comboBox_OfferSheet_Audit";
             this.comboBox_OfferSheet_Audit.Size = new System.Drawing.Size(152, 25);
             this.comboBox_OfferSheet_Audit.TabIndex = 3;
@@ -193,13 +193,6 @@
             this.dataGridView_OfferSheet_Audit.TabIndex = 3;
             this.dataGridView_OfferSheet_Audit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_OfferSheet_Audit_CellContentClick);
             // 
-            // OSM_Pager_OfferSheet_Audit
-            // 
-            this.OSM_Pager_OfferSheet_Audit.Location = new System.Drawing.Point(274, 474);
-            this.OSM_Pager_OfferSheet_Audit.Name = "OSM_Pager_OfferSheet_Audit";
-            this.OSM_Pager_OfferSheet_Audit.Size = new System.Drawing.Size(750, 30);
-            this.OSM_Pager_OfferSheet_Audit.TabIndex = 4;
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
@@ -288,6 +281,13 @@
             this.failBtn.Text = "不通过";
             this.failBtn.UseColumnTextForLinkValue = true;
             this.failBtn.Width = 50;
+            // 
+            // OSM_Pager_OfferSheet_Audit
+            // 
+            this.OSM_Pager_OfferSheet_Audit.Location = new System.Drawing.Point(274, 474);
+            this.OSM_Pager_OfferSheet_Audit.Name = "OSM_Pager_OfferSheet_Audit";
+            this.OSM_Pager_OfferSheet_Audit.Size = new System.Drawing.Size(750, 30);
+            this.OSM_Pager_OfferSheet_Audit.TabIndex = 4;
             // 
             // OSM_Offer_Audit_Form
             // 

@@ -178,11 +178,12 @@ namespace OSM
                 string updateSQL = "update OSM_ORDER_SHEET set ORDER_STATE = '3' where ID = " + order_id;
                 if (adb.SQLExecute(updateSQL))
                 {
-                    string insertSQL = "insert into OSM_DILIVERY_SHEET(ORDER_ID,DILIVERY_STATE) values(" + order_id + ",'1')";
-                    if (adb.SQLExecute(insertSQL))
-                    {
-                        MessageBox.Show("对应订单已可以发货,已生成发货单！", "消息");
-                    }
+                    MessageBox.Show("对应订单已可以进入发货流程！", "消息");
+                    //string insertSQL = "insert into OSM_DILIVERY_SHEET(ORDER_ID,DILIVERY_STATE) values(" + order_id + ",'1')";
+                    //if (adb.SQLExecute(insertSQL))
+                    //{
+                    //    MessageBox.Show("对应订单已可以发货,已生成发货单！", "消息");
+                    //}
                 }
             }
         }

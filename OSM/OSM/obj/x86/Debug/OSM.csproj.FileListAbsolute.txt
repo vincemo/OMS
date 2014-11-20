@@ -38,3 +38,8 @@ D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Product_Add.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Purchase_Complete.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Purchase_Confirm.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_DeliverySheet_Form.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Delivery_Audit_Form.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_PayMode_Select.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Order_Delivery_Aduit_Form.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Delivery_DatePicker.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Delivery_Arrive_Form.resources

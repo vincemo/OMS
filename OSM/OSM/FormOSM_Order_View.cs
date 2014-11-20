@@ -77,6 +77,14 @@ namespace OSM
                 dateTimePicker_OrderDate.Enabled = false;
             }
 
+            if (viewState == 1)
+            {
+                textBox_RequirePayment.ReadOnly = true;
+                comboBox_OrderState.Enabled = false;
+                comboBox_PayState.Enabled = false;
+                dateTimePicker_OrderDate.Enabled = false;
+            }
+
             textBox_OfferSheetCode.Text = ht["OFFERSHEET_CODE"].ToString();
             textBox_AlreadyPayment.Text = ht["ALREADY_PAYMENT"].ToString();
             textBox_PrePayment.Text = ht["PRE_PAYMENT"].ToString();

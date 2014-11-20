@@ -11,7 +11,7 @@ using OSM.DBClass;
 
 namespace OSM
 {
-    public partial class OSM_DeliverySheet_Form : UserControl
+    public partial class OSM_Delivery_Audit_Form : UserControl
     {
         //父窗口
         private FormOSM_Main main_form;
@@ -19,7 +19,7 @@ namespace OSM
         /// <summary>
         /// 构造函数
         /// </summary>
-        public OSM_DeliverySheet_Form()
+        public OSM_Delivery_Audit_Form()
         {
             InitializeComponent();
 
@@ -28,8 +28,10 @@ namespace OSM
 
             string whereString = "where PID = 53 order by ID";
             SJZDController.setZD_ComboBox(whereString, comboBox_DeliveryState);
+            //comboBox_DeliveryState.SelectedIndex = 1;
+            comboBox_DeliveryState.Enabled = false;
 
-            queryFromDiliverySheetV(dataGridView_Delivery);
+            queryFromDiliverySheetV(dataGridView_Delivery, "where DILIVERY_STATE = '1'");
         }
 
         /// <summary>
@@ -67,7 +69,7 @@ namespace OSM
         /// <param name="e"></param>
         private void button_Reset_Click(object sender, EventArgs e)
         {
-            comboBox_DeliveryState.SelectedIndex = -1;
+            //comboBox_DeliveryState.SelectedIndex = -1;
             dateTimePicker_DeliverDate.CustomFormat = " ";
             dateTimePicker_ArrDate.CustomFormat = " ";
         }
@@ -99,7 +101,7 @@ namespace OSM
         /// <param name="e"></param>
         private void button_Query_Click(object sender, EventArgs e)
         {
-            string whereString = "where 1=1 ";
+            string whereString = "where DILIVERY_STATE = '1' ";
 
             if (!string.IsNullOrWhiteSpace(dateTimePicker_DeliverDate.Text))
             {
@@ -111,11 +113,11 @@ namespace OSM
                 whereString += " and ARRIVE_DATE = #" + dateTimePicker_ArrDate.Text + "# ";
             }
 
-            if (comboBox_DeliveryState.SelectedIndex != -1)
-            {
-                KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_DeliveryState.SelectedItem;
-                whereString += " and DILIVERY_STATE = '" + kv.Key + "' ";
-            }
+            //if (comboBox_DeliveryState.SelectedIndex != -1)
+            //{
+            //    KeyValuePair<string, string> kv = (KeyValuePair<string, string>)comboBox_DeliveryState.SelectedItem;
+            //    whereString += " and DILIVERY_STATE = '" + kv.Key + "' ";
+            //}
 
             queryFromDiliverySheetV(dataGridView_Delivery, whereString);
         }
@@ -132,6 +134,14 @@ namespace OSM
                 string order_id = dataGridView_Delivery.Rows[e.RowIndex].Cells["ORDER_ID"].Value.ToString();
 
                 viewOrderSheet(order_id);
+            }
+
+            if (dataGridView_Delivery.Columns[e.ColumnIndex].Name == "auditBtn")
+            {
+                string d_sheet_id = dataGridView_Delivery.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                string order_id = dataGridView_Delivery.Rows[e.RowIndex].Cells["ORDER_ID"].Value.ToString();
+
+                auditDelivery(d_sheet_id, order_id);
             }
         }
 
@@ -172,6 +182,21 @@ namespace OSM
             orderView.viewOrderSheet(hashtable);
             orderView.StartPosition = FormStartPosition.CenterParent;
             orderView.ShowDialog();
+        }
+
+        /// <summary>
+        /// 发货确认
+        /// </summary>
+        /// <param name="d_sheet_id"></param>
+        private void auditDelivery(string d_sheet_id, string order_id)
+        {
+            //弹出日期选择框
+            FormOSM_Delivery_DatePicker ddp = new FormOSM_Delivery_DatePicker();
+            ddp.setDeliverySheetID(int.Parse(d_sheet_id));
+            ddp.setOrderID(int.Parse(order_id));
+            ddp.setState(0);
+            ddp.ShowDialog();
+            queryFromDiliverySheetV(dataGridView_Delivery, "where DILIVERY_STATE = '1'");
         }
     }
 }

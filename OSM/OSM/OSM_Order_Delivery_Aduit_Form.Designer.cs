@@ -1,6 +1,6 @@
 ﻿namespace OSM
 {
-    partial class OSM_Order_Delivery_Form
+    partial class OSM_Order_Delivery_Aduit_Form
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -62,7 +62,7 @@
             this.groupBox_Order_Delivery.Location = new System.Drawing.Point(3, 3);
             this.groupBox_Order_Delivery.Name = "groupBox_Order_Delivery";
             this.groupBox_Order_Delivery.Size = new System.Drawing.Size(262, 493);
-            this.groupBox_Order_Delivery.TabIndex = 3;
+            this.groupBox_Order_Delivery.TabIndex = 4;
             this.groupBox_Order_Delivery.TabStop = false;
             this.groupBox_Order_Delivery.Text = "订单查询条件";
             // 
@@ -209,7 +209,7 @@
             this.dataGridView_Order.ReadOnly = true;
             this.dataGridView_Order.RowTemplate.Height = 23;
             this.dataGridView_Order.Size = new System.Drawing.Size(750, 443);
-            this.dataGridView_Order.TabIndex = 4;
+            this.dataGridView_Order.TabIndex = 5;
             this.dataGridView_Order.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Order_CellContentClick);
             // 
             // ID
@@ -271,7 +271,7 @@
             this.auditBtn.HeaderText = "";
             this.auditBtn.Name = "auditBtn";
             this.auditBtn.ReadOnly = true;
-            this.auditBtn.Text = "订单采购审核";
+            this.auditBtn.Text = "订单发货审核";
             this.auditBtn.UseColumnTextForLinkValue = true;
             // 
             // OSM_Pager_Order
@@ -279,16 +279,16 @@
             this.OSM_Pager_Order.Location = new System.Drawing.Point(271, 474);
             this.OSM_Pager_Order.Name = "OSM_Pager_Order";
             this.OSM_Pager_Order.Size = new System.Drawing.Size(750, 30);
-            this.OSM_Pager_Order.TabIndex = 5;
+            this.OSM_Pager_Order.TabIndex = 6;
             // 
-            // OSM_Order_Delivery_Form
+            // OSM_Order_Delivery_Aduit_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.OSM_Pager_Order);
             this.Controls.Add(this.dataGridView_Order);
             this.Controls.Add(this.groupBox_Order_Delivery);
-            this.Name = "OSM_Order_Delivery_Form";
+            this.Name = "OSM_Order_Delivery_Aduit_Form";
             this.Size = new System.Drawing.Size(1024, 510);
             this.groupBox_Order_Delivery.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

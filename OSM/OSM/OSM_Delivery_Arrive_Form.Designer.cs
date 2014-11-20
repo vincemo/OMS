@@ -1,6 +1,6 @@
 ﻿namespace OSM
 {
-    partial class OSM_DeliverySheet_Form
+    partial class OSM_Delivery_Arrive_Form
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -40,6 +40,7 @@
             this.label_ArrDate = new System.Windows.Forms.Label();
             this.dateTimePicker_ArrDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView_Delivery = new System.Windows.Forms.DataGridView();
+            this.OSM_Pager_Delivery = new OSM.OSM_Pager();
             this.ORDER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DILIVERY_STATE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,7 @@
             this.ARRIVE_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COMMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewOrderBtn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.OSM_Pager_Delivery = new OSM.OSM_Pager();
+            this.auditBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox__Delivery.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -61,7 +62,7 @@
             this.groupBox__Delivery.Location = new System.Drawing.Point(3, 3);
             this.groupBox__Delivery.Name = "groupBox__Delivery";
             this.groupBox__Delivery.Size = new System.Drawing.Size(262, 493);
-            this.groupBox__Delivery.TabIndex = 4;
+            this.groupBox__Delivery.TabIndex = 6;
             this.groupBox__Delivery.TabStop = false;
             this.groupBox__Delivery.Text = "发货单查询条件";
             // 
@@ -205,14 +206,22 @@
             this.DILIVERY_DATE,
             this.ARRIVE_DATE,
             this.COMMENT,
-            this.viewOrderBtn});
+            this.viewOrderBtn,
+            this.auditBtn});
             this.dataGridView_Delivery.Location = new System.Drawing.Point(271, 25);
             this.dataGridView_Delivery.Name = "dataGridView_Delivery";
             this.dataGridView_Delivery.ReadOnly = true;
             this.dataGridView_Delivery.RowTemplate.Height = 23;
             this.dataGridView_Delivery.Size = new System.Drawing.Size(750, 443);
-            this.dataGridView_Delivery.TabIndex = 5;
+            this.dataGridView_Delivery.TabIndex = 7;
             this.dataGridView_Delivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Delivery_CellContentClick);
+            // 
+            // OSM_Pager_Delivery
+            // 
+            this.OSM_Pager_Delivery.Location = new System.Drawing.Point(271, 474);
+            this.OSM_Pager_Delivery.Name = "OSM_Pager_Delivery";
+            this.OSM_Pager_Delivery.Size = new System.Drawing.Size(750, 30);
+            this.OSM_Pager_Delivery.TabIndex = 8;
             // 
             // ORDER_ID
             // 
@@ -266,21 +275,22 @@
             this.viewOrderBtn.Text = "查看订单";
             this.viewOrderBtn.UseColumnTextForLinkValue = true;
             // 
-            // OSM_Pager_Delivery
+            // auditBtn
             // 
-            this.OSM_Pager_Delivery.Location = new System.Drawing.Point(271, 474);
-            this.OSM_Pager_Delivery.Name = "OSM_Pager_Delivery";
-            this.OSM_Pager_Delivery.Size = new System.Drawing.Size(750, 30);
-            this.OSM_Pager_Delivery.TabIndex = 6;
+            this.auditBtn.HeaderText = "";
+            this.auditBtn.Name = "auditBtn";
+            this.auditBtn.ReadOnly = true;
+            this.auditBtn.Text = "到货确认";
+            this.auditBtn.UseColumnTextForLinkValue = true;
             // 
-            // OSM_DeliverySheet_Form
+            // OSM_Delivery_Arrive_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.OSM_Pager_Delivery);
             this.Controls.Add(this.dataGridView_Delivery);
             this.Controls.Add(this.groupBox__Delivery);
-            this.Name = "OSM_DeliverySheet_Form";
+            this.Name = "OSM_Delivery_Arrive_Form";
             this.Size = new System.Drawing.Size(1024, 510);
             this.groupBox__Delivery.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -296,16 +306,16 @@
         private System.Windows.Forms.GroupBox groupBox__Delivery;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label_Date;
-        private System.Windows.Forms.ComboBox comboBox_DeliveryState;
-        private System.Windows.Forms.Label label_DeliveryState;
         private System.Windows.Forms.DateTimePicker dateTimePicker_DeliverDate;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button button_Query;
         private System.Windows.Forms.Button button_Reset;
-        private System.Windows.Forms.DataGridView dataGridView_Delivery;
-        private OSM_Pager OSM_Pager_Delivery;
+        private System.Windows.Forms.Label label_DeliveryState;
+        private System.Windows.Forms.ComboBox comboBox_DeliveryState;
         private System.Windows.Forms.Label label_ArrDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker_ArrDate;
+        private System.Windows.Forms.DataGridView dataGridView_Delivery;
+        private OSM_Pager OSM_Pager_Delivery;
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDER_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DILIVERY_STATE_DESC;
@@ -313,5 +323,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ARRIVE_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT;
         private System.Windows.Forms.DataGridViewLinkColumn viewOrderBtn;
+        private System.Windows.Forms.DataGridViewLinkColumn auditBtn;
     }
 }

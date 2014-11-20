@@ -130,7 +130,15 @@ namespace OSM
             {
                 //MessageBox.Show(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString());
                 string offersheet_code = dataGridView_OfferSheet.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString();
-                editOfferSheet(offersheet_code);
+
+                if (!string.IsNullOrWhiteSpace(dataGridView_OfferSheet.Rows[e.RowIndex].Cells["ORDERSHEET_GEN"].Value.ToString()))
+                {
+                    MessageBox.Show("该记录已生成订单,无法编辑!", "警告");
+                }
+                else
+                {
+                    editOfferSheet(offersheet_code);
+                }
             }
 
 

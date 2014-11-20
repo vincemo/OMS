@@ -76,6 +76,12 @@
     <Compile Include="FormOSM_Buyer_Add.Designer.cs">
       <DependentUpon>FormOSM_Buyer_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOSM_Delivery_DatePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_Delivery_DatePicker.Designer.cs">
+      <DependentUpon>FormOSM_Delivery_DatePicker.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOSM_HW_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,12 @@
     </Compile>
     <Compile Include="FormOSM_password.Designer.cs">
       <DependentUpon>FormOSM_password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOSM_PayMode_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_PayMode_Select.Designer.cs">
+      <DependentUpon>FormOSM_PayMode_Select.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOSM_Product_Add.cs">
       <SubType>Form</SubType>
@@ -149,6 +161,18 @@
     <Compile Include="OSM_DeliverySheet_Form.Designer.cs">
       <DependentUpon>OSM_DeliverySheet_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSM_Delivery_Arrive_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_Delivery_Arrive_Form.Designer.cs">
+      <DependentUpon>OSM_Delivery_Arrive_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSM_Delivery_Audit_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_Delivery_Audit_Form.Designer.cs">
+      <DependentUpon>OSM_Delivery_Audit_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSM_Offers_Form.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,6 +190,12 @@
     </Compile>
     <Compile Include="OSM_Orders_Form.Designer.cs">
       <DependentUpon>OSM_Orders_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OSM_Order_Delivery_Aduit_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_Order_Delivery_Aduit_Form.Designer.cs">
+      <DependentUpon>OSM_Order_Delivery_Aduit_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="OSM_Order_Delivery_Form.cs">
       <SubType>UserControl</SubType>
@@ -196,6 +226,9 @@
     <EmbeddedResource Include="FormOSM_Buyer_Add.resx">
       <DependentUpon>FormOSM_Buyer_Add.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_Delivery_DatePicker.resx">
+      <DependentUpon>FormOSM_Delivery_DatePicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_HW_Add.resx">
       <DependentUpon>FormOSM_HW_Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_password.resx">
       <DependentUpon>FormOSM_password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_PayMode_Select.resx">
+      <DependentUpon>FormOSM_PayMode_Select.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_Product_Add.resx">
       <DependentUpon>FormOSM_Product_Add.cs</DependentUpon>
@@ -232,6 +268,12 @@
     <EmbeddedResource Include="OSM_DeliverySheet_Form.resx">
       <DependentUpon>OSM_DeliverySheet_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OSM_Delivery_Arrive_Form.resx">
+      <DependentUpon>OSM_Delivery_Arrive_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_Delivery_Audit_Form.resx">
+      <DependentUpon>OSM_Delivery_Audit_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OSM_Offers_Form.resx">
       <DependentUpon>OSM_Offers_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Orders_Form.resx">
       <DependentUpon>OSM_Orders_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_Order_Delivery_Aduit_Form.resx">
+      <DependentUpon>OSM_Order_Delivery_Aduit_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Order_Delivery_Form.resx">
       <DependentUpon>OSM_Order_Delivery_Form.cs</DependentUpon>

@@ -11,7 +11,7 @@ using OSM.DBClass;
 
 namespace OSM
 {
-    public partial class OSM_Order_Delivery_Form : UserControl
+    public partial class OSM_Order_Delivery_Aduit_Form : UserControl
     {
         //父窗口
         private FormOSM_Main main_form;
@@ -19,7 +19,7 @@ namespace OSM
         /// <summary>
         /// 构造函数
         /// </summary>
-        public OSM_Order_Delivery_Form()
+        public OSM_Order_Delivery_Aduit_Form()
         {
             InitializeComponent();
 
@@ -27,14 +27,14 @@ namespace OSM
 
             string whereString = "where PID = 2 order by ID";
             SJZDController.setZD_ComboBox(whereString, comboBox_OrderState);
-            comboBox_OrderState.SelectedIndex = 0;
+            comboBox_OrderState.SelectedIndex = 2;
             comboBox_OrderState.Enabled = false;
 
             whereString = "where PID = 24 order by ID";
             SJZDController.setZD_ComboBox(whereString, comboBox_PayState);
 
             //查询订单视图返回结果
-            queryFromOrderSheetV(dataGridView_Order,"where ORDER_STATE = '1' ");
+            queryFromOrderSheetV(dataGridView_Order, "where ORDER_STATE = '3' ");
         }
 
         /// <summary>
@@ -65,7 +65,6 @@ namespace OSM
             OSM_Pager_Order.refreshDataGirdViewBySQL(dataGridView_Order);
         }
 
-
         /// <summary>
         /// 重置按钮点击事件
         /// </summary>
@@ -73,7 +72,7 @@ namespace OSM
         /// <param name="e"></param>
         private void button_Reset_Click(object sender, EventArgs e)
         {
-            comboBox_OrderState.SelectedIndex = 0;
+            comboBox_OrderState.SelectedIndex = 2;
             comboBox_PayState.SelectedIndex = -1;
             dateTimePicker_OrderDate.CustomFormat = " ";
         }
@@ -95,7 +94,7 @@ namespace OSM
         /// <param name="e"></param>
         private void button_Query_Click(object sender, EventArgs e)
         {
-            string whereString = "where ORDER_STATE = '1' ";
+            string whereString = "where ORDER_STATE = '3' ";
 
             if (!string.IsNullOrWhiteSpace(dateTimePicker_OrderDate.Text))
             {
@@ -117,6 +116,7 @@ namespace OSM
             queryFromOrderSheetV(dataGridView_Order, whereString);
         }
 
+
         /// <summary>
         /// DataGridView单元格点击事件
         /// </summary>
@@ -136,7 +136,8 @@ namespace OSM
                 string order_id = dataGridView_Order.Rows[e.RowIndex].Cells["ID"].Value.ToString();
                 string offersheet_code = dataGridView_Order.Rows[e.RowIndex].Cells["OFFERSHEET_CODE"].Value.ToString();
 
-                checkOfferHW(order_id, offersheet_code);
+                //checkOfferHW(order_id, offersheet_code);
+                checkDelivery(order_id);
             }
         }
 
@@ -180,147 +181,86 @@ namespace OSM
         }
 
         /// <summary>
-        /// 检查订单对应货物列表
+        /// 检查是否可以发货
         /// </summary>
-        /// <param name="order_id">订单ID</param>
-        /// <param name="offersheet_code">报价单编号</param>
-        private void checkOfferHW(string order_id, string offersheet_code)
+        /// <param name="order_id"></param>
+        private void checkDelivery(string order_id)
         {
-            string sql = "select PRODUCT_ID,HW_NUMBER from OSM_HW where OFFERSHEET_CODE = '" + offersheet_code + "'";
+            string sql = "select PAY_MODE,PAY_STATE,ALREADY_PAYMENT,PRE_PAYMENT,REQUIRE_PAYMENT from OSM_ORDER_SHEET where ID = " + order_id;
 
             AccessDB adb = new AccessDB();
             DataTable dt = adb.SQLTableQuery(sql);
 
-            List<Hashtable> hashList = new List<Hashtable>();
-            for (int i = 0; i < dt.Rows.Count; i++)
+            Hashtable hashtable = new Hashtable();
+
+            if (dt.Rows.Count == 1)
             {
-                DataRow dr = dt.Rows[i];
-                Hashtable ht = new Hashtable();
-
-                ht.Add("PRODUCT_ID", dr["PRODUCT_ID"]);
-                //ht.Add("HW_NAME", dr["HW_NAME"]);
-                //ht.Add("HW_CODE", dr["HW_CODE"]);
-                ht.Add("HW_NUMBER", dr["HW_NUMBER"]);
-
-                hashList.Add(ht);
-            }
-
-            if (checkDelivery(hashList, order_id))
-            {
-                //MessageBox.Show("根据与库存容量比对，可以发货！", "消息");
-                sql = "update OSM_ORDER_SHEET set ORDER_STATE = '3' where ID = " + order_id;
-                if (adb.SQLExecute(sql))
+                DataRow dr = dt.Rows[0];
+                string pay_mode = dr["PAY_MODE"].ToString();
+                string pay_state = dr["PAY_STATE"].ToString();
+                double already_payment = double.Parse(dr["ALREADY_PAYMENT"].ToString());
+                double pre_payment = double.Parse(dr["PRE_PAYMENT"].ToString());
+                double require_payment = double.Parse(dr["REQUIRE_PAYMENT"].ToString());
+                //hashtable.Add("PAY_MODE", dr["PAY_MODE"]);
+                //hashtable.Add("PAY_STATE", dr["PAY_STATE"]);
+                //hashtable.Add("ALREADY_PAYMENT", dr["ALREADY_PAYMENT"]);
+                //hashtable.Add("PRE_PAYMENT", dr["PRE_PAYMENT"]);
+                //hashtable.Add("REQUIRE_PAYMENT", dr["REQUIRE_PAYMENT"]);
+                
+                switch (pay_mode)
                 {
-                    MessageBox.Show("库存充足,对应订单已可以进行发货审核！", "消息");
-                    //查询订单视图返回结果
-                    queryFromOrderSheetV(dataGridView_Order, "where ORDER_STATE = '1' ");
-                }
-            }
-            else
-            {
-                sql = "update OSM_ORDER_SHEET set ORDER_STATE = '2' where ID = " + order_id;
-                if (adb.SQLExecute(sql))
-                {
-                    //查询订单视图返回结果
-                    queryFromOrderSheetV(dataGridView_Order, "where ORDER_STATE = '1' ");
-                }       
-            }
-        }
-
-        /// <summary>
-        /// 检查是否可以发货，不能发货则生成对应的采购单
-        /// </summary>
-        /// <param name="hashList">货物列表</param>
-        /// <param name="order_id">订单ID</param>
-        /// <returns></returns>
-        private bool checkDelivery(List<Hashtable> hashList, string order_id)
-        {
-            List<Hashtable> purchaseList = new List<Hashtable>();
-            AccessDB adb = new AccessDB();
-
-            for (int i = 0; i < hashList.Count; i++)
-            {
-                Hashtable ht = hashList[i];
-                string product_id = ht["PRODUCT_ID"].ToString();
-                int hw_need_number = int.Parse(ht["HW_NUMBER"].ToString());
-
-                string sql = "select ID,HW_NUMBER from OSM_STORAGE where ID = " + product_id + "";
-                DataTable dt = adb.SQLTableQuery(sql);
-                if (dt.Rows.Count == 1)
-                {
-                    DataRow dr = dt.Rows[0];
-                    int hw_storage_number = int.Parse(dr["HW_NUMBER"].ToString());
-                    int hw_diff_number = hw_need_number - hw_storage_number;
-                    if (hw_diff_number > 0)
-                    {
-                        string updateSQL = "update OSM_STORAGE set HW_NUMBER = 0 where ID = " + product_id;
-                        adb.SQLExecute(updateSQL);
-
-                        ht["HW_NUMBER"] = hw_diff_number;
-                        purchaseList.Add(ht);
-                    }
-                    else
-                    {
-                        string updateSQL = "update OSM_STORAGE set HW_NUMBER = " + (-hw_diff_number) + " where ID = " + product_id;
-                        adb.SQLExecute(updateSQL);
-
+                    case "1":
+                        if (pay_state == "2")
+                        {
+                            orderDeliver(order_id);
+                        }
+                        else
+                        {
+                            MessageBox.Show("未付全款，无法发货！", "警告");
+                            return;
+                        }
                         break;
-                    }
+                    case "2":
+                        if (pay_state == "1")
+                        {
+                            orderDeliver(order_id);
+                        }
+                        
+                        break;
+                    case "3":
+                        if (pay_state == "3")
+                        {
+                            orderDeliver(order_id);
+                        }
+                        else
+                        {
+                            MessageBox.Show("未预付部分款，无法发货！", "警告");
+                            return;
+                        }
+                        break;
                 }
-                else
-                {
-                    ht["HW_NUMBER"] = hw_need_number;
-                    purchaseList.Add(ht);
-                }
-            }
-
-            if (purchaseList.Count == 0)
-            {
-                //string insertSQL = "insert into OSM_DILIVERY_SHEET(ORDER_ID,DILIVERY_STATE) values(" + order_id + ",'1')";
-                //if (adb.SQLExecute(insertSQL))
-                //{
-                //    return true;
-                //}
-                return true;
-            }
-            else
-            {
-                int count = createPurchaseSheet(purchaseList, order_id);
-                MessageBox.Show("库存不足，新增" + count + "条采购记录", "消息");
-                return false;
             }
         }
 
-
         /// <summary>
-        /// 根据得到的hashList货物列表生成采购单
+        /// 生成发货单
         /// </summary>
-        /// <param name="purchaseList">采购货物列表</param>
-        /// <param name="order_id">订单</param>
-        /// <returns>新增采购记录数量</returns>        
-        private int createPurchaseSheet(List<Hashtable> purchaseList, string order_id)
+        /// <param name="order_id"></param>
+        private void orderDeliver(string order_id)
         {
             AccessDB adb = new AccessDB();
-            int count = 0;
-            string insertSql = "insert into OSM_PURCHASE_SHEET(ORDER_ID,PRODUCT_ID,PURCHASE_NUMBER,PURCHASE_STATE,INIT_DATE) values (";
 
-            for (int i = 0; i < purchaseList.Count; i++)
+            string insertSQL = "insert into OSM_DILIVERY_SHEET(ORDER_ID,DILIVERY_STATE) values(" + order_id + ",'1')";
+
+            if (adb.SQLExecute(insertSQL))
             {
-                Hashtable ht = purchaseList[i];
-                string valueString = order_id + ",";
-                valueString +=  ht["PRODUCT_ID"].ToString() + ",";
-                //valueString += "'" + ht["HW_NAME"].ToString() + "',";
-                //valueString += "'" + ht["HW_CODE"].ToString() + "',";
-                valueString += ht["HW_NUMBER"].ToString() + ",'1',#" + DateTime.Now.ToString("yyyy-MM-dd") + "#)";
-
-                string sql = insertSql + valueString;
-                if (adb.SQLExecute(sql))
+                string updateSQL = "update OSM_ORDER_SHEET set ORDER_STATE = '4' where ID = " + order_id;
+                if (adb.SQLExecute(updateSQL))
                 {
-                    count++;
+                    MessageBox.Show("该订单可以发货，已生成发货单！", "消息");
+                    queryFromOrderSheetV(dataGridView_Order, "where ORDER_STATE = '3' ");
                 }
             }
-
-            return count;
         }
     }
 }
