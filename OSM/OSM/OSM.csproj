@@ -209,6 +209,12 @@
     <Compile Include="OSM_Pager.Designer.cs">
       <DependentUpon>OSM_Pager.cs</DependentUpon>
     </Compile>
+    <Compile Include="OSM_PayList_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_PayList_Form.Designer.cs">
+      <DependentUpon>OSM_PayList_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="OSM_Purchase_Complete.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Pager.resx">
       <DependentUpon>OSM_Pager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OSM_PayList_Form.resx">
+      <DependentUpon>OSM_PayList_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OSM_Purchase_Complete.resx">
       <DependentUpon>OSM_Purchase_Complete.cs</DependentUpon>

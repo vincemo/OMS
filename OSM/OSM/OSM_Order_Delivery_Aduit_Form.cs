@@ -217,7 +217,6 @@ namespace OSM
                         else
                         {
                             MessageBox.Show("未付全款，无法发货！", "警告");
-                            return;
                         }
                         break;
                     case "2":
@@ -225,7 +224,6 @@ namespace OSM
                         {
                             orderDeliver(order_id);
                         }
-                        
                         break;
                     case "3":
                         if (pay_state == "3")
@@ -235,9 +233,15 @@ namespace OSM
                         else
                         {
                             MessageBox.Show("未预付部分款，无法发货！", "警告");
-                            return;
                         }
                         break;
+                }
+
+                string checkPayListSQL = "select ID from OSM_PAYMENTREMINDER_SHEET where ORDER_ID = " + order_id;
+                DataTable dataT = adb.SQLTableQuery(checkPayListSQL);
+                if (dataT.Rows.Count == 0)
+                {
+                    createPaySheet(order_id);
                 }
             }
         }
@@ -260,6 +264,26 @@ namespace OSM
                     MessageBox.Show("该订单可以发货，已生成发货单！", "消息");
                     queryFromOrderSheetV(dataGridView_Order, "where ORDER_STATE = '3' ");
                 }
+            }
+        }
+
+        /// <summary>
+        /// 生成收款单
+        /// </summary>
+        /// <param name="order_id">订单ID</param>
+        private void createPaySheet(string order_id)
+        {
+            AccessDB adb = new AccessDB();
+
+            string payListSQL = "insert into OSM_PAYMENTREMINDER_SHEET(ORDER_ID,GEN_DATE) values (" + order_id + ",#" + DateTime.Now.ToString("yyyy-MM-dd") + "#)";
+
+            if (adb.SQLExecute(payListSQL))
+            {
+                MessageBox.Show("已生成对应收款单！", "消息");
+            }
+            else
+            {
+                MessageBox.Show("生成收款单遇到错误！", "错误");
             }
         }
     }

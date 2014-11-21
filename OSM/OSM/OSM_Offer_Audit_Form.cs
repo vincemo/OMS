@@ -170,7 +170,7 @@ namespace OSM
         {
             AccessDB adb = new AccessDB();
 
-            string query = "select sum(HW_TOTALPRICE) from OSM_HW where OFFERSHEET_CODE = '" + offerSheetCode + "'";
+            string query = "select sum(HW_TOTALPRICE) as REQUIRE_PAYMENT from OSM_HW where OFFERSHEET_CODE = '" + offerSheetCode + "'";
             DataTable dt = adb.SQLTableQuery(query);
             if (dt.Rows.Count > 0)
             {
@@ -178,7 +178,7 @@ namespace OSM
                 double require_payment = 0;
                 try
                 {
-                    require_payment = double.Parse(dr[0].ToString());
+                    require_payment = double.Parse(dr["REQUIRE_PAYMENT"].ToString());
                 }
                 catch (Exception exception)
                 {

@@ -40,7 +40,6 @@
             this.label_ArrDate = new System.Windows.Forms.Label();
             this.dateTimePicker_ArrDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView_Delivery = new System.Windows.Forms.DataGridView();
-            this.OSM_Pager_Delivery = new OSM.OSM_Pager();
             this.ORDER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DILIVERY_STATE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +48,7 @@
             this.COMMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewOrderBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.auditBtn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.OSM_Pager_Delivery = new OSM.OSM_Pager();
             this.groupBox__Delivery.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -163,7 +163,7 @@
             this.comboBox_DeliveryState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_DeliveryState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_DeliveryState.FormattingEnabled = true;
-            this.comboBox_DeliveryState.Location = new System.Drawing.Point(85, 92);
+            this.comboBox_DeliveryState.Location = new System.Drawing.Point(85, 95);
             this.comboBox_DeliveryState.Name = "comboBox_DeliveryState";
             this.comboBox_DeliveryState.Size = new System.Drawing.Size(152, 25);
             this.comboBox_DeliveryState.TabIndex = 3;
@@ -215,13 +215,6 @@
             this.dataGridView_Delivery.Size = new System.Drawing.Size(750, 443);
             this.dataGridView_Delivery.TabIndex = 6;
             this.dataGridView_Delivery.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Delivery_CellContentClick);
-            // 
-            // OSM_Pager_Delivery
-            // 
-            this.OSM_Pager_Delivery.Location = new System.Drawing.Point(271, 474);
-            this.OSM_Pager_Delivery.Name = "OSM_Pager_Delivery";
-            this.OSM_Pager_Delivery.Size = new System.Drawing.Size(750, 30);
-            this.OSM_Pager_Delivery.TabIndex = 7;
             // 
             // ORDER_ID
             // 
@@ -282,6 +275,13 @@
             this.auditBtn.ReadOnly = true;
             this.auditBtn.Text = "发货确认";
             this.auditBtn.UseColumnTextForLinkValue = true;
+            // 
+            // OSM_Pager_Delivery
+            // 
+            this.OSM_Pager_Delivery.Location = new System.Drawing.Point(271, 474);
+            this.OSM_Pager_Delivery.Name = "OSM_Pager_Delivery";
+            this.OSM_Pager_Delivery.Size = new System.Drawing.Size(750, 30);
+            this.OSM_Pager_Delivery.TabIndex = 7;
             // 
             // OSM_Delivery_Audit_Form
             // 
