@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOSM_GetPrePayed));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_RequirePayment = new System.Windows.Forms.Label();
-            this.label_Pay = new System.Windows.Forms.Label();
             this.label_PrePayment = new System.Windows.Forms.Label();
             this.textBox_RequirePayment = new System.Windows.Forms.TextBox();
             this.textBox_PrePayment = new System.Windows.Forms.TextBox();
+            this.label_Pay = new System.Windows.Forms.Label();
             this.textBox_Payment = new System.Windows.Forms.TextBox();
+            this.label_Tips = new System.Windows.Forms.Label();
             this.button_OK = new System.Windows.Forms.Button();
             this.button_CANCEL = new System.Windows.Forms.Button();
-            this.label_Tips = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,16 +74,6 @@
             this.label_RequirePayment.TabIndex = 1;
             this.label_RequirePayment.Text = "需付款总金额";
             // 
-            // label_Pay
-            // 
-            this.label_Pay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_Pay.AutoSize = true;
-            this.label_Pay.Location = new System.Drawing.Point(11, 114);
-            this.label_Pay.Name = "label_Pay";
-            this.label_Pay.Size = new System.Drawing.Size(68, 17);
-            this.label_Pay.TabIndex = 2;
-            this.label_Pay.Text = "预付款金额";
-            // 
             // label_PrePayment
             // 
             this.label_PrePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -112,6 +102,16 @@
             this.textBox_PrePayment.TabIndex = 5;
             this.textBox_PrePayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_PrePayment_KeyPress);
             // 
+            // label_Pay
+            // 
+            this.label_Pay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_Pay.AutoSize = true;
+            this.label_Pay.Location = new System.Drawing.Point(11, 114);
+            this.label_Pay.Name = "label_Pay";
+            this.label_Pay.Size = new System.Drawing.Size(68, 17);
+            this.label_Pay.TabIndex = 2;
+            this.label_Pay.Text = "预付款金额";
+            // 
             // textBox_Payment
             // 
             this.textBox_Payment.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -120,6 +120,16 @@
             this.textBox_Payment.Size = new System.Drawing.Size(187, 23);
             this.textBox_Payment.TabIndex = 6;
             this.textBox_Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Payment_KeyPress);
+            // 
+            // label_Tips
+            // 
+            this.label_Tips.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_Tips.AutoSize = true;
+            this.label_Tips.Location = new System.Drawing.Point(122, 79);
+            this.label_Tips.Name = "label_Tips";
+            this.label_Tips.Size = new System.Drawing.Size(153, 17);
+            this.label_Tips.TabIndex = 7;
+            this.label_Tips.Text = "（默认按照总金额的10%）";
             // 
             // button_OK
             // 
@@ -141,16 +151,6 @@
             this.button_CANCEL.UseVisualStyleBackColor = true;
             this.button_CANCEL.Click += new System.EventHandler(this.button_CANCEL_Click);
             // 
-            // label_Tips
-            // 
-            this.label_Tips.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_Tips.AutoSize = true;
-            this.label_Tips.Location = new System.Drawing.Point(122, 79);
-            this.label_Tips.Name = "label_Tips";
-            this.label_Tips.Size = new System.Drawing.Size(153, 17);
-            this.label_Tips.TabIndex = 7;
-            this.label_Tips.Text = "（默认按照总金额的10%）";
-            // 
             // FormOSM_GetPrePayed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -162,6 +162,8 @@
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormOSM_GetPrePayed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "预付部分款";

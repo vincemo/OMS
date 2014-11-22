@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOSM_GetPayed));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox_Payment = new System.Windows.Forms.TextBox();
             this.label_RequirePayment = new System.Windows.Forms.Label();
             this.label_Pay = new System.Windows.Forms.Label();
             this.textBox_RequirePayment = new System.Windows.Forms.TextBox();
-            this.textBox_Payment = new System.Windows.Forms.TextBox();
             this.button_OK = new System.Windows.Forms.Button();
             this.button_CANCEL = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -55,6 +55,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(306, 74);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // textBox_Payment
+            // 
+            this.textBox_Payment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textBox_Payment.Location = new System.Drawing.Point(105, 44);
+            this.textBox_Payment.Name = "textBox_Payment";
+            this.textBox_Payment.Size = new System.Drawing.Size(187, 23);
+            this.textBox_Payment.TabIndex = 3;
+            this.textBox_Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Payment_KeyPress);
             // 
             // label_RequirePayment
             // 
@@ -84,15 +93,6 @@
             this.textBox_RequirePayment.ReadOnly = true;
             this.textBox_RequirePayment.Size = new System.Drawing.Size(187, 23);
             this.textBox_RequirePayment.TabIndex = 2;
-            // 
-            // textBox_Payment
-            // 
-            this.textBox_Payment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox_Payment.Location = new System.Drawing.Point(105, 44);
-            this.textBox_Payment.Name = "textBox_Payment";
-            this.textBox_Payment.Size = new System.Drawing.Size(187, 23);
-            this.textBox_Payment.TabIndex = 3;
-            this.textBox_Payment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Payment_KeyPress);
             // 
             // button_OK
             // 
@@ -125,6 +125,8 @@
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormOSM_GetPayed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "全款支付";

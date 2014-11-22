@@ -32,6 +32,7 @@
             this.button_CANCEL = new System.Windows.Forms.Button();
             this.button_OK = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label_RestPay = new System.Windows.Forms.Label();
             this.label_RequirePayment = new System.Windows.Forms.Label();
             this.label_PrePayment = new System.Windows.Forms.Label();
             this.textBox_RequirePayment = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.label_Pay = new System.Windows.Forms.Label();
             this.textBox_Payment = new System.Windows.Forms.TextBox();
             this.textBox_RestPayment = new System.Windows.Forms.TextBox();
-            this.label_RestPay = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(306, 140);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // label_RestPay
+            // 
+            this.label_RestPay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_RestPay.AutoSize = true;
+            this.label_RestPay.Location = new System.Drawing.Point(11, 79);
+            this.label_RestPay.Name = "label_RestPay";
+            this.label_RestPay.Size = new System.Drawing.Size(68, 17);
+            this.label_RestPay.TabIndex = 8;
+            this.label_RestPay.Text = "需付剩余款";
             // 
             // label_RequirePayment
             // 
@@ -153,16 +163,6 @@
             this.textBox_RestPayment.Size = new System.Drawing.Size(187, 23);
             this.textBox_RestPayment.TabIndex = 7;
             // 
-            // label_RestPay
-            // 
-            this.label_RestPay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_RestPay.AutoSize = true;
-            this.label_RestPay.Location = new System.Drawing.Point(11, 79);
-            this.label_RestPay.Name = "label_RestPay";
-            this.label_RestPay.Size = new System.Drawing.Size(68, 17);
-            this.label_RestPay.TabIndex = 8;
-            this.label_RestPay.Text = "需付剩余款";
-            // 
             // FormOSM_GetRestPayed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -174,6 +174,8 @@
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormOSM_GetRestPayed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "付剩余款";
