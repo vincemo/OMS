@@ -82,6 +82,24 @@
     <Compile Include="FormOSM_Delivery_DatePicker.Designer.cs">
       <DependentUpon>FormOSM_Delivery_DatePicker.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOSM_GetPayed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_GetPayed.Designer.cs">
+      <DependentUpon>FormOSM_GetPayed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOSM_GetPrePayed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_GetPrePayed.Designer.cs">
+      <DependentUpon>FormOSM_GetPrePayed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOSM_GetRestPayed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOSM_GetRestPayed.Designer.cs">
+      <DependentUpon>FormOSM_GetRestPayed.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOSM_HW_Add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,11 +247,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OSM_PayList_Confirm_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OSM_PayList_Confirm_Form.Designer.cs">
+      <DependentUpon>OSM_PayList_Confirm_Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormOSM_Buyer_Add.resx">
       <DependentUpon>FormOSM_Buyer_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_Delivery_DatePicker.resx">
       <DependentUpon>FormOSM_Delivery_DatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_GetPayed.resx">
+      <DependentUpon>FormOSM_GetPayed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_GetPrePayed.resx">
+      <DependentUpon>FormOSM_GetPrePayed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOSM_GetRestPayed.resx">
+      <DependentUpon>FormOSM_GetRestPayed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOSM_HW_Add.resx">
       <DependentUpon>FormOSM_HW_Add.cs</DependentUpon>
@@ -316,6 +349,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="OSM_PayList_Confirm_Form.resx">
+      <DependentUpon>OSM_PayList_Confirm_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

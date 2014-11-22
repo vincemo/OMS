@@ -1,6 +1,6 @@
 ﻿namespace OSM
 {
-    partial class OSM_PayList_Form
+    partial class OSM_PayList_Confirm_Form
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -40,8 +40,11 @@
             this.label_PayState = new System.Windows.Forms.Label();
             this.comboBox_PayState = new System.Windows.Forms.ComboBox();
             this.dataGridView_PayList = new System.Windows.Forms.DataGridView();
+            this.OSM_Pager_PayList = new OSM.OSM_Pager();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ORDER_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAY_MODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAY_STATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GEN_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ACHIEVE_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PAY_MODE_DESC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +53,7 @@
             this.PRE_PAYMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.REQUIRE_PAYMENT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewOrderBtn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.OSM_Pager_PayList = new OSM.OSM_Pager();
+            this.PayBtn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox_PayList.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -105,7 +108,7 @@
             this.comboBox_PayMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PayMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PayMode.FormattingEnabled = true;
-            this.comboBox_PayMode.Location = new System.Drawing.Point(85, 53);
+            this.comboBox_PayMode.Location = new System.Drawing.Point(85, 50);
             this.comboBox_PayMode.Name = "comboBox_PayMode";
             this.comboBox_PayMode.Size = new System.Drawing.Size(152, 25);
             this.comboBox_PayMode.TabIndex = 3;
@@ -185,7 +188,7 @@
             this.comboBox_PayState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox_PayState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_PayState.FormattingEnabled = true;
-            this.comboBox_PayState.Location = new System.Drawing.Point(85, 95);
+            this.comboBox_PayState.Location = new System.Drawing.Point(85, 92);
             this.comboBox_PayState.Name = "comboBox_PayState";
             this.comboBox_PayState.Size = new System.Drawing.Size(152, 25);
             this.comboBox_PayState.TabIndex = 6;
@@ -200,6 +203,8 @@
             this.dataGridView_PayList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.ORDER_ID,
+            this.PAY_MODE,
+            this.PAY_STATE,
             this.GEN_DATE,
             this.ACHIEVE_DATE,
             this.PAY_MODE_DESC,
@@ -207,7 +212,8 @@
             this.ALREADY_PAYMENT,
             this.PRE_PAYMENT,
             this.REQUIRE_PAYMENT,
-            this.viewOrderBtn});
+            this.viewOrderBtn,
+            this.PayBtn});
             this.dataGridView_PayList.Location = new System.Drawing.Point(271, 25);
             this.dataGridView_PayList.Name = "dataGridView_PayList";
             this.dataGridView_PayList.ReadOnly = true;
@@ -215,6 +221,13 @@
             this.dataGridView_PayList.Size = new System.Drawing.Size(750, 443);
             this.dataGridView_PayList.TabIndex = 6;
             this.dataGridView_PayList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_PayList_CellContentClick);
+            // 
+            // OSM_Pager_PayList
+            // 
+            this.OSM_Pager_PayList.Location = new System.Drawing.Point(271, 474);
+            this.OSM_Pager_PayList.Name = "OSM_Pager_PayList";
+            this.OSM_Pager_PayList.Size = new System.Drawing.Size(750, 30);
+            this.OSM_Pager_PayList.TabIndex = 7;
             // 
             // ID
             // 
@@ -231,6 +244,22 @@
             this.ORDER_ID.Name = "ORDER_ID";
             this.ORDER_ID.ReadOnly = true;
             this.ORDER_ID.Visible = false;
+            // 
+            // PAY_MODE
+            // 
+            this.PAY_MODE.DataPropertyName = "PAY_MODE";
+            this.PAY_MODE.HeaderText = "PAY_MODE";
+            this.PAY_MODE.Name = "PAY_MODE";
+            this.PAY_MODE.ReadOnly = true;
+            this.PAY_MODE.Visible = false;
+            // 
+            // PAY_STATE
+            // 
+            this.PAY_STATE.DataPropertyName = "PAY_STATE";
+            this.PAY_STATE.HeaderText = "PAY_STATE";
+            this.PAY_STATE.Name = "PAY_STATE";
+            this.PAY_STATE.ReadOnly = true;
+            this.PAY_STATE.Visible = false;
             // 
             // GEN_DATE
             // 
@@ -296,21 +325,22 @@
             this.viewOrderBtn.Text = "查看订单";
             this.viewOrderBtn.UseColumnTextForLinkValue = true;
             // 
-            // OSM_Pager_PayList
+            // PayBtn
             // 
-            this.OSM_Pager_PayList.Location = new System.Drawing.Point(271, 474);
-            this.OSM_Pager_PayList.Name = "OSM_Pager_PayList";
-            this.OSM_Pager_PayList.Size = new System.Drawing.Size(750, 30);
-            this.OSM_Pager_PayList.TabIndex = 7;
+            this.PayBtn.HeaderText = "";
+            this.PayBtn.Name = "PayBtn";
+            this.PayBtn.ReadOnly = true;
+            this.PayBtn.Text = "付款";
+            this.PayBtn.UseColumnTextForLinkValue = true;
             // 
-            // OSM_PayList_Form
+            // OSM_PayList_Confirm_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.OSM_Pager_PayList);
             this.Controls.Add(this.dataGridView_PayList);
             this.Controls.Add(this.groupBox_PayList);
-            this.Name = "OSM_PayList_Form";
+            this.Name = "OSM_PayList_Confirm_Form";
             this.Size = new System.Drawing.Size(1024, 510);
             this.groupBox_PayList.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -338,6 +368,8 @@
         private OSM_Pager OSM_Pager_PayList;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ORDER_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAY_MODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAY_STATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn GEN_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn ACHIEVE_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn PAY_MODE_DESC;
@@ -346,5 +378,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PRE_PAYMENT;
         private System.Windows.Forms.DataGridViewTextBoxColumn REQUIRE_PAYMENT;
         private System.Windows.Forms.DataGridViewLinkColumn viewOrderBtn;
+        private System.Windows.Forms.DataGridViewLinkColumn PayBtn;
     }
 }

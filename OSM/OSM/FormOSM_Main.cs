@@ -253,5 +253,13 @@ namespace OSM
             plf.setMainForm(this);
             panel_Main.Controls.Add(plf);
         }
+
+        private void TSMItem_PayList_Pay_Click(object sender, EventArgs e)
+        {
+            panel_Main.Controls.Clear();
+            OSM_PayList_Confirm_Form plcf = new OSM_PayList_Confirm_Form();
+            plcf.setMainForm(this);
+            panel_Main.Controls.Add(plcf);
+        }
     }
 }

@@ -44,3 +44,7 @@ D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Order_Delivery_Aduit_Form.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_Delivery_DatePicker.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_Delivery_Arrive_Form.resources
 D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_PayList_Form.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.OSM_PayList_Confirm_Form.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_GetPayed.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_GetPrePayed.resources
+D:\Project\OMS\OSM\OSM\obj\x86\Debug\OSM.FormOSM_GetRestPayed.resources
